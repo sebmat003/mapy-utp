@@ -1,0 +1,62 @@
+
+.floors {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0 0 4rem 2rem;
+  width: 10rem;
+}
+
+
+
+p:not(:first-child) {
+  margin-top: 0.3rem;
+}
+
+.active {
+  color: white !important;
+  font-weight: 600;
+}
+
+.line {
+  position: relative;
+  background-color: white;
+  height: 7rem;
+  width: 1px;
+  float: left;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 0.5rem solid transparent;
+  border-left: 1rem solid white;
+  border-bottom: 0.5rem solid transparent;
+  position: relative;
+  float: left;
+}
+
+.text-floors {
+  position: relative;
+  float: left;
+}
+
+.table-floors {
+  border: none;
+  transform: translateX(-2px);
+}
+
+.table-floors tr td:last-child p {
+  margin-left: 1rem;
+}
+
+.astext {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.astext:active, .astext:hover {
+  color: rgba(255,255,255,0.9);
+
+}

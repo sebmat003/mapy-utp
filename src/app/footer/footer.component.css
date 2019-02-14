@@ -1,0 +1,39 @@
+footer {
+  background-color: #efeeed;
+  width: 100%;
+  left:0;
+  bottom:0;
+  position: fixed;
+  font-family: 'Montserrat Medium', 'sans-serif';
+  font-size: 0.7rem;
+}
+
+.info-label {
+  color: #1b272e;
+  display: inline-block;
+  float:left;
+  text-transform: uppercase;
+  text-align: center;
+  width:15%;
+}
+.info-label p {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.3rem;
+  margin: 5px 5px 5px 0.5rem;
+}
+
+.info-text-box {
+  background-color: #fff;
+  display:inline-block;
+  float: left;
+  width: 85%;
+}
+
+.info-text {
+  padding: 0.3rem;
+  font-weight: 700;
+  margin: 5px;
+  color: #1b272e;
+  text-transform: uppercase;
+}
