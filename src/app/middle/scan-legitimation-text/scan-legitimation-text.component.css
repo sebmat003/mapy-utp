@@ -1,0 +1,20 @@
+.scan-box {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 1.8rem;
+  margin-right: 1rem;
+  width: 40rem;
+  height: 2rem;
+  font-size: 0.7rem;
+  color: white;
+  font-weight: 500;
+  text-align: right;
+}
+
+.scan-img {
+  max-height: 1rem;
+  max-width: 1rem;
+  margin-right: 0.5rem;
+}
+

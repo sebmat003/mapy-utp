@@ -1,0 +1,37 @@
+.size-buttons {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 4rem;
+  margin-right: 2.5rem;
+  width: 2rem;
+  height: 3rem;
+  background-color: #efeeed;
+  border-collapse: collapse;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Montserrat Bold', sans-serif;
+  font-weight: bold;
+  color: #1b272e;
+}
+.size-buttons tr {
+
+}
+
+.size-buttons tr:first-child::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background-color: rgba(27, 39, 46, 0.2);
+  transform: translateY(-2rem) translateX(0.25rem);
+}
+
+.size-buttons td {
+  cursor: pointer;
+  overflow: hidden;
+  word-wrap: break-word;
+
+}
