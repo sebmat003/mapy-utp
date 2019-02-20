@@ -68,7 +68,7 @@ import { ChangeFloorsComponent } from './mobile-version/floors-mobile/change-flo
     ChangeFloorsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

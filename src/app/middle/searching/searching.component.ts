@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-searching',
   templateUrl: './searching.component.html',
@@ -9,7 +10,15 @@ export class SearchingComponent implements OnInit {
 
   constructor() { }
 
+  private display: boolean = false;
+
   ngOnInit() {
   }
+
+  onClickOptions() {
+
+  }
+
+
 
 }

@@ -1,0 +1,41 @@
+.options-container {
+  width: 100%;
+  text-align: center;
+}
+
+.options {
+  width: 51%;
+  display: inline-block;
+  position: relative;
+}
+
+.option {
+  display: inline-block;
+  float: right;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50px;
+  background-color: #c3c2c1;
+}
+
+.option img {
+  max-width: 1.4rem;
+  max-height: 1.4rem;
+  overflow: hidden;
+  margin-top: .3rem;
+
+}
+
+.elevator img {
+  margin-left: .2rem;
+}
+
+.wc p {
+  text-align: center;
+  margin-top: .45rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #1b272e;
+}

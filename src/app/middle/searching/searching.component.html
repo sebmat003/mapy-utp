@@ -3,20 +3,28 @@
     <table>
       <tr>
         <td class="loupe">
-            <img src="../../../assets/images/loupe.svg" alt="">
+          <img src="../../../assets/images/loupe.svg" alt="">
         </td>
         <td class="search-input">
-            <input type="text" placeholder="Wyszukaj na UTP...">
+          <input type="text" placeholder="Wyszukaj na UTP...">
         </td>
         <td class="microphone">
-            <img src="../../../assets/images/microphone.svg" alt="micro">
+          <img src="../../../assets/images/microphone.svg" alt="micro">
         </td>
         <td class="line"></td>
-        <td class="options">
-            <img src="../../../assets/images/down-arrow.svg" alt="">
+        <td class="options" (click)="display = !display" type="button" >
+          <img src="../../../assets/images/down-arrow.svg" alt="">
         </td>
       </tr>
     </table>
+
+  </div>
+  <div class="dropdown" [ngClass]="{ 'display': display, 'nodisplay': !display }">
+    <div class="dropdown-menu">
+      <a>Wyszukiwanie ogólne</a>
+      <a>Pracownik</a>
+      <a>Pomieszczenie</a>
+    </div>
   </div>
 </div>
 
