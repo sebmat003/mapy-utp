@@ -1,14 +1,57 @@
-.hide-button {
-  width: 1.15rem;
-  height: 2.5rem;
+.left-menu-container {
+  height: 100%;
+  background-color: orangered;
+  width: 25%;
+  position: absolute;
+  z-index: 1;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+}
+
+.show {
+  display: block;
+  visibility: visible;
+}
+
+.noshow {
+  transform: translateX(-101%);
+}
+.button-container {
+  left:0;
+  top: 0;
+  text-align: left;
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+}
+
+.button {
+  width: 4%;
+  height: 6%;
   background-color: #efeeed;
-  position: relative;
+  position: absolute;
   float: left;
   margin-top: .65rem;
   cursor: pointer;
+  z-index: 3;
+
 }
 
-.triangle-right {
+.open-button {
+  transform: translateX(100%);
+
+}
+
+.hide-button {
+
+}
+
+.triangle {
   position: absolute;
   margin: auto;
   top: 0;
@@ -17,7 +60,18 @@
   bottom: 0;
   width: 0;
   height: 0;
-  border-top: 0.4rem solid transparent;
-  border-left: 0.6rem solid #1b272e;
-  border-bottom: 0.4rem solid transparent;
+  border-top: 0.3rem solid transparent;
+  border-left: 0.5rem solid #1b272e;
+  border-bottom: 0.3rem solid transparent;
+  transition-property: border-left, border-right;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+}
+.triangle-left {
+  border-left: 0.5rem solid #1b272e;
+}
+
+.triangle-right {
+  border-right: 0.5rem solid #1b272e;
+  border-left: none;
 }

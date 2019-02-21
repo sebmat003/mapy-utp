@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftMenuComponent implements OnInit {
 
+  private showLeftMenu: boolean = false;
+
   constructor() { }
 
   ngOnInit() {

@@ -6,6 +6,7 @@ footer {
   position: fixed;
   font-family: 'Montserrat Medium', 'sans-serif';
   font-size: 0.7rem;
+  z-index: 3;
 }
 
 .info-label {
