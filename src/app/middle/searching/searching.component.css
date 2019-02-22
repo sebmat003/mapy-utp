@@ -2,6 +2,7 @@
   width: 100%;
   margin-top: 1rem;
   text-align: center;
+  z-index: 4;
 }
 
 .search-panel {
@@ -12,6 +13,7 @@
   background-color: white;
   position: relative;
   border-radius: 10px;
+  z-index: 4;
 
 }
 
@@ -110,4 +112,14 @@ img {
   display: none;
 }
 
+
+.transform-right {
+  transform: translateX(25%);
+}
+
+.search-panel, .dropdown {
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+}
 

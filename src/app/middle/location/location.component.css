@@ -9,6 +9,9 @@
   font-size: 0.7rem;
   z-index: 3;
   position: absolute;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
 }
 
 .label  {
@@ -21,4 +24,9 @@
   display: inline-block;
   float: left;
 }
+
+.transform-right {
+  transform: translateX(195%);
+}
+
 

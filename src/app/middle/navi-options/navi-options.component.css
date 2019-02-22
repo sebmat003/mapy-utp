@@ -8,6 +8,9 @@
   width: 51%;
   display: inline-block;
   position: relative;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
 }
 
 .option {
@@ -39,4 +42,9 @@
   font-size: .9rem;
   font-weight: 600;
   color: #1b272e;
+}
+
+
+.transform-right {
+  transform: translateX(25%);
 }

@@ -1,1 +1,3 @@
-
+:host-context (.transform-right) {
+  transform: translateX(100%);
+}

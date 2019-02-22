@@ -1,11 +1,10 @@
-
 <!--left side-->
-<app-left-menu></app-left-menu>
-<app-floors></app-floors>
-<app-location></app-location>
+<app-left-menu (emitStateMenu)="onTransform($event)" ></app-left-menu>
+<app-floors [transform]="transform"></app-floors>
+<app-location [transform]="transform"></app-location>
 <!--middle-->
-<app-navi-options></app-navi-options>
-<app-searching></app-searching>
+<app-navi-options [transform]="transform"></app-navi-options>
+<app-searching [transform]="transform"></app-searching>
 
 
 <!--right side-->

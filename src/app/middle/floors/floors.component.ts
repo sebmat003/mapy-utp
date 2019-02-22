@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-floors',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FloorsComponent implements OnInit {
 
-  constructor() { }
+  @Input() private transform: boolean = false;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
+
 
 }

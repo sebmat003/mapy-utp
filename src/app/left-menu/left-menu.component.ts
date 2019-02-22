@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-left-menu',
@@ -8,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class LeftMenuComponent implements OnInit {
 
   private showLeftMenu: boolean = false;
+  @Output() emitStateMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleMenu () {
+    this.showLeftMenu = !this.showLeftMenu;
+    this.emitStateMenu.emit(this.showLeftMenu);
+  }
 }

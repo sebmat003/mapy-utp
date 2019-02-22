@@ -1,5 +1,5 @@
-<div class="search-container">
-  <div class="search-panel">
+<div class="search-container" >
+  <div class="search-panel" [ngClass]="{'transform-right' : transform, '': !transform}">
     <table>
       <tr>
         <td class="loupe">
@@ -19,7 +19,7 @@
     </table>
 
   </div>
-  <div class="dropdown" [ngClass]="{ 'display': display, 'nodisplay': !display }">
+  <div class="dropdown" [ngClass]="{ 'display': display, 'nodisplay': !display, 'transform-right' : transform, '': !transform } ">
     <div class="dropdown-menu">
       <a>Wyszukiwanie ogólne</a>
       <a>Pracownik</a>

@@ -1,8 +1,8 @@
-<div class="left-menu-container" [ngClass]="{ 'show': showLeftMenu, 'noshow': !showLeftMenu }">
+<div class="left-menu-container" [ngClass]="{ 'show': showLeftMenu, 'noshow': !showLeftMenu}">
 
 </div>
 <div class="button-container" [ngClass]="{ 'open-button': showLeftMenu, 'hide-button': !showLeftMenu}">
-  <div class="button" (click)="showLeftMenu = !showLeftMenu;">
+  <div class="button" (click)="toggleMenu()">
     <div class="triangle" [ngClass]="{ 'triangle-right': showLeftMenu, 'triangle-left': !showLeftMenu}"></div>
   </div>
 </div>

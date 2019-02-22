@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-navi-options',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navi-options.component.css']
 })
 export class NaviOptionsComponent implements OnInit {
+  @Input() private transform: boolean = false;
 
   constructor() { }
 
