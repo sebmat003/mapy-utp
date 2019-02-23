@@ -1,10 +1,10 @@
 
 .floors {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   margin: 0 0 4rem 4rem;
-  width: 10rem;
+  width: 25%;
   z-index: 3;
   transition-property: transform, -webkit-transform;
   transition-duration: 0.2s;
@@ -66,5 +66,5 @@ p:not(:first-child) {
 }
 
 .transform-right {
-  transform: translateX(200%);
+  transform: translateX(100%);
 }

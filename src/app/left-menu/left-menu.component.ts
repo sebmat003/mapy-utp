@@ -8,12 +8,13 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class LeftMenuComponent implements OnInit {
 
-  private showLeftMenu: boolean = false;
+  private showLeftMenu: boolean = true;
   @Output() emitStateMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit() {
+    this.emitStateMenu.emit(this.showLeftMenu);
   }
 
   toggleMenu () {
