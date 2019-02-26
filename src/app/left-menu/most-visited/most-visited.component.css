@@ -18,7 +18,7 @@
 }
 .text p {
   margin-top: 5%;
-  font-size: .9rem;
+  font-size: .8rem;
   font-weight: 600;
 }
 
@@ -32,14 +32,15 @@
   position: relative;
   display: inline-block;
   float: left;
-  width: 30%;
+  width: 20%;
   height: 50%;
   text-align: center;
+  margin: 0 3%;
 
 }
 
 .most-visited--item:first-child {
-  margin-left: 5%;
+  margin-left: 15%;
 }
 
 .most-visited--item:last-child {
@@ -50,14 +51,14 @@
   width: 100%;
   position: relative;
   text-align: center;
-  height: 35%;
+  height: 30%;
 }
 
 
 .image-container {
-  margin: 0 5%;
-  width: 20%;
-  height: 100%;
+  margin: 0 4%;
+  width: 17%;
+  height: auto;
   overflow: hidden;
   text-align: center;
   float: left;
@@ -65,11 +66,11 @@
 }
 
 .image-container:first-child {
-  margin-left: 10%;
+  margin-left: 17%;
 }
 
 .image-container img {
-  border: .15rem solid #1b272e;
+  border: .1rem solid #1b272e;
   background-color: #1b272e;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -81,39 +82,71 @@
 
 .buttons-container {
   width: 100%;
-  height: 27%;
+  height: 29%;
   display: block;
   position: relative;
   float: left;
 }
 
 .button-container {
-  width: 33.33%;
+  margin: 0 2.5%;
+  width: 20%;
   height: 100%;
   overflow: hidden;
   text-align: center;
   float: left;
   position: relative;
-  background-color: yellow;
 }
 
-.navi-button {
-
+.button-container:first-child {
+  margin-left: 15.7%;
 }
 
-.wheelchair-button {
-
+.button-container:last-child {
+  margin-left: 2.7%;
 }
 
 .button-container p {
   position: absolute;
   bottom: 0;
-  font-size: .8rem;
+  left: 0;
+  right: 0;
+  font-size: .6rem;
   font-style: italic;
   text-transform: capitalize;
   text-align: center;
+  margin-bottom:7%;
 }
 
-.button-container p:first-child {
-  padding-left: 5%;
+.btn {
+  margin: 10% 0 0 5%;
+  width: 40%;
+  height: auto;
+  /*overflow: hidden;*/
+  position: relative;
+  display: inline-block;
+  float: left;
 }
+
+.btn img {
+  padding: 20%;
+  background-color: #1b272e;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  max-width: 110%;
+  max-height: 110%;
+  min-height: 110%;
+  min-width: 110%;
+}
+
+
+.navi img {
+}
+.wheelchair img {
+  /*margin-top: 22%;*/
+}
+
+.wheelchair {
+  margin-left: 10%;
+}
+
