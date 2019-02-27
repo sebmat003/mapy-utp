@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MostVisitedComponent implements OnInit {
 
+  private activeState : number = 1;
+
   constructor() { }
 
   ngOnInit() {
