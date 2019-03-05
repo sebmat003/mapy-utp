@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoComponent implements OnInit {
 
-  constructor() { }
+  time: number = Date.now();
+
+  constructor() {}
 
   ngOnInit() {
+    setInterval(() => {
+      this.time = Date.now();
+    }, 1000)
   }
 
 }
