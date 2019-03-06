@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusComponent implements OnInit {
 
+  private openState: boolean = false;
+
   constructor() { }
 
   ngOnInit() {

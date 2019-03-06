@@ -1,5 +1,14 @@
-<div class="bus-button">
-  <div class="bus-icon">
-    <img src="../../assets/images/bus.svg" alt="bus">
+<div class="bus-background" [ngClass]="{ 'active-background' : openState, '' : !openState }"></div>
+<div class="bus-menu" [ngClass]="{ 'open-menu' : openState, '' : !openState }">
+  <div class="menu" [ngClass]="{ 'opacity' : openState, '' : !openState }">
+    <p>dasadas</p>
+    <img src="../../assets/images/restaurant.jpg" alt="">
+  </div>
+</div>
+<div class="bus-button-container" [ngClass]="{ 'open-button' : openState, '' : !openState }">
+  <div class="bus-button" (click)="openState = !openState">
+    <div class="bus-icon">
+      <img src="../../assets/images/bus.svg" alt="bus">
+    </div>
   </div>
 </div>
