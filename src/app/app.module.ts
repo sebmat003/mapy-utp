@@ -32,6 +32,7 @@ import { ChangeLanguageMobileComponent } from './mobile-version/change-language-
 import { LocationMobileComponent } from './mobile-version/location-mobile/location-mobile.component';
 import { FloorsMobileComponent } from './mobile-version/floors-mobile/floors-mobile.component';
 import { ChangeFloorsComponent } from './mobile-version/floors-mobile/change-floors/change-floors.component';
+import { BusItemComponent } from './bus/bus-item/bus-item.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { ChangeFloorsComponent } from './mobile-version/floors-mobile/change-flo
     ChangeLanguageMobileComponent,
     LocationMobileComponent,
     FloorsMobileComponent,
-    ChangeFloorsComponent
+    ChangeFloorsComponent,
+    BusItemComponent
   ],
   imports: [
     BrowserModule,

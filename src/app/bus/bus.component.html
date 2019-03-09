@@ -1,6 +1,6 @@
 <div class="bus-background" (click)="openState = !openState" [ngClass]="{ 'active-background' : openState, 'inactive-background' : !openState }"></div>
 <div class="bus-menu" [ngClass]="{ 'open-menu' : openState, '' : !openState }">
-  <div class="menu">
+  <div class="menu" [ngClass]="{ 'opacity-1' : openState, 'opacity-0' : !openState }">
     <div class="top">
       <div class="top-title"><p>Rozkład jazdy tramwajów/autobusów</p></div>
       <div class="top-time"><p>{{ time | date:'HH:mm'}}</p></div>
@@ -11,11 +11,22 @@
     </div>
 
     <div class="bus-numbers">
-
+      <div class="bus-number-item">
+        <p>Kaliskiego UTP</p>
+        <p>80 82 83 89 32</p>
+      </div>
+      <div class="bus-number-item">
+        <p>Akademicka/UTP</p>
+        <p>3 5 7 10 31</p>
+      </div>
+      <div class="bus-number-item">
+        <p>Dworzec Akademia</p>
+        <p>65</p>
+      </div>
     </div>
 
     <div class="timetable">
-
+      <app-bus-item></app-bus-item>
     </div>
 
   </div>
