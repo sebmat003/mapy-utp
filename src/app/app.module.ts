@@ -33,6 +33,7 @@ import { LocationMobileComponent } from './mobile-version/location-mobile/locati
 import { FloorsMobileComponent } from './mobile-version/floors-mobile/floors-mobile.component';
 import { ChangeFloorsComponent } from './mobile-version/floors-mobile/change-floors/change-floors.component';
 import { BusItemComponent } from './bus/bus-item/bus-item.component';
+import {ClickOutsideModule} from 'ng-click-outside';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { BusItemComponent } from './bus/bus-item/bus-item.component';
   ],
   imports: [
     BrowserModule,
+    ClickOutsideModule
   ],
   providers: [],
   bootstrap: [AppComponent]

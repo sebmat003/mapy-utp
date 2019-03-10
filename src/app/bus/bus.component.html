@@ -1,4 +1,4 @@
-<div class="bus-background" (click)="openState = !openState" [ngClass]="{ 'active-background' : openState, 'inactive-background' : !openState }"></div>
+<div class="bus-background" (click)="openState = false" [ngClass]="{ 'active-background' : openState, 'inactive-background' : !openState }"></div>
 <div class="bus-menu" [ngClass]="{ 'open-menu' : openState, '' : !openState }">
   <div class="menu" [ngClass]="{ 'opacity-1' : openState, 'opacity-0' : !openState }">
     <div class="top">

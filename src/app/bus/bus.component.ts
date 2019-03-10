@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusComponent implements OnInit {
 
-  private openState: boolean = true;
+  private openState: boolean = false;
   time: number = Date.now();
 
   constructor() { }

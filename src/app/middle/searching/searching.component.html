@@ -1,30 +1,51 @@
-<div class="search-container" >
+<div class="search-container">
   <div class="search-panel" [ngClass]="{'transform-right' : transform, '': !transform}">
     <table>
       <tr>
         <td class="loupe">
           <img src="../../../assets/images/loupe.svg" alt="">
         </td>
-        <td class="search-input">
-          <input type="text" placeholder="Wyszukaj na UTP...">
-        </td>
+        <ng-container *ngIf="searchingState==1">
+          <td class="search-input">
+            <input type="text" placeholder="Wyszukaj na UTP...">
+          </td>
+        </ng-container>
+        <ng-container *ngIf="searchingState==2">
+          <td class="half-search-input">
+            <input type="text" placeholder="Nazwisko i/lub imię">
+          </td>
+          <td class="half-search-input">
+            <input type="text" placeholder="Email/Telefon">
+          </td>
+        </ng-container>
+        <ng-container *ngIf="searchingState==3">
+          <td class="half-search-input">
+            <input type="text" placeholder="Numer sali">
+          </td>
+          <td class="half-search-input">
+            <input type="text" placeholder="Budynek">
+          </td>
+        </ng-container>
         <td class="microphone">
           <img src="../../../assets/images/microphone.svg" alt="micro">
         </td>
         <td class="line"></td>
-        <td class="options" (click)="display = !display" type="button" >
+        <td class="options" (click)="click()" type="button">
           <img src="../../../assets/images/down-arrow.svg" alt="">
         </td>
       </tr>
     </table>
 
   </div>
-  <div class="dropdown" [ngClass]="{ 'display': display, 'nodisplay': !display, 'transform-right' : transform, '': !transform } ">
-    <div class="dropdown-menu">
-      <a>Wyszukiwanie ogólne</a>
-      <a>Pracownik</a>
-      <a>Pomieszczenie</a>
+
+    <div class="dropdown"
+         [ngClass]="{ 'display': display, 'nodisplay': !display, 'transform-right' : transform, '': !transform } ">
+      <div class="dropdown-menu" (clickOutside)="closeMenu()" [clickOutsideEvents]="'click,touchstart'">
+        <a (click)="searchingState = 1; display=false">Wyszukiwanie ogólne</a>
+        <a (click)="searchingState = 2; display=false">Pracownik</a>
+        <a (click)="searchingState = 3; display=false">Pomieszczenie</a>
+      </div>
     </div>
-  </div>
+
 </div>
 
