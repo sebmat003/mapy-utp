@@ -1,3 +1,33 @@
-<p>
-  change-location works!
-</p>
+<div class="div-container">
+  <div class="location-container">
+    <div class="text">
+      <p> Zmień lokalizację </p>
+    </div>
+    <div class="locations">
+      <table class="table-locations">
+        <tr class="location-item">
+          <td class="active">Kaliskiego</td>
+        </tr>
+        <tr class="location-item">
+          <td>Bernardyńska</td>
+        </tr>
+        <tr class="location-item">
+          <td>Fordońska</td>
+        </tr>
+        <tr class="location-item">
+          <td>Kordeckiego</td>
+        </tr>
+        <tr class="location-item">
+          <td>Mazowiecka</td>
+        </tr>
+        <tr class="location-item">
+          <td>Seminaryjna</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="close-button" (click)="onClose()">
+    <img src="../../assets/images/x.png" alt="">
+  </div>
+</div>
+
