@@ -1,22 +1,31 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {LocationService} from '../services/location.service';
 
 @Component({
   selector: 'app-change-location',
   templateUrl: './change-location.component.html',
   styleUrls: ['./change-location.component.css']
 })
-export class ChangeLocationComponent implements OnInit, OnDestroy {
+export class ChangeLocationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private LocationService: LocationService) { }
 
   ngOnInit() {
   }
 
   onClose() {
-    this.ngOnDestroy();
+    if(this.LocationService.clickedButton == 1) {
+      this.LocationService.showLocation = false;
+    } else this.LocationService.clickedButton = 1;
+
   }
 
-  ngOnDestroy() {
 
+  onClickItem(state: number) {
+    this.LocationService.locationState = state;
+
+    setTimeout(() => {
+      this.LocationService.showLocation = false;
+    },100)
   }
 }

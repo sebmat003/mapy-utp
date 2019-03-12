@@ -5,7 +5,7 @@
 <!--middle-->
 <app-navi-options [transform]="transform"></app-navi-options>
 <app-searching [transform]="transform"></app-searching>
-<app-change-location></app-change-location>
+<app-change-location *ngIf="LocationService.showLocation"></app-change-location>
 
 <!--right side-->
 <app-sizing-map></app-sizing-map>

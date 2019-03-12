@@ -34,6 +34,7 @@ import { FloorsMobileComponent } from './mobile-version/floors-mobile/floors-mob
 import { ChangeFloorsComponent } from './mobile-version/floors-mobile/change-floors/change-floors.component';
 import { BusItemComponent } from './bus/bus-item/bus-item.component';
 import {ClickOutsideModule} from 'ng-click-outside';
+import {LocationService} from './services/location.service';
 
 
 @NgModule({
@@ -75,7 +76,7 @@ import {ClickOutsideModule} from 'ng-click-outside';
     BrowserModule,
     ClickOutsideModule
   ],
-  providers: [],
+  providers: [LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

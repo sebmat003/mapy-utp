@@ -1,8 +1,14 @@
 <div class="location" [ngClass]="{'transform-right' : transform, '': !transform}">
   <div class="label">
-    <p>Lokalizacja: KALISKIEGO</p>
+
+    <p *ngIf="LocationService.locationState==0">Lokalizacja: KALISKIEGO</p>
+    <p *ngIf="LocationService.locationState==1">Lokalizacja: BERNARDYŃSKA</p>
+    <p *ngIf="LocationService.locationState==2">Lokalizacja: FORDOŃSKA</p>
+    <p *ngIf="LocationService.locationState==3">Lokalizacja: KORDECKIEGO</p>
+    <p *ngIf="LocationService.locationState==4">Lokalizacja: MAZOWIECKA</p>
+    <p *ngIf="LocationService.locationState==5">Lokalizacja: SEMINARYJNA</p>
   </div>
-  <div class="button-box">
+  <div class="button-box" (click)="openLocation()">
     <button class="astext">zmień</button>
   </div>
 </div>

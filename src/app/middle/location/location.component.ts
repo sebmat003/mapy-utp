@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {LocationService} from '../../services/location.service';
 
 @Component({
   selector: 'app-location',
@@ -8,9 +9,13 @@ import {Component, Input, OnInit} from '@angular/core';
 export class LocationComponent implements OnInit {
   @Input() private transform: boolean = false;
 
-  constructor() { }
+  constructor(private LocationService: LocationService) { }
 
   ngOnInit() {
   }
 
+  openLocation() {
+    this.LocationService.showLocation = true;
+    this.LocationService.clickedButton = 0;
+  }
 }

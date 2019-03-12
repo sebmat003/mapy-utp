@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {LocationService} from './services/location.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,8 @@ import {Component} from '@angular/core';
 export class AppComponent {
 
   transform: boolean = false;
-  // @Output() emitTransform: EventEmitter<boolean> =  new EventEmitter<boolean>();
+
+  constructor(private LocationService: LocationService) {}
 
 
   onTransform(stateLeftMenu: boolean) {
