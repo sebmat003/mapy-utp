@@ -50,6 +50,7 @@
   float: left;
   width: 50%;
   height: 40%;
+  cursor: pointer;
 }
 
 .menu {
@@ -76,9 +77,10 @@
   text-transform: uppercase;
   font-weight: 600;
   padding: 6% 0;
+
 }
 
-.clickable {
+.menu-text-info {
   margin: 0;
   position: relative;
   width: 100%;
@@ -87,7 +89,7 @@
   text-align: left;
   padding-left: 7%;
   font-style: italic;
-  cursor: pointer;
+
   padding-bottom: 5%;
 
 }

@@ -9,6 +9,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class FloorsComponent implements OnInit {
 
   @Input() private transform: boolean = false;
+  public floorState: number = 0;
+
 
   constructor() {
   }
@@ -17,4 +19,7 @@ export class FloorsComponent implements OnInit {
   }
 
 
+  onClickFloor(number: number) {
+    this.floorState = number;
+  }
 }

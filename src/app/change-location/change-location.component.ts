@@ -29,3 +29,4 @@ export class ChangeLocationComponent implements OnInit {
     },100)
   }
 }
+

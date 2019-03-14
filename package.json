@@ -25,6 +25,7 @@
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
     "ng-click-outside": "^4.0.0",
+    "ng2-pdf-viewer": "^5.2.3",
     "popper.js": "^1.14.7",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"

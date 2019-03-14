@@ -6,6 +6,7 @@
 <app-navi-options [transform]="transform"></app-navi-options>
 <app-searching [transform]="transform"></app-searching>
 <app-change-location *ngIf="LocationService.showLocation"></app-change-location>
+<app-menu-restaurant *ngIf="MenuRestaurantService.showMenu"></app-menu-restaurant>
 
 <!--right side-->
 <app-sizing-map></app-sizing-map>

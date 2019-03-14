@@ -68,3 +68,7 @@ p:not(:first-child) {
 .transform-right {
   transform: translateX(100%);
 }
+
+.hidden {
+  display: none;
+}

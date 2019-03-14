@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MenuRestaurantService} from '../../services/menu-restaurant.service';
 
 @Component({
   selector: 'app-restaurant',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantComponent implements OnInit {
 
-  constructor() { }
+  constructor(private MenuRestaurantService: MenuRestaurantService) { }
 
   ngOnInit() {
   }
 
+  onClickMenu() {
+    this.MenuRestaurantService.showMenu = true;
+    this.MenuRestaurantService.clickButtonMenu = 0;
+  }
 }

@@ -35,6 +35,9 @@ import { ChangeFloorsComponent } from './mobile-version/floors-mobile/change-flo
 import { BusItemComponent } from './bus/bus-item/bus-item.component';
 import {ClickOutsideModule} from 'ng-click-outside';
 import {LocationService} from './services/location.service';
+import {MenuRestaurantService} from './services/menu-restaurant.service';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -74,9 +77,11 @@ import {LocationService} from './services/location.service';
   ],
   imports: [
     BrowserModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    PdfViewerModule,
+    HttpClientModule
   ],
-  providers: [LocationService],
+  providers: [LocationService, MenuRestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
