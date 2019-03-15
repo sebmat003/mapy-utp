@@ -16,7 +16,6 @@ export class AppComponent {
 
   onTransform(stateLeftMenu: boolean) {
     this.transform = stateLeftMenu;
-    // this.emitTransform.emit(this.transform);
   }
 
 }

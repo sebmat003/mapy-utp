@@ -1,3 +1,12 @@
 :host-context (.transform-right) {
   transform: translateX(100%);
 }
+
+
+@media only screen and (max-width: 1000px) {
+  app-bus, app-change-floors, app-change-location, app-left-menu, app-navi-options, app-floors, app-scan-legitimation-text,
+   app-language, app-footer, app-location, app-sizing-map{
+    display: none;
+    visibility: hidden;
+  }
+}
