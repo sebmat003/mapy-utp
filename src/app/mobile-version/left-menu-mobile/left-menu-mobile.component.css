@@ -1,0 +1,46 @@
+.left-menu-mobile-container {
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #efeeed;
+  width: 75%;
+  position: absolute;
+  z-index: 4;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+}
+
+.show {
+  display: block;
+  visibility: visible;
+}
+
+.noshow {
+  transform: translateX(-101%);
+}
+
+.left-menu-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  visibility: hidden;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+  display: block;
+}
+
+.inactive-background {
+  visibility: hidden;
+  background-color: rgba(0,0,0,0);
+}
+
+.active-background {
+  display: block;
+  visibility: visible;
+  background-color: rgba(0,0,0,0.5);
+}

@@ -10,3 +10,11 @@
     visibility: hidden;
   }
 }
+
+@media only screen and (min-width: 1001px) {
+  app-floors-mobile, app-location-mobile, app-change-language-mobile, app-left-menu-mobile,
+  app-employee-info-mobile, app-room-info-mobile{
+    display: none;
+    visibility: hidden;
+  }
+}

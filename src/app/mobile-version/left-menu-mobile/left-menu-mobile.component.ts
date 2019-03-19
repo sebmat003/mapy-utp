@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MenuMobileService} from '../../services/menu-mobile.service';
 
 @Component({
   selector: 'app-left-menu-mobile',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-menu-mobile.component.css']
 })
 export class LeftMenuMobileComponent implements OnInit {
+  showLeftMenu: boolean = false;
 
-  constructor() { }
+  constructor(private LeftMenuMobileService: MenuMobileService) { }
 
   ngOnInit() {
+    this.LeftMenuMobileService.showLeftMenu
+      .subscribe((value)=>{
+        this.showLeftMenu = value;
+      })
   }
 
+  onClickBackground() {
+    this.showLeftMenu = false;
+    this.LeftMenuMobileService.showLeftMenu.emit(false);
+  }
 }

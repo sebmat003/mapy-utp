@@ -1,3 +1,7 @@
-<p>
-  left-menu-mobile works!
-</p>
+<div class="left-menu-mobile-container" [ngClass]="{ 'show': showLeftMenu, 'noshow': !showLeftMenu}">
+
+</div>
+<div class="left-menu-background"
+     (click)="onClickBackground()"
+     [ngClass]="{ 'active-background' : showLeftMenu, 'inactive-background' : !showLeftMenu }">
+</div>

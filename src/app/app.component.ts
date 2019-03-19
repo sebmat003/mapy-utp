@@ -11,11 +11,13 @@ export class AppComponent {
 
   transform: boolean = false;
 
+
   constructor(private LocationService: LocationService, private MenuRestaurantService: MenuRestaurantService) {}
 
 
   onTransform(stateLeftMenu: boolean) {
     this.transform = stateLeftMenu;
   }
+
 
 }
