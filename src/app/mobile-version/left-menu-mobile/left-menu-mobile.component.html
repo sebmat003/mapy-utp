@@ -1,5 +1,55 @@
 <div class="left-menu-mobile-container" [ngClass]="{ 'show': showLeftMenu, 'noshow': !showLeftMenu}">
   <app-logo></app-logo>
+
+  <div class="options-container">
+    <table class="table-options">
+      <tr>
+        <td><img src="../../../assets/images/wc.png" alt=""></td>
+        <td><p>Toalety</p></td>
+      </tr>
+      <tr>
+        <td><img src="../../../assets/images/hanger.svg" alt=""></td>
+        <td><p>Szatnia</p></td>
+      </tr>
+      <tr>
+        <td><img src="../../../assets/images/elevator.svg" alt=""></td>
+        <td><p>Winda</p></td>
+      </tr>
+      <tr>
+        <td><img src="../../../assets/images/wheelchair-access.svg" alt=""></td>
+        <td><p>Niepełnosprawni</p></td>
+      </tr>
+      <tr>
+        <td><img src="../../../assets/images/printer.svg" alt=""></td>
+        <td><p>Ksero</p></td>
+      </tr>
+      <tr>
+        <td><img src="../../../assets/images/fork.svg" alt=""></td>
+        <td><p>Sklepik</p></td>
+      </tr>
+      <tr>
+        <td><img src="../../../assets/images/first-aid-kit.svg" alt=""></td>
+        <td><p>Pierwsza pomoc</p></td>
+      </tr>
+      <tr class="clearance">
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><img src="../../../assets/images/menu.png" alt=""></td>
+        <td><p>Menu restauracja</p></td>
+      </tr>
+      <tr class="clearance">
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><img src="../../../assets/images/white-flag-symbol.png" alt=""></td>
+        <td><p>Zmień język</p></td>
+      </tr>
+    </table>
+
+  </div>
 </div>
 <div class="left-menu-background"
      (click)="onClickBackground()"
