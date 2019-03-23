@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {LocationService} from './services/location.service';
 import {MenuRestaurantService} from './services/menu-restaurant.service';
+import {FloorsService} from './services/floors.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent {
   transform: boolean = false;
 
 
-  constructor(private LocationService: LocationService, private MenuRestaurantService: MenuRestaurantService) {}
+  constructor(public LocationService: LocationService, public MenuRestaurantService: MenuRestaurantService,
+              public FloorsService: FloorsService) {}
 
 
   onTransform(stateLeftMenu: boolean) {

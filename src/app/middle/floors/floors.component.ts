@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FloorsService} from '../../services/floors.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class FloorsComponent implements OnInit {
   public floorState: number = 0;
 
 
-  constructor() {
+  constructor(private FloorsService: FloorsService) {
   }
 
   ngOnInit() {
@@ -21,5 +22,6 @@ export class FloorsComponent implements OnInit {
 
   onClickFloor(number: number) {
     this.floorState = number;
+    this.FloorsService.floorState = this.floorState;
   }
 }

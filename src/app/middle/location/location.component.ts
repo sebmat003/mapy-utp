@@ -9,7 +9,7 @@ import {LocationService} from '../../services/location.service';
 export class LocationComponent implements OnInit {
   @Input() private transform: boolean = false;
 
-  constructor(private LocationService: LocationService) { }
+  constructor(public LocationService: LocationService) { }
 
   ngOnInit() {
   }

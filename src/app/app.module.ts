@@ -31,7 +31,7 @@ import { OptionsComponent } from './mobile-version/left-menu-mobile/options/opti
 import { ChangeLanguageMobileComponent } from './mobile-version/change-language-mobile/change-language-mobile.component';
 import { LocationMobileComponent } from './mobile-version/location-mobile/location-mobile.component';
 import { FloorsMobileComponent } from './mobile-version/floors-mobile/floors-mobile.component';
-import { ChangeFloorsComponent } from './mobile-version/floors-mobile/change-floors/change-floors.component';
+import { ChangeFloorsComponent } from './mobile-version/change-floors/change-floors.component';
 import { BusItemComponent } from './bus/bus-item/bus-item.component';
 import {ClickOutsideModule} from 'ng-click-outside';
 import {LocationService} from './services/location.service';
@@ -39,6 +39,7 @@ import {MenuRestaurantService} from './services/menu-restaurant.service';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuMobileService} from './services/menu-mobile.service';
+import {FloorsService} from './services/floors.service';
 
 
 @NgModule({
@@ -82,7 +83,7 @@ import {MenuMobileService} from './services/menu-mobile.service';
     PdfViewerModule,
     HttpClientModule
   ],
-  providers: [LocationService, MenuRestaurantService, MenuMobileService],
+  providers: [LocationService, MenuRestaurantService, MenuMobileService, FloorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

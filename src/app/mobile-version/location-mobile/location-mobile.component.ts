@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LocationService} from '../../services/location.service';
 
 @Component({
   selector: 'app-location-mobile',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationMobileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public LocationService: LocationService) { }
 
   ngOnInit() {
   }
 
+  openLocation() {
+    this.LocationService.showLocation = true;
+    this.LocationService.clickedButton = 0;
+  }
 }

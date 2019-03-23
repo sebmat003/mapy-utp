@@ -10,6 +10,8 @@
 <app-change-location *ngIf="LocationService.showLocation"></app-change-location>
 <app-menu-restaurant *ngIf="MenuRestaurantService.showMenu"></app-menu-restaurant>
 
+<app-change-floors *ngIf="FloorsService.showFloors"></app-change-floors>
+
 <!--right side-->
 <app-sizing-map></app-sizing-map>
 <app-scan-legitimation-text></app-scan-legitimation-text>
@@ -20,3 +22,7 @@
 
 <!--bottom-->
 <app-footer></app-footer>
+
+<app-floors-mobile></app-floors-mobile>
+<app-location-mobile></app-location-mobile>
+
