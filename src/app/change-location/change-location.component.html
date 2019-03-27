@@ -5,22 +5,22 @@
     </div>
     <div class="locations">
       <table class="table-locations">
-        <tr class="floors-item" (click)="onClickItem(0)">
+        <tr class="location-item" (click)="onClickItem(0)">
           <td [ngClass]="{'active' : LocationService.locationState == 0}" >Kaliskiego</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(1)">
+        <tr class="location-item" (click)="onClickItem(1)">
           <td [ngClass]="{'active' : LocationService.locationState == 1}">Bernardyńska</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(2)">
+        <tr class="location-item" (click)="onClickItem(2)">
           <td [ngClass]="{'active' : LocationService.locationState == 2}">Fordońska</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(3)">
+        <tr class="location-item" (click)="onClickItem(3)">
           <td [ngClass]="{'active' : LocationService.locationState == 3}">Kordeckiego</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(4)">
+        <tr class="location-item" (click)="onClickItem(4)">
           <td [ngClass]="{'active' : LocationService.locationState == 4}">Mazowiecka</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(5)">
+        <tr class="location-item" (click)="onClickItem(5)">
           <td [ngClass]="{'active' : LocationService.locationState == 5}">Seminaryjna</td>
         </tr>
       </table>

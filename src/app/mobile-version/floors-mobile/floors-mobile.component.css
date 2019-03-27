@@ -36,3 +36,17 @@
   padding: 15%;
 
 }
+
+@media only screen and (max-height: 400px) {
+  .button-floors {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media only screen and (max-height: 200px) {
+  .button-floors {
+    width: 2rem;
+    height: 2rem;
+  }
+}

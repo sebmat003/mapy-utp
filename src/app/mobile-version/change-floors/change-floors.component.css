@@ -88,6 +88,8 @@
 }
 
 
+
+
 @media only screen and (max-width: 500px) and (min-height: 500px) {
   .floors-container {
     width: 65%;
@@ -113,5 +115,32 @@
     width: 4%;
     margin-left: 80.5%;
     margin-top: 3%;
+  }
+}
+
+
+@media only screen and (max-height: 400px) {
+  .text {
+    font-size: 1.3rem;
+  }
+
+  .floors-item td {
+    font-size: .8rem;
+    padding: .5%;
+
+  }
+}
+
+@media only screen and (max-height: 200px) {
+
+  .text {
+    font-size: .7rem;
+
+  }
+
+  .floors-item td {
+    font-size: .6rem;
+    padding: 0;
+
   }
 }
