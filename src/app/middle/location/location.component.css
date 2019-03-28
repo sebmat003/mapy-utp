@@ -13,17 +13,22 @@
   transition-property: transform, -webkit-transform;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+  visibility: hidden;
 }
+
+
 
 .label  {
   display: inline-block;
   float: left;
+  visibility: visible;
 }
 
 .button-box {
   margin-left: 0.7rem;
   display: inline-block;
   float: left;
+  visibility: visible;
 }
 
 .transform-right {

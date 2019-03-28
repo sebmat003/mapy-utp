@@ -9,6 +9,7 @@
   transition-property: transform, -webkit-transform;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+  visibility: hidden;
 }
 
 
@@ -27,9 +28,11 @@ p:not(:first-child) {
   height: 7rem;
   width: 1px;
   float: left;
+  visibility: visible;
 }
 
 .triangle {
+  visibility: visible;
   width: 0;
   height: 0;
   transform: translateY(2px);
@@ -41,11 +44,13 @@ p:not(:first-child) {
 }
 
 .text-floors {
+  visibility: visible;
   position: relative;
   float: left;
 }
 
 .table-floors {
+  visibility: visible;
   border: none;
   transform: translateX(-2px);
 }

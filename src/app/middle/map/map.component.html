@@ -1,3 +1,4 @@
-<p>
-  map works!
-</p>
+<div class="map-container">
+  <div class="map" *ngIf="!isMapLoading" [ngStyle]="{'background-image' : 'url('+mapImage+')'}">
+  </div>
+</div>

@@ -29,6 +29,7 @@
   transition-property: transform, -webkit-transform;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+  visibility: hidden;
 }
 
 .button {
@@ -40,6 +41,8 @@
   margin-top: .65rem;
   cursor: pointer;
   z-index: 3;
+  visibility: visible;
+  padding: 2%;
 
 }
 

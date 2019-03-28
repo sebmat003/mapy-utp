@@ -40,6 +40,7 @@ import {PdfViewerModule} from 'ng2-pdf-viewer';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuMobileService} from './services/menu-mobile.service';
 import {FloorsService} from './services/floors.service';
+import {MapService} from './services/map.service';
 
 
 @NgModule({
@@ -83,7 +84,13 @@ import {FloorsService} from './services/floors.service';
     PdfViewerModule,
     HttpClientModule
   ],
-  providers: [LocationService, MenuRestaurantService, MenuMobileService, FloorsService],
+  providers: [
+    LocationService,
+    MenuRestaurantService,
+    MenuMobileService,
+    FloorsService,
+    MapService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

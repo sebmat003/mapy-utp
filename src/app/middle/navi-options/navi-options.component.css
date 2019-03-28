@@ -1,9 +1,11 @@
 .options-container {
   width: 100%;
   text-align: center;
+  visibility: hidden;
 }
 
 .options {
+  visibility: hidden;
   margin-top: 3%;
   width: 51%;
   display: inline-block;
@@ -14,6 +16,7 @@
 }
 
 .option {
+  visibility: visible;
   display: inline-block;
   float: right;
   margin: 0 0.3rem;
