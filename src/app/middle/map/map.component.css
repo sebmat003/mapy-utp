@@ -10,21 +10,7 @@
 }
 
 .map {
-  position:absolute;
-  left:0; right:0;
-  top:0; bottom:0;
-  margin:auto;
-  background-repeat: no-repeat;
   height: 100%;
-  width: auto;
-
+  background-color:rgba(255,0,0,0.0);
 }
 
-
-/* to tylko tak na razie... */
-@media only screen and (min-width: 1000px) {
-  .map {
-    transform: translateX(30%);
-  }
-
-}

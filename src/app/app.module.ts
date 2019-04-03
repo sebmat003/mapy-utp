@@ -41,6 +41,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {MenuMobileService} from './services/menu-mobile.service';
 import {FloorsService} from './services/floors.service';
 import {MapService} from './services/map.service';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+
 
 
 @NgModule({
@@ -82,7 +84,8 @@ import {MapService} from './services/map.service';
     BrowserModule,
     ClickOutsideModule,
     PdfViewerModule,
-    HttpClientModule
+    HttpClientModule,
+    LeafletModule.forRoot(),
   ],
   providers: [
     LocationService,

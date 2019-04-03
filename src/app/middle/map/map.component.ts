@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MapService} from '../../services/map.service';
+import {imageOverlay, LatLngBoundsExpression} from 'leaflet';
+
+
 
 @Component({
   selector: 'app-map',
@@ -8,39 +10,23 @@ import {MapService} from '../../services/map.service';
 })
 export class MapComponent implements OnInit {
 
-  mapImage : any;
-  private isMapLoading: boolean;
-  dummyUrl: string = 'http://maps.utp.edu.pl/api/maps/KAL1/svg/LEVEL_0.svg';
+  imageUrl: string = 'http://maps.utp.edu.pl/api/maps/KAL1/svg/LEVEL_1';
+  bounds: LatLngBoundsExpression = [[0,0],[50,50]];
+  imageOverlay = imageOverlay(this.imageUrl, this.bounds);
+  options = {
+    layers: [
+      this.imageOverlay
+    ],
+    zoom: 1,
+    center: [-100,0],
+  };
 
-  constructor(private mapService: MapService) { }
+
+  constructor() { }
 
   ngOnInit() {
-    this.getMapFromAPI();
+
   }
 
-  createMapFromBlob(image: Blob) {
-    let reader = new FileReader();
-    reader.addEventListener("load", ()=> {
-      this.mapImage = reader.result;
-    }, false);
-    if(image) {
-      reader.readAsDataURL(image);
-
-    }
-    console.log(image);
-  }
-
-  getMapFromAPI() {
-    this.isMapLoading = true;
-    this.mapService.getMapImage(this.dummyUrl)
-      .subscribe( (data) => {
-        this.createMapFromBlob(data);
-        this.isMapLoading = false;
-      },
-        error => {
-          this.isMapLoading = false;
-          console.log("Map loading error " + error);
-        })
-  }
 
 }
