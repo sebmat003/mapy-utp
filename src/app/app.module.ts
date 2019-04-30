@@ -45,6 +45,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +86,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     ClickOutsideModule,
     PdfViewerModule,
     HttpClientModule,
-    LeafletModule.forRoot(),
+    LeafletModule.forRoot()
   ],
   providers: [
     LocationService,
