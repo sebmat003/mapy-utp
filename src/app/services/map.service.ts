@@ -21,6 +21,7 @@ export class MapService {
   bounds: LatLngBoundsExpression[] = [];
 
 
+
   // initialize location KAL1
   level_minus_1_url: string = '/assets/maps/KAL1/LEVEL_-1.svg';
   level_0_url: string = '/assets/maps/KAL1/LEVEL_0.svg';
@@ -38,11 +39,6 @@ export class MapService {
   level_2 = imageOverlay(this.level_2_url, this.bounds4);
   level_3 = imageOverlay(this.level_3_url, this.bounds5);
   options = {
-    layers: [
-      this.level_minus_1,
-      this.level_0,
-      this.level_1
-    ],
     zoom: 9,
     minZoom: 7,
     maxZoom: 15,
@@ -50,19 +46,29 @@ export class MapService {
     center: [2.5, 2.5],
     maxBounds: [[0, -1], [5, 6]],
     maxBoundsViscosity: 1,
-    attributionControl: false
-
+    attributionControl: false,
   };
+
+
+  layers: ImageOverlay[] = [];
+  layersControl = {
+    baseLayers: {
+      1: this.level_minus_1,
+    },
+    overlays: {
+      1: this.level_0,
+      2: this.level_1,
+      3: this.level_2,
+      4: this.level_3
+    }
+  };
+
 
 
   mapReady(map: L.Map) {
     map.addControl(L.control.zoom(
       {}
     ));
-    map.on('baselayerchange', ()=> {
-      this.options.layers = [];
-    })
-
   }
 
 
@@ -71,6 +77,9 @@ export class MapService {
   }
 
   initializeFloors() {
+
+    this.layers.push(this.level_minus_1);
+    this.layers.push(this.level_0);
 
     this.bounds.push([[0, 0], [5, 5]]);
     this.bounds.push([[0.015, 0], [5.015, 5]]);
@@ -137,7 +146,8 @@ export class MapService {
       this.optionsLayers.push(imageOverlay(this.layersArray[i],this.bounds[i]));
     }
 
-    this.options.layers = this.optionsLayers;
+    this.layers = this.optionsLayers;
+
 
   }
 

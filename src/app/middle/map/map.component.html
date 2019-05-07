@@ -2,6 +2,8 @@
   <div class="map" leaflet
        [leafletOptions]="this.mapService.options"
        (leafletMapReady)="this.mapService.mapReady($event)"
+       [leafletLayers]="this.mapService.layers"
+       [leafletLayersControl]="this.mapService.layersControl"
 
 >
   </div>
