@@ -1,10 +1,9 @@
 <div class="map-container">
   <div class="map" leaflet
        [leafletOptions]="this.mapService.options"
-       (leafletMapReady)="this.mapService.mapReady($event)"
-       [leafletLayers]="this.mapService.layers"
-       [leafletLayersControl]="this.mapService.layersControl"
+       (leafletMapReady)="MapService.mapReady($event)"
+       [leafletLayers]="this.mapService.layers">
 
->
+
   </div>
 </div>

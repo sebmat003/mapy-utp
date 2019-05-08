@@ -3,25 +3,35 @@
     <div class="line"></div>
     <div class="text-floors">
       <table class="table-floors">
-        <tr>
-          <td><div class="triangle" [ngClass]="{'hidden' : floorState!=3}" ></div></td>
-          <td><p><button class="astext" (click)="onClickFloor(3)" [ngClass]="{'active' : floorState==3}">Piętro 3</button></p></td>
+        <tr *ngIf="LocationService.locationState==4">
+          <td><div class="triangle" [ngClass]="{'hidden' : FloorsService.floorState!=4}" ></div></td>
+          <td><p><button class="astext" (click)="onClickFloor(4)"
+                         [ngClass]="{'active' : FloorsService.floorState==4}">Piętro 4</button></p></td>
         </tr>
         <tr>
-          <td><div class="triangle" [ngClass]="{'hidden' : floorState!=2}"></div></td>
-          <td><p><button class="astext" (click)="onClickFloor(2)" [ngClass]="{'active' : floorState==2}">Piętro 2</button></p></td>
+          <td><div class="triangle" [ngClass]="{'hidden' : FloorsService.floorState!=3}" ></div></td>
+          <td><p><button class="astext" (click)="onClickFloor(3)"
+                         [ngClass]="{'active' : FloorsService.floorState==3}">Piętro 3</button></p></td>
         </tr>
         <tr>
-          <td><div class="triangle" [ngClass]="{'hidden' : floorState!=1}"></div></td>
-          <td><p><button class="astext" (click)="onClickFloor(1)" [ngClass]="{'active' : floorState==1}">Piętro 1</button></p></td>
+          <td><div class="triangle" [ngClass]="{'hidden' : FloorsService.floorState!=2}"></div></td>
+          <td><p><button class="astext" (click)="onClickFloor(2)"
+                         [ngClass]="{'active' : FloorsService.floorState==2}">Piętro 2</button></p></td>
         </tr>
         <tr>
-          <td><div class="triangle" [ngClass]="{'hidden' : floorState!=0}"></div></td>
-          <td><p><button class="astext" (click)="onClickFloor(0)" [ngClass]="{'active' : floorState==0}">Parter</button></p></td>
+          <td><div class="triangle" [ngClass]="{'hidden' : FloorsService.floorState!=1}"></div></td>
+          <td><p><button class="astext" (click)="onClickFloor(1)"
+                         [ngClass]="{'active' : FloorsService.floorState==1}">Piętro 1</button></p></td>
         </tr>
         <tr>
-          <td><div class="triangle" [ngClass]="{'hidden' : floorState!=-1}"></div></td>
-          <td><p><button class="astext" (click)="onClickFloor(-1)" [ngClass]="{'active' : floorState==-1}">Piwnica</button></p></td>
+          <td><div class="triangle" [ngClass]="{'hidden' : FloorsService.floorState!=0}"></div></td>
+          <td><p><button class="astext" (click)="onClickFloor(0)"
+                         [ngClass]="{'active' : FloorsService.floorState==0}">Parter</button></p></td>
+        </tr>
+        <tr *ngIf="LocationService.locationState!=2 && LocationService.locationState !=4">
+          <td><div class="triangle" [ngClass]="{'hidden' : FloorsService.floorState!=-1}"></div></td>
+          <td><p><button class="astext" (click)="onClickFloor(-1)"
+                         [ngClass]="{'active' : FloorsService.floorState==-1}">Piwnica</button></p></td>
         </tr>
       </table>
 

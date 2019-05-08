@@ -1,4 +1,5 @@
 <div class="location" [ngClass]="{'transform-right' : transform, '': !transform}">
+  <div class="location-background">
     <div class="label">
 
       <p *ngIf="LocationService.locationState==0">Lokalizacja: KALISKIEGO</p>
@@ -11,4 +12,6 @@
     <div class="button-box" (click)="openLocation()">
       <button class="astext">zmień</button>
     </div>
+  </div>
+
 </div>

@@ -16,11 +16,7 @@ export class MapService {
   private layersMAZ1: string[] = [];
   private layersSEM1: string[] = [];
 
-  private optionsLayers: ImageOverlay[] = [];
-
   bounds: LatLngBoundsExpression[] = [];
-
-
 
   // initialize location KAL1
   level_minus_1_url: string = '/assets/maps/KAL1/LEVEL_-1.svg';
@@ -49,23 +45,9 @@ export class MapService {
     attributionControl: false,
   };
 
-
   layers: ImageOverlay[] = [];
-  layersControl = {
-    baseLayers: {
-      1: this.level_minus_1,
-    },
-    overlays: {
-      1: this.level_0,
-      2: this.level_1,
-      3: this.level_2,
-      4: this.level_3
-    }
-  };
 
-
-
-  mapReady(map: L.Map) {
+  static mapReady(map: L.Map) {
     map.addControl(L.control.zoom(
       {}
     ));
@@ -141,13 +123,10 @@ export class MapService {
       } break;
 
     }
-    this.optionsLayers = [];
+    this.layers = [];
     for(let i=0; i < this.layersArray.length; i++) {
-      this.optionsLayers.push(imageOverlay(this.layersArray[i],this.bounds[i]));
+      this.layers.push(imageOverlay(this.layersArray[i],this.bounds[i]));
     }
-
-    this.layers = this.optionsLayers;
-
 
   }
 
@@ -161,7 +140,5 @@ export class MapService {
 
     return updatedArray;
   }
-
-
 
 }

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FloorsService} from '../../services/floors.service';
 import {MapService} from '../../services/map.service';
+import {LocationService} from '../../services/location.service';
 
 
 @Component({
@@ -11,19 +12,20 @@ import {MapService} from '../../services/map.service';
 export class FloorsComponent implements OnInit {
 
   @Input() private transform: boolean = false;
-  public floorState: number = 0;
+  // public floorState: number = 0;
 
 
-  constructor(private FloorsService: FloorsService, private MapService: MapService) {
+  constructor(private FloorsService: FloorsService, private MapService: MapService, public LocationService: LocationService) {
   }
 
   ngOnInit() {
+
   }
 
 
   onClickFloor(number: number) {
-    this.floorState = number;
-    this.FloorsService.floorState = this.floorState;
+    // this.floorState = number;
+    this.FloorsService.floorState = number;
     this.MapService.changeFloor();
 
 
