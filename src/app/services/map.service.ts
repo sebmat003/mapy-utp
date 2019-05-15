@@ -1,12 +1,15 @@
 import {Injectable} from '@angular/core';
-import {ImageOverlay, imageOverlay, LatLngBoundsExpression} from 'leaflet';
+import {LatLngBoundsExpression, svg, svgOverlay} from 'leaflet';
 import * as L from 'leaflet';
 import {LocationService} from './location.service';
 import {FloorsService} from './floors.service';
+import {HttpClient} from '@angular/common/http';
 
 
 @Injectable()
 export class MapService {
+
+
 
   private layersArray: string[] = [];
   private layersKAL1: string[] = [];
@@ -29,11 +32,12 @@ export class MapService {
   bounds3: LatLngBoundsExpression = [[0.03, 0], [5.03, 5]];
   bounds4: LatLngBoundsExpression = [[0.045, 0], [5.045, 5]];
   bounds5: LatLngBoundsExpression = [[0.06, 0], [5.06, 5]];
-  level_minus_1 = imageOverlay(this.level_minus_1_url, this.bounds1);
-  level_0 = imageOverlay(this.level_0_url, this.bounds2);
-  level_1 = imageOverlay(this.level_1_url, this.bounds3);
-  level_2 = imageOverlay(this.level_2_url, this.bounds4);
-  level_3 = imageOverlay(this.level_3_url, this.bounds5);
+
+  level_minus_1 = svgOverlay(this.level_minus_1_url, this.bounds1);
+  level_0 = svgOverlay(this.level_0_url, this.bounds2);
+  level_1 = svgOverlay(this.level_1_url, this.bounds3);
+  level_2 = svgOverlay(this.level_2_url, this.bounds4);
+  level_3 = svgOverlay(this.level_3_url, this.bounds5);
   options = {
     zoom: 9,
     minZoom: 7,
@@ -45,23 +49,48 @@ export class MapService {
     attributionControl: false,
   };
 
-  layers: ImageOverlay[] = [];
+  layers = [];
 
-  static mapReady(map: L.Map) {
+  mapReady(map: L.Map) {
     map.addControl(L.control.zoom(
       {}
     ));
   }
 
 
-  constructor(private LocationService: LocationService, private FloorsService: FloorsService) {
+  constructor(private LocationService: LocationService, private FloorsService: FloorsService, private httpClient: HttpClient) {
     this.initializeFloors();
   }
 
   initializeFloors() {
 
-    this.layers.push(this.level_minus_1);
-    this.layers.push(this.level_0);
+//TODO ogarnac dobrze viewBox, oraz wrzucanie do tablicy gotowych SvgElementow...
+
+
+    let svg_content: string = '';
+    this.httpClient.get('/assets/maps/KAL1/LEVEL_1.svg', {responseType: 'text'})
+      .subscribe( (data) => {
+        svg_content = data;
+
+        // cut the first line:
+        data = data.substring(data.indexOf("\n") + 1);
+
+        // cut the last line:
+        data = data.substring(data.lastIndexOf("\n") + 1, -1);
+
+        let svgElement: SVGElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svgElement.setAttribute('viewBox', "0 0 1000 500");
+        svgElement.innerHTML = data;
+        console.log(svgElement);
+        let svg = svgOverlay(svgElement, this.bounds2);
+        this.layers.push(svg);
+
+
+      });
+
+
+    // this.layers.push(this.level_minus_1);
+    // this.layers.push(this.level_0);
 
     this.bounds.push([[0, 0], [5, 5]]);
     this.bounds.push([[0.015, 0], [5.015, 5]]);
@@ -125,7 +154,7 @@ export class MapService {
     }
     this.layers = [];
     for(let i=0; i < this.layersArray.length; i++) {
-      this.layers.push(imageOverlay(this.layersArray[i],this.bounds[i]));
+      // this.layers.push(svgOverlay(this.layersArray[i],this.bounds[i]));
     }
 
   }
