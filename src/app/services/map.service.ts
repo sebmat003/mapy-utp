@@ -5,7 +5,6 @@ import {LocationService} from './location.service';
 import {FloorsService} from './floors.service';
 import {HttpClient} from '@angular/common/http';
 
-
 @Injectable()
 export class MapService {
 
@@ -40,39 +39,58 @@ export class MapService {
 
 
   constructor(private LocationService: LocationService, private FloorsService: FloorsService, private httpClient: HttpClient) {
+    this.initializeMap();
     this.initializeFloors();
   }
 
-  initializeFloors() {
+  // initialiazing first map (KAL1 - 2 floors)
+  initializeMap() {
+    this.getInitializeContent('/assets/maps/KAL1/LEVEL_-1.svg', 0, 500);
+    this.getInitializeContent('/assets/maps/KAL1/LEVEL_0.svg', 1, 500);
+  }
 
-    this.bounds.push([[0, 0], [5, 5]]);
-    this.bounds.push([[0.015, 0], [5.015, 5]]);
-    this.bounds.push([[0.03, 0], [5.03, 5]]);
-    this.bounds.push([[0.045, 0], [5.045, 5]]);
-    this.bounds.push([[0.06, 0], [5.06, 5]]);
+  getInitializeContent(url: string, bounds: number, viewBox: number){
+    this.httpClient.get(url, {responseType: 'text'})
+      .subscribe((data) => {
+        data = data.substring(data.indexOf('\n') + 1);
+        data = data.substring(data.lastIndexOf('\n') + 1, -1);
+        let svgElement: SVGElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svgElement.innerHTML = data;
+        svgElement.setAttribute('viewBox', '0 0 ' + viewBox + ' ' + viewBox);
+        this.layers.push(svgOverlay(svgElement, this.bounds[bounds]));
+      });
+  }
 
-    let start_floor = -1;
-    let end_floor = 3;
-    for (start_floor; start_floor <= end_floor; start_floor++) {
-      this.getSvgContent('kal', '/assets/maps/KAL1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-      this.getSvgContent('ber', '/assets/maps/BER1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-      this.getSvgContent('kor', '/assets/maps/KOR1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-      this.getSvgContent('sem', '/assets/maps/SEM1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-    }
+  // initialize all maps
+  async initializeFloors() {
+        this.bounds.push([[0, 0], [5, 5]]);
+        this.bounds.push([[0.015, 0], [5.015, 5]]);
+        this.bounds.push([[0.03, 0], [5.03, 5]]);
+        this.bounds.push([[0.045, 0], [5.045, 5]]);
+        this.bounds.push([[0.06, 0], [5.06, 5]]);
 
-    start_floor = 0;
-    end_floor = 3;
+        let start_floor = -1;
+        let end_floor = 3;
+        for (start_floor; start_floor <= end_floor; start_floor++) {
+          await this.getSvgContent('kal', '/assets/maps/KAL1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+          await this.getSvgContent('ber', '/assets/maps/BER1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+          await this.getSvgContent('kor', '/assets/maps/KOR1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+          await this.getSvgContent('sem', '/assets/maps/SEM1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+        }
 
-    for (start_floor; start_floor <= end_floor; start_floor++) {
-      this.getSvgContent('for', '/assets/maps/FOR1/LEVEL_' + start_floor + '.svg', start_floor);
-    }
+        start_floor = 0;
+        end_floor = 3;
 
-    start_floor = 0;
-    end_floor = 4;
+        for (start_floor; start_floor <= end_floor; start_floor++) {
+          await this.getSvgContent('for', '/assets/maps/FOR1/LEVEL_' + start_floor + '.svg', start_floor);
+        }
 
-    for (start_floor; start_floor <= end_floor; start_floor++) {
-      this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor);
-    }
+        start_floor = 0;
+        end_floor = 4;
+
+        for (start_floor; start_floor <= end_floor; start_floor++) {
+          await this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor);
+        }
 
   }
 
@@ -125,13 +143,13 @@ export class MapService {
         updatedArray.push(array[i]);
       }
     } else {
-      //something went wrong
+      console.log('something went wrong');
     }
     return updatedArray;
   }
 
-  getSvgContent(location: string, url: string, bounds: number) {
-    this.httpClient.get(url, {responseType: 'text'})
+  async getSvgContent(location: string, url: string, bounds: number) {
+    await this.httpClient.get(url, {responseType: 'text'})
       .toPromise()
       .then((data) => {
         // cut the first line: ( <svg> tags )
@@ -140,28 +158,31 @@ export class MapService {
         data = data.substring(data.lastIndexOf('\n') + 1, -1);
 
         let svgElement: SVGElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svgElement.setAttribute('viewBox', '0 0 100 100');
         svgElement.innerHTML = data;
-        let svg = svgOverlay(svgElement, this.bounds[bounds]);
-
         switch (location) {
           case 'kal':
-            this.layersKAL1.push(svg);
+            svgElement.setAttribute('viewBox', '0 0 500 500');
+            this.layersKAL1.push(svgOverlay(svgElement, this.bounds[bounds]));
             break;
           case 'ber':
-            this.layersBER1.push(svg);
+            svgElement.setAttribute('viewBox', '0 0 160 160');
+            this.layersBER1.push(svgOverlay(svgElement, this.bounds[bounds]));
             break;
           case 'kor':
-            this.layersKOR1.push(svg);
+            svgElement.setAttribute('viewBox', '0 0 200 200');
+            this.layersKOR1.push(svgOverlay(svgElement, this.bounds[bounds]));
             break;
           case 'sem':
-            this.layersSEM1.push(svg);
+            svgElement.setAttribute('viewBox', '0 0 170 170');
+            this.layersSEM1.push(svgOverlay(svgElement, this.bounds[bounds]));
             break;
           case 'for':
-            this.layersFOR1.push(svg);
+            svgElement.setAttribute('viewBox', '0 0 100 100');
+            this.layersFOR1.push(svgOverlay(svgElement, this.bounds[bounds]));
             break;
           case 'maz':
-            this.layersMAZ1.push(svg);
+            svgElement.setAttribute('viewBox', '0 0 130 130');
+            this.layersMAZ1.push(svgOverlay(svgElement, this.bounds[bounds]));
             break;
         }
 
