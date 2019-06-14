@@ -96,11 +96,25 @@ p, div, img, td{
   outline: 0;
 }
 
+.inactive-layer {
+  filter: brightness(60%);
+}
 
-
-@font-face {
+.inactive-layer path {
 
 }
+
+.remove-layer {
+  animation-name: fade-out;
+  animation-duration: 0.3s;
+}
+
+@keyframes fade-out {
+  0% {opacity: 1}
+  50% {opacity: 0.5}
+  100% {opacity: 0}
+}
+
 
 
 

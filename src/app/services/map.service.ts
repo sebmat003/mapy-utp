@@ -49,7 +49,7 @@ export class MapService {
     this.getInitializeContent('/assets/maps/KAL1/LEVEL_0.svg', 1, 500);
   }
 
-  getInitializeContent(url: string, bounds: number, viewBox: number){
+  getInitializeContent(url: string, bounds: number, viewBox: number) {
     this.httpClient.get(url, {responseType: 'text'})
       .subscribe((data) => {
         data = data.substring(data.indexOf('\n') + 1);
@@ -63,34 +63,34 @@ export class MapService {
 
   // initialize all maps
   async initializeFloors() {
-        this.bounds.push([[0, 0], [5, 5]]);
-        this.bounds.push([[0.015, 0], [5.015, 5]]);
-        this.bounds.push([[0.03, 0], [5.03, 5]]);
-        this.bounds.push([[0.045, 0], [5.045, 5]]);
-        this.bounds.push([[0.06, 0], [5.06, 5]]);
+    this.bounds.push([[0, 0], [5, 5]]);
+    this.bounds.push([[0.015, 0], [5.015, 5]]);
+    this.bounds.push([[0.03, 0], [5.03, 5]]);
+    this.bounds.push([[0.045, 0], [5.045, 5]]);
+    this.bounds.push([[0.06, 0], [5.06, 5]]);
 
-        let start_floor = -1;
-        let end_floor = 3;
-        for (start_floor; start_floor <= end_floor; start_floor++) {
-          await this.getSvgContent('kal', '/assets/maps/KAL1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-          await this.getSvgContent('ber', '/assets/maps/BER1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-          await this.getSvgContent('kor', '/assets/maps/KOR1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-          await this.getSvgContent('sem', '/assets/maps/SEM1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-        }
+    let start_floor = -1;
+    let end_floor = 3;
+    for (start_floor; start_floor <= end_floor; start_floor++) {
+      await this.getSvgContent('kal', '/assets/maps/KAL1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+      await this.getSvgContent('ber', '/assets/maps/BER1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+      await this.getSvgContent('kor', '/assets/maps/KOR1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+      await this.getSvgContent('sem', '/assets/maps/SEM1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+    }
 
-        start_floor = 0;
-        end_floor = 3;
+    start_floor = 0;
+    end_floor = 3;
 
-        for (start_floor; start_floor <= end_floor; start_floor++) {
-          await this.getSvgContent('for', '/assets/maps/FOR1/LEVEL_' + start_floor + '.svg', start_floor);
-        }
+    for (start_floor; start_floor <= end_floor; start_floor++) {
+      await this.getSvgContent('for', '/assets/maps/FOR1/LEVEL_' + start_floor + '.svg', start_floor);
+    }
 
-        start_floor = 0;
-        end_floor = 4;
+    start_floor = 0;
+    end_floor = 4;
 
-        for (start_floor; start_floor <= end_floor; start_floor++) {
-          await this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor);
-        }
+    for (start_floor; start_floor <= end_floor; start_floor++) {
+      await this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor);
+    }
 
   }
 
@@ -100,50 +100,62 @@ export class MapService {
     switch (location) {
       case 0: {
         //KAL1
-        this.layers = this.updateArray(this.layersKAL1, floor, location);
+        this.layers = this.updateArray(this.layers, this.layersKAL1, floor, location);
       }
         break;
       case 1: {
         //BER1
-        this.layers = this.updateArray(this.layersBER1, floor, location);
+        this.layers = this.updateArray(this.layers, this.layersBER1, floor, location);
       }
         break;
       case 2: {
         //FOR1
-        this.layers = this.updateArray(this.layersFOR1, floor, location);
+        this.layers = this.updateArray(this.layers, this.layersFOR1, floor, location);
       }
         break;
       case 3: {
         //KOR1
-        this.layers = this.updateArray(this.layersKOR1, floor, location);
+        this.layers = this.updateArray(this.layers, this.layersKOR1, floor, location);
       }
         break;
       case 4: {
         //MAZ1
-        this.layers = this.updateArray(this.layersMAZ1, floor, location);
+        this.layers = this.updateArray(this.layers, this.layersMAZ1, floor, location);
       }
         break;
       case 5: {
         //SEM1
-        this.layers = this.updateArray(this.layersSEM1, floor, location);
+        this.layers = this.updateArray(this.layers, this.layersSEM1, floor, location);
       }
         break;
     }
   }
 
-  updateArray(array, number: number, location: number) {
-    let updatedArray = [];
+  updateArray(current_layers, location_array, floor_number: number, location: number) {
+    // TODO Dodanie stylow/animacji do aktywny i nieaktywnych warstw mapy
+    // array[i]._url.classList.add('inactive-layer');
 
+    let updatedArray = current_layers;
+    let updatedArray_length = updatedArray.length;
+    let difference = 0;
     if (location == 0 || location == 1 || location == 3 || location == 5) {
-      for (let i = 0; i <= number + 1; i++) {
-        updatedArray.push(array[i]);
-      }
+      difference = updatedArray_length - (floor_number + 2);
     } else if (location == 2 || location == 4) {
-      for (let i = 0; i <= number; i++) {
-        updatedArray.push(array[i]);
+      difference = updatedArray_length - (floor_number + 1);
+    }
+
+    if (difference > 0) {
+      for (let i = 0; i < difference; i++) {
+        updatedArray[updatedArray.length - 1]._url.classList.add('remove-layer');
+        setTimeout(() => {
+          updatedArray[updatedArray.length - 1]._url.classList.remove('remove-layer');
+          updatedArray.pop();
+        }, 250);
       }
     } else {
-      console.log('something went wrong');
+      for (let i = 0; i < Math.abs(difference); i++) {
+        updatedArray.push(location_array[updatedArray_length + i]);
+      }
     }
     return updatedArray;
   }
@@ -188,4 +200,43 @@ export class MapService {
 
       });
   }
+
+
+  changeLocation() {
+    let location = this.LocationService.locationState;
+    this.layers = [];
+    switch (location) {
+      case 0: {
+        //KAL1
+        this.layers.push(this.layersKAL1[0], this.layersKAL1[1]);
+      }
+        break;
+      case 1: {
+        //BER1
+        this.layers.push(this.layersBER1[0], this.layersBER1[1]);
+      }
+        break;
+      case 2: {
+        //FOR1
+        this.layers.push(this.layersFOR1[0], this.layersFOR1[1]);
+      }
+        break;
+      case 3: {
+        //KOR1
+        this.layers.push(this.layersKOR1[0], this.layersKOR1[1]);
+      }
+        break;
+      case 4: {
+        //MAZ1
+        this.layers.push(this.layersMAZ1[0], this.layersMAZ1[1]);
+      }
+        break;
+      case 5: {
+        //SEM1
+        this.layers.push(this.layersSEM1[0], this.layersSEM1[1]);
+      }
+        break;
+    }
+  }
+
 }

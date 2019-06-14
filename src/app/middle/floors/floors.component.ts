@@ -25,8 +25,10 @@ export class FloorsComponent implements OnInit {
 
   onClickFloor(number: number) {
     // this.floorState = number;
-    this.FloorsService.floorState = number;
-    this.MapService.changeFloor();
+    if(this.FloorsService.floorState != number) {
+      this.FloorsService.floorState = number;
+      this.MapService.changeFloor();
+    }
 
 
   }

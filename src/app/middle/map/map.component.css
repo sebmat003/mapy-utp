@@ -24,3 +24,11 @@
 
 }
 
+
+::ng-deep .leaflet-image-layer{
+
+}
+
+.inactive-layer {
+  opacity: 0.5;
+}
