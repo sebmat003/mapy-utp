@@ -1,0 +1,54 @@
+.navigation-container {
+  margin: 2%;
+  width: 96%;
+  background-color: white;
+  height: 18%;
+  text-align: center;
+  border: .05rem solid #b5b5b5;
+  position: relative;
+}
+
+.nav-image, .nav-points {
+  height: 100%;
+  float: left;
+  position: relative;
+  margin-top: 5%;
+}
+
+.nav-image {
+  margin-left: 2%;
+  width: 17%;
+  margin-right: 1%;
+}
+
+.nav-points {
+  width: 72%;
+}
+
+.nav-image img {
+  max-width: 100%;
+  max-height: 100%;
+  transform: scaleX(-1);
+}
+
+
+.nav-points input {
+  height: 30%;
+  width: 100%;
+  border: none;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  font-size: 1.1rem;
+}
+
+.nav-points input::placeholder {
+  font-size: 0.8rem;
+}
+
+.nav-points input:focus {
+  outline: none;
+}
+
+.nav-start {
+  margin-bottom: 11%;
+}

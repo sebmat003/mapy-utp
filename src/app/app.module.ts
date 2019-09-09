@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
 import { LogoComponent } from './left-menu/logo/logo.component';
-import { WeatherComponent } from './left-menu/weather/weather.component';
+import { NavigationPanelComponent } from './left-menu/navigation-panel/navigation-panel.component';
 import { MostVisitedComponent } from './left-menu/most-visited/most-visited.component';
 import { RestaurantComponent } from './left-menu/restaurant/restaurant.component';
 import { RoomInfoComponent } from './left-menu/room-info/room-info.component';
@@ -51,7 +51,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     AppComponent,
     LeftMenuComponent,
     LogoComponent,
-    WeatherComponent,
+    NavigationPanelComponent,
     MostVisitedComponent,
     RestaurantComponent,
     RoomInfoComponent,
