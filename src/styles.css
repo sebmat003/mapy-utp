@@ -100,6 +100,11 @@ p, div, img, td{
   filter: brightness(60%);
 }
 
+.active-layer {
+  filter: brightness(100%);
+}
+
+
 .inactive-layer path {
 
 }
@@ -110,9 +115,13 @@ p, div, img, td{
 }
 
 @keyframes fade-out {
-  0% {opacity: 1}
-  50% {opacity: 0.5}
-  100% {opacity: 0}
+  0% {filter: brightness(100%); opacity: 1;}
+  20% {filter: brightness(90%);opacity: 0.8;}
+  40% {filter: brightness(80%);opacity: 0.6;}
+  60% {filter: brightness(70%);opacity: 0.4;}
+  80% {filter: brightness(60%);opacity: 0.2;}
+  100% {filter: brightness(50%);opacity: 0;}
+
 }
 
 

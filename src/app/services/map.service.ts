@@ -58,6 +58,7 @@ export class MapService {
         svgElement.innerHTML = data;
         svgElement.setAttribute('viewBox', '0 0 ' + viewBox + ' ' + viewBox);
         this.layers.push(svgOverlay(svgElement, this.bounds[bounds]));
+        this.layers[0]._url.classList.add('inactive-layer');
       });
   }
 
@@ -71,30 +72,37 @@ export class MapService {
 
     let start_floor = -1;
     let end_floor = 3;
+    let ifSecondFloor = false;
     for (start_floor; start_floor <= end_floor; start_floor++) {
-      await this.getSvgContent('kal', '/assets/maps/KAL1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-      await this.getSvgContent('ber', '/assets/maps/BER1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-      await this.getSvgContent('kor', '/assets/maps/KOR1/LEVEL_' + start_floor + '.svg', start_floor + 1);
-      await this.getSvgContent('sem', '/assets/maps/SEM1/LEVEL_' + start_floor + '.svg', start_floor + 1);
+
+      ifSecondFloor = start_floor == 0;
+
+      await this.getSvgContent('kal', '/assets/maps/KAL1/LEVEL_' + start_floor + '.svg', start_floor + 1, ifSecondFloor);
+      await this.getSvgContent('ber', '/assets/maps/BER1/LEVEL_' + start_floor + '.svg', start_floor + 1, ifSecondFloor);
+      await this.getSvgContent('kor', '/assets/maps/KOR1/LEVEL_' + start_floor + '.svg', start_floor + 1, ifSecondFloor);
+      await this.getSvgContent('sem', '/assets/maps/SEM1/LEVEL_' + start_floor + '.svg', start_floor + 1, ifSecondFloor);
     }
 
     start_floor = 0;
     end_floor = 3;
 
     for (start_floor; start_floor <= end_floor; start_floor++) {
-      await this.getSvgContent('for', '/assets/maps/FOR1/LEVEL_' + start_floor + '.svg', start_floor);
+      ifSecondFloor = start_floor == 1;
+      await this.getSvgContent('for', '/assets/maps/FOR1/LEVEL_' + start_floor + '.svg', start_floor, ifSecondFloor);
     }
 
     start_floor = 0;
     end_floor = 4;
 
     for (start_floor; start_floor <= end_floor; start_floor++) {
-      await this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor);
+      ifSecondFloor = start_floor == 1;
+      await this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor, ifSecondFloor);
     }
 
   }
 
   changeFloor() {
+    this.resetClassesInLayers();
     let location = this.LocationService.locationState;
     let floor = this.FloorsService.floorState;
     switch (location) {
@@ -132,9 +140,6 @@ export class MapService {
   }
 
   updateArray(current_layers, location_array, floor_number: number, location: number) {
-    // TODO Dodanie stylow/animacji do aktywny i nieaktywnych warstw mapy
-    // array[i]._url.classList.add('inactive-layer');
-
     let updatedArray = current_layers;
     let updatedArray_length = updatedArray.length;
     let difference = 0;
@@ -144,23 +149,31 @@ export class MapService {
       difference = updatedArray_length - (floor_number + 1);
     }
 
+
     if (difference > 0) {
       for (let i = 0; i < difference; i++) {
         updatedArray[updatedArray.length - 1]._url.classList.add('remove-layer');
         setTimeout(() => {
           updatedArray[updatedArray.length - 1]._url.classList.remove('remove-layer');
           updatedArray.pop();
+
         }, 250);
       }
+        updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
+        updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
+
     } else {
       for (let i = 0; i < Math.abs(difference); i++) {
         updatedArray.push(location_array[updatedArray_length + i]);
       }
+      updatedArray[updatedArray.length - 1]._url.classList.add('active-layer');
+      updatedArray[updatedArray.length - 1]._url.classList.remove('inactive-layer');
     }
+
     return updatedArray;
   }
 
-  async getSvgContent(location: string, url: string, bounds: number) {
+  async getSvgContent(location: string, url: string, bounds: number, ifSecondFloor: boolean) {
     await this.httpClient.get(url, {responseType: 'text'})
       .toPromise()
       .then((data) => {
@@ -175,34 +188,42 @@ export class MapService {
           case 'kal':
             svgElement.setAttribute('viewBox', '0 0 500 500');
             this.layersKAL1.push(svgOverlay(svgElement, this.bounds[bounds]));
+            if(!ifSecondFloor) this.layersKAL1[this.layersKAL1.length - 1]._url.classList.add('inactive-layer');
             break;
           case 'ber':
             svgElement.setAttribute('viewBox', '0 0 160 160');
             this.layersBER1.push(svgOverlay(svgElement, this.bounds[bounds]));
+            if(!ifSecondFloor) this.layersBER1[this.layersBER1.length - 1]._url.classList.add('inactive-layer');
             break;
           case 'kor':
             svgElement.setAttribute('viewBox', '0 0 200 200');
             this.layersKOR1.push(svgOverlay(svgElement, this.bounds[bounds]));
+            if(!ifSecondFloor) this.layersKOR1[this.layersKOR1.length - 1]._url.classList.add('inactive-layer');
             break;
           case 'sem':
             svgElement.setAttribute('viewBox', '0 0 170 170');
             this.layersSEM1.push(svgOverlay(svgElement, this.bounds[bounds]));
+            if(!ifSecondFloor) this.layersSEM1[this.layersSEM1.length - 1]._url.classList.add('inactive-layer');
             break;
           case 'for':
             svgElement.setAttribute('viewBox', '0 0 100 100');
             this.layersFOR1.push(svgOverlay(svgElement, this.bounds[bounds]));
+            if(!ifSecondFloor) this.layersFOR1[this.layersFOR1.length - 1]._url.classList.add('inactive-layer');
             break;
           case 'maz':
             svgElement.setAttribute('viewBox', '0 0 130 130');
             this.layersMAZ1.push(svgOverlay(svgElement, this.bounds[bounds]));
+            if(!ifSecondFloor) this.layersMAZ1[this.layersMAZ1.length - 1]._url.classList.add('inactive-layer');
             break;
         }
+
 
       });
   }
 
 
   changeLocation() {
+    this.resetClassesInLayers();
     let location = this.LocationService.locationState;
     this.layers = [];
     switch (location) {
@@ -237,6 +258,41 @@ export class MapService {
       }
         break;
     }
+
+    this.layers[this.layers.length - 1]._url.classList.add('active-layer');
+    this.layers[this.layers.length - 1]._url.classList.remove('inactive-layer');
+  }
+
+
+  resetClassesInLayers() {
+    this.layers.forEach((map)=> {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
+    this.layersKAL1.forEach((map)=> {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
+    this.layersSEM1.forEach((map)=> {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
+    this.layersMAZ1.forEach((map)=> {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
+    this.layersKOR1.forEach((map)=> {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
+    this.layersFOR1.forEach((map)=> {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
+    this.layersBER1.forEach((map)=> {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
   }
 
 }

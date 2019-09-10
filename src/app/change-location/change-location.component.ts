@@ -24,10 +24,11 @@ export class ChangeLocationComponent implements OnInit {
 
 
   onClickItem(state: number) {
-    this.LocationService.locationState = state;
-    this.FloorsService.floorState = 0;
-    this.MapService.changeLocation();
-
+    if(this.LocationService.locationState != state) {
+      this.LocationService.locationState = state;
+      this.FloorsService.floorState = 0;
+      this.MapService.changeLocation();
+    }
     setTimeout(() => {
       this.LocationService.showLocation = false;
     },100)
