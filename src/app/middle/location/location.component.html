@@ -2,15 +2,15 @@
   <div class="location-background">
     <div class="label">
 
-      <p *ngIf="LocationService.locationState==0">Lokalizacja: KALISKIEGO</p>
-      <p *ngIf="LocationService.locationState==1">Lokalizacja: BERNARDYŃSKA</p>
-      <p *ngIf="LocationService.locationState==2">Lokalizacja: FORDOŃSKA</p>
-      <p *ngIf="LocationService.locationState==3">Lokalizacja: KORDECKIEGO</p>
-      <p *ngIf="LocationService.locationState==4">Lokalizacja: MAZOWIECKA</p>
-      <p *ngIf="LocationService.locationState==5">Lokalizacja: SEMINARYJNA</p>
+      <p *ngIf="LocationService.locationState==0">{{'location.text' | translate}}: KALISKIEGO</p>
+      <p *ngIf="LocationService.locationState==1">{{'location.text' | translate}}: BERNARDYŃSKA</p>
+      <p *ngIf="LocationService.locationState==2">{{'location.text' | translate}}: FORDOŃSKA</p>
+      <p *ngIf="LocationService.locationState==3">{{'location.text' | translate}}: KORDECKIEGO</p>
+      <p *ngIf="LocationService.locationState==4">{{'location.text' | translate}}: MAZOWIECKA</p>
+      <p *ngIf="LocationService.locationState==5">{{'location.text' | translate}}: SEMINARYJNA</p>
     </div>
     <div class="button-box" (click)="openLocation()">
-      <button class="astext">zmień</button>
+      <button class="astext">{{'location.change' | translate}}</button>
     </div>
   </div>
 

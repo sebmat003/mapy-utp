@@ -16,7 +16,6 @@ import { LocationComponent } from './middle/location/location.component';
 import { FloorsComponent } from './middle/floors/floors.component';
 import { LanguageComponent } from './middle/language/language.component';
 import { SizingMapComponent } from './middle/sizing-map/sizing-map.component';
-import { ScanLegitimationTextComponent } from './middle/scan-legitimation-text/scan-legitimation-text.component';
 import { ChangeLocationComponent } from './change-location/change-location.component';
 import { MenuRestaurantComponent } from './menu-restaurant/menu-restaurant.component';
 import { PlanComponent } from './plan/plan.component';
@@ -37,11 +36,13 @@ import {ClickOutsideModule} from 'ng-click-outside';
 import {LocationService} from './services/location.service';
 import {MenuRestaurantService} from './services/menu-restaurant.service';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MenuMobileService} from './services/menu-mobile.service';
 import {FloorsService} from './services/floors.service';
 import {MapService} from './services/map.service';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 
 
@@ -63,7 +64,6 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     FloorsComponent,
     LanguageComponent,
     SizingMapComponent,
-    ScanLegitimationTextComponent,
     ChangeLocationComponent,
     MenuRestaurantComponent,
     PlanComponent,
@@ -86,7 +86,14 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     ClickOutsideModule,
     PdfViewerModule,
     HttpClientModule,
-    LeafletModule.forRoot()
+    LeafletModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     LocationService,
@@ -98,3 +105,9 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

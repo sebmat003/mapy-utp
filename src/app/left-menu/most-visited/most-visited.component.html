@@ -1,17 +1,17 @@
 <div class="div-container">
   <div class="text">
-    <p>Najczęściej odwiedzane</p>
+    <p>{{'most-visited.title' | translate}}</p>
   </div>
 
   <div class="most-visited">
     <div class="most-visited--item" [ngClass]="{ 'active' : activeState==1}">
-      <p>Sklepik /</p><p>Automaty</p>
+      <p>{{'most-visited.shop' | translate}} /</p><p>{{'most-visited.vendings' | translate}}</p>
     </div>
     <div class="most-visited--item" [ngClass]="{ 'active' : activeState==2}">
-      <p>Auditorium</p><p> Novum</p>
+      <p>{{'most-visited.auditorium' | translate}}</p><p> {{'most-visited.novum' | translate}}</p>
     </div>
     <div class="most-visited--item" [ngClass]="{ 'active' : activeState==3}">
-      <p>Czytelnia</p>
+      <p>{{'most-visited.reading' | translate}}</p>
     </div>
   </div>
 
@@ -31,17 +31,17 @@
     <div class="button-container" [ngClass]="{ 'hidden' : activeState!=1}">
       <div class="navi btn" ><img src="../../../assets/images/navigation.svg" alt=""></div>
       <div class="wheelchair btn"><img src="../../../assets/images/wheelchair-access-white.svg" alt=""></div>
-      <p>Nawiguj</p>
+      <p>{{'most-visited.navigate' | translate}}</p>
     </div>
     <div class="button-container" [ngClass]="{ 'hidden' : activeState!=2}">
       <div class="navi btn"><img src="../../../assets/images/navigation.svg" alt=""></div>
       <div class="wheelchair btn"><img src="../../../assets/images/wheelchair-access-white.svg" alt=""></div>
-      <p>Nawiguj</p>
+      <p>{{'most-visited.navigate' | translate}}</p>
     </div>
     <div class="button-container" [ngClass]="{ 'hidden' : activeState!=3}">
       <div class="navi btn"><img src="../../../assets/images/navigation.svg" alt=""></div>
       <div class="wheelchair btn"><img src="../../../assets/images/wheelchair-access-white.svg" alt=""></div>
-      <p>Nawiguj</p>
+      <p>{{'most-visited.navigate' | translate}}</p>
     </div>
   </div>
 </div>

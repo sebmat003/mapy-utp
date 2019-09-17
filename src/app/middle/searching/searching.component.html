@@ -17,23 +17,23 @@
 
         <ng-container *ngIf="searchingState==1">
           <td class="search-input">
-            <input type="text" placeholder="Wyszukaj na UTP...">
+            <input type="text" placeholder="{{'searching.search' | translate}}">
           </td>
         </ng-container>
         <ng-container *ngIf="searchingState==2">
           <td class="half-search-input">
-            <input type="text" placeholder="Nazwisko i/lub imię">
+            <input type="text" placeholder="{{'searching.name' | translate}}">
           </td>
           <td class="half-search-input">
-            <input type="text" placeholder="Email/Telefon">
+            <input type="text" placeholder="{{'searching.email' | translate}}">
           </td>
         </ng-container>
         <ng-container *ngIf="searchingState==3">
           <td class="half-search-input">
-            <input type="text" placeholder="Numer sali">
+            <input type="text" placeholder="{{'searching.audience' | translate}}">
           </td>
           <td class="half-search-input">
-            <input type="text" placeholder="Budynek">
+            <input type="text" placeholder="{{'searching.building' | translate}}">
           </td>
         </ng-container>
         <td class="microphone" (click)="microphone()" type="button">
@@ -53,9 +53,9 @@
     <div class="dropdown-menu" (clickOutside)="closeMenu()" [clickOutsideEvents]="'click,touchstart'"
          [ngClass]="{'display': display, 'nodisplay': !display}"
     >
-      <a (click)="searchingState = 1; display=false">Wyszukiwanie ogólne</a>
-      <a (click)="searchingState = 2; display=false">Pracownik</a>
-      <a (click)="searchingState = 3; display=false">Pomieszczenie</a>
+      <a (click)="searchingState = 1; display=false">{{'searching.searching' | translate}}</a>
+      <a (click)="searchingState = 2; display=false">{{'searching.employee' | translate}}</a>
+      <a (click)="searchingState = 3; display=false">{{'searching.room' | translate}}</a>
     </div>
   </div>
 

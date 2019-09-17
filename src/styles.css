@@ -104,6 +104,11 @@ p, div, img, td{
   filter: brightness(100%);
 }
 
+.active-layer:hover {
+  fill-opacity: 0.8;
+  filter: brightness(20%);
+}
+
 
 .inactive-layer path {
 

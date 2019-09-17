@@ -1,13 +1,13 @@
 <div class="restaurant-container">
   <div class="text">
-    <p>Restauracja uniwersytecka</p>
+    <p>{{'restaurant.title' | translate}}</p>
   </div>
   <div class="image-container">
     <div class="image">
       <img src="../../../assets/images/restaurant.jpg" alt="">
     </div>
     <div class="address">
-      <p>ul. gen. w. andersa 1</p>
+      <p>{{'restaurant.street' | translate}} gen. w. andersa 1</p>
     </div>
   </div>
   <div class="menu-container" (click)="onClickMenu()">
@@ -16,7 +16,7 @@
       <p>Menu</p>
     </div>
     <div class="menu-text-info">
-      <p>(Kliknij, aby zobaczyć)</p>
+      <p>({{'restaurant.menu-click' | translate}})</p>
     </div>
   </div>
 

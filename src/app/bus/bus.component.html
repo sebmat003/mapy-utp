@@ -2,7 +2,7 @@
 <div class="bus-menu" [ngClass]="{ 'open-menu' : openState, '' : !openState }">
   <div class="menu" [ngClass]="{ 'opacity-1' : openState, 'opacity-0' : !openState }">
     <div class="top">
-      <div class="top-title"><p>Rozkład jazdy tramwajów/autobusów</p></div>
+      <div class="top-title"><p>{{ 'bus.title' | translate}}</p></div>
       <div class="top-time"><p>{{ time | date:'HH:mm'}}</p></div>
     </div>
 

@@ -1,9 +1,11 @@
 import {Injectable} from '@angular/core';
 import * as L from 'leaflet';
-import {LatLngBoundsExpression, svg, svgOverlay} from 'leaflet';
+import {LatLngBoundsExpression, svgOverlay} from 'leaflet';
 import {LocationService} from './location.service';
 import {FloorsService} from './floors.service';
 import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
+
 
 @Injectable()
 export class MapService {
@@ -30,17 +32,25 @@ export class MapService {
     preferCanvas: true
   };
 
+  private animationMapSource = new Subject<void>();
+  public animationMap$ = this.animationMapSource.asObservable();
+
+
 
   mapReady(map: L.Map) {
     map.addControl(L.control.zoom(
       {}
     ));
+
   }
 
 
   constructor(private LocationService: LocationService, private FloorsService: FloorsService, private httpClient: HttpClient) {
     this.initializeMap();
     this.initializeFloors();
+
+    //TODO d3 animation on svg maps
+
   }
 
   // initialiazing first map (KAL1 - 2 floors)
@@ -59,6 +69,7 @@ export class MapService {
         svgElement.setAttribute('viewBox', '0 0 ' + viewBox + ' ' + viewBox);
         this.layers.push(svgOverlay(svgElement, this.bounds[bounds]));
         this.layers[0]._url.classList.add('inactive-layer');
+
       });
   }
 
@@ -98,6 +109,7 @@ export class MapService {
       ifSecondFloor = start_floor == 1;
       await this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor, ifSecondFloor);
     }
+    this.animationMapSource.next();
 
   }
 
@@ -153,14 +165,35 @@ export class MapService {
     if (difference > 0) {
       for (let i = 0; i < difference; i++) {
         updatedArray[updatedArray.length - 1]._url.classList.add('remove-layer');
+
         setTimeout(() => {
           updatedArray[updatedArray.length - 1]._url.classList.remove('remove-layer');
           updatedArray.pop();
-
         }, 250);
       }
+
+      // -- this is not beauty but works
+      if(difference==1) {
         updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
+      } else if(difference==2) {
+        updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
+        updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
+        updatedArray[updatedArray.length - 3]._url.classList.add('active-layer');
+        updatedArray[updatedArray.length - 3]._url.classList.remove('inactive-layer');
+      } else if(difference==3){
+        updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
+        updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
+        updatedArray[updatedArray.length - 3]._url.classList.add('active-layer');
+        updatedArray[updatedArray.length - 3]._url.classList.remove('inactive-layer');
+        updatedArray[updatedArray.length - 4]._url.classList.add('active-layer');
+        updatedArray[updatedArray.length - 4]._url.classList.remove('inactive-layer');
+      } else if(difference==4) {
+        updatedArray.forEach((map)=> {
+          map._url.classList.add('active-layer');
+          map._url.classList.remove('inactive-layer');
+        });
+      }
 
     } else {
       for (let i = 0; i < Math.abs(difference); i++) {
@@ -296,3 +329,4 @@ export class MapService {
   }
 
 }
+

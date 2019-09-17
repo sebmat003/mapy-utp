@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FloorsService} from '../../services/floors.service';
+import {MapService} from '../../services/map.service';
 
 @Component({
   selector: 'app-change-floors',
@@ -8,7 +9,7 @@ import {FloorsService} from '../../services/floors.service';
 })
 export class ChangeFloorsComponent implements OnInit {
 
-  constructor(public FloorsService: FloorsService) { }
+  constructor(public FloorsService: FloorsService, public MapService: MapService) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,7 @@ export class ChangeFloorsComponent implements OnInit {
 
     setTimeout(() => {
       this.FloorsService.showFloors = false;
+      this.MapService.changeFloor();
     },100)
   }
 }

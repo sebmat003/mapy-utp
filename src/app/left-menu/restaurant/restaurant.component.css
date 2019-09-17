@@ -81,14 +81,13 @@
 }
 
 .menu-text-info {
-  margin: 0;
   position: relative;
-  width: 100%;
+  width: 85%;
   display: inline-block;
   font-size: 0.8rem;
-  text-align: left;
-  padding-left: 7%;
+  text-align: center;
   font-style: italic;
+  margin: 0 4% 0 0;
 
   padding-bottom: 5%;
 

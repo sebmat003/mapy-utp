@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {LocationService} from './services/location.service';
 import {MenuRestaurantService} from './services/menu-restaurant.service';
 import {FloorsService} from './services/floors.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ export class AppComponent {
 
 
   constructor(public LocationService: LocationService, public MenuRestaurantService: MenuRestaurantService,
-              public FloorsService: FloorsService) {}
+              public FloorsService: FloorsService, public TranslateService: TranslateService) {
+    TranslateService.setDefaultLang('pl');
+  }
 
 
   onTransform(stateLeftMenu: boolean) {
