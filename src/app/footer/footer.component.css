@@ -1,3 +1,5 @@
+* { box-sizing: border-box; }
+
 footer {
   background-color: #efeeed;
   width: 100%;
@@ -11,12 +13,14 @@ footer {
 }
 
 .info-label {
+  position: relative;
   color: #1b272e;
   display: inline-block;
   float:left;
   text-transform: uppercase;
   text-align: center;
   width:15%;
+  z-index: 1;
 }
 .info-label p {
   font-size: 0.6rem;
@@ -26,16 +30,66 @@ footer {
 }
 
 .info-text-box {
+  position: fixed;
+  z-index: 0;
   background-color: #fff;
   display:inline-block;
   float: left;
   width: 85%;
+  box-sizing: content-box;
+  overflow:hidden;
 }
 
 .info-text {
-  padding: 0.3rem;
+  display: inline-block;
+  padding: 0.3rem 0.3rem 0.3rem 100%;
   font-weight: 700;
   margin: 5px;
   color: #1b272e;
   text-transform: uppercase;
+  box-sizing: content-box;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: moving;
+  animation-name: moving;
+  -webkit-animation-duration: 40s;
+  animation-duration: 40s;
+
+  white-space: nowrap;
+}
+
+.info-text-item  {
+  display: inline-block;
+
+}
+
+
+
+@-webkit-keyframes moving {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+
+@keyframes moving {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
 }

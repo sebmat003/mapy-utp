@@ -10,16 +10,17 @@ import {Observable} from 'rxjs';
 })
 export class MenuRestaurantComponent implements OnInit {
 
-  pdfSrc: string = 'http://www.lewiccy.com/wp-content/uploads/2014/11/Szablon-tlo-menu-20190314.pdf';
+  pdfSrc: string = 'http://www.lewiccy.com/plik-menu-01/restauracja-uniwersytecka';
 
   constructor(private MenuRestaurantService: MenuRestaurantService,
               private httpClient: HttpClient) { }
 
   ngOnInit() {
-    // let headers = new HttpHeaders();
-    // headers = headers.set('Accept', 'application/pdf');
-    // headers = headers.set('Access-Control-Allow-Origin', '*');
-    // return this.httpClient.get(this.pdfSrc, { headers: headers, responseType: 'blob' });
+    let headers = new HttpHeaders();
+    headers = headers.set('Accept', 'application/pdf');
+    headers = headers.set('Access-Control-Allow-Origin', 'true');
+    headers = headers.set('Access-Control-Allow-Credentials', 'true');
+    return this.httpClient.get(this.pdfSrc, { headers: headers, responseType: 'blob' });
 
   }
 
