@@ -14,32 +14,23 @@ import {Subscription} from 'rxjs';
 })
 export class MapComponent implements OnInit, OnDestroy {
 
-  private subscription: Subscription;
-
-
   constructor(public mapService: MapService) {
-    this.subscription = this.mapService.animationMap$
-      .subscribe( ()=> {
-        this.animateMap();
-      });
+
   }
 
   ngOnInit() {
   }
 
-  animateMap() {
-    // d3.select('.map').style('background-color', 'pink');
-    console.log('animate...');
-    // d3.selectAll('path').call(log,'svg');
-    d3.selectAll('path').on("mouseover", function() {
-      d3.select(this).style('fill','pink');
-    }).on("mouseout", function(){
-      d3.select(this).style('filter','brightness(100%)');
-    })
-  }
+  // animateMap() {
+  //   console.log('animate...');
+  //   d3.selectAll('path').on("mouseover", function() {
+  //     d3.select(this).style('fill','pink');
+  //   }).on("mouseout", function(){
+  //     // d3.select(this).style('filter','brightness(100%)');
+  //   })
+  // }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
 }

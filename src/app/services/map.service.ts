@@ -29,11 +29,11 @@ export class MapService {
     maxBounds: [[0, -1], [5, 6]],
     maxBoundsViscosity: 1,
     attributionControl: false,
-    preferCanvas: true
+    preferCanvas: true,
   };
 
-  private animationMapSource = new Subject<void>();
-  public animationMap$ = this.animationMapSource.asObservable();
+  // private animationMapSource = new Subject<void>();
+  // public animationMap$ = this.animationMapSource.asObservable();
 
 
 
@@ -41,19 +41,15 @@ export class MapService {
     map.addControl(L.control.zoom(
       {}
     ));
-
   }
 
 
   constructor(private LocationService: LocationService, private FloorsService: FloorsService, private httpClient: HttpClient) {
     this.initializeMap();
     this.initializeFloors();
-
-    //TODO d3 animation on svg maps
-
   }
 
-  // initialiazing first map (KAL1 - 2 floors)
+  // initializing first map (KAL1 - 2 floors)
   initializeMap() {
     this.getInitializeContent('/assets/maps/KAL1/LEVEL_-1.svg', 0, 500);
     this.getInitializeContent('/assets/maps/KAL1/LEVEL_0.svg', 1, 500);
@@ -69,7 +65,7 @@ export class MapService {
         svgElement.setAttribute('viewBox', '0 0 ' + viewBox + ' ' + viewBox);
         this.layers.push(svgOverlay(svgElement, this.bounds[bounds]));
         this.layers[0]._url.classList.add('inactive-layer');
-
+        this.addTileAnimation();
       });
   }
 
@@ -109,7 +105,8 @@ export class MapService {
       ifSecondFloor = start_floor == 1;
       await this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor, ifSecondFloor);
     }
-    this.animationMapSource.next();
+
+    this.addTileAnimation();
 
   }
 
@@ -202,7 +199,7 @@ export class MapService {
       updatedArray[updatedArray.length - 1]._url.classList.add('active-layer');
       updatedArray[updatedArray.length - 1]._url.classList.remove('inactive-layer');
     }
-
+    this.addTileAnimation();
     return updatedArray;
   }
 
@@ -251,6 +248,7 @@ export class MapService {
         }
 
 
+
       });
   }
 
@@ -294,6 +292,7 @@ export class MapService {
 
     this.layers[this.layers.length - 1]._url.classList.add('active-layer');
     this.layers[this.layers.length - 1]._url.classList.remove('inactive-layer');
+    this.addTileAnimation();
   }
 
 
@@ -325,6 +324,12 @@ export class MapService {
     this.layersBER1.forEach((map)=> {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
+    });
+  }
+
+  addTileAnimation() {
+    this.layers.forEach((map)=> {
+      map._url.classList.add('tile-animation');
     });
   }
 
