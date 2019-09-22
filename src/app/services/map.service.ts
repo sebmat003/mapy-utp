@@ -66,6 +66,7 @@ export class MapService {
         this.layers.push(svgOverlay(svgElement, this.bounds[bounds]));
         this.layers[0]._url.classList.add('inactive-layer');
         this.addTileAnimation();
+        console.log(this.layers);
       });
   }
 
@@ -330,8 +331,18 @@ export class MapService {
   addTileAnimation() {
     this.layers.forEach((map)=> {
       map._url.classList.add('tile-animation');
+      let children = map._url.lastElementChild.firstElementChild.firstElementChild.children;
+      for (let i=0; i<children.length; i++) {
+        let stroke = children[i].attributes.getNamedItem('stroke-width');
+        if(children[i].nodeName == 'path' && stroke) {
+          if(stroke.value == '0.1'){
+            children[i].classList.add('path-animation');
+          }
+        }
+      }
     });
   }
+
 
 }
 

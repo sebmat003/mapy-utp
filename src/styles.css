@@ -126,16 +126,17 @@ p, div, img, td{
 .tile-animation {
 
 }
-.tile-animation path {
-  transition: all 0.5s;
-}
+
 
 .tile-animation path, .tile-animation text, .tile-animation image {
   cursor: pointer;
 }
 
-.tile-animation path:hover {
-  /*stroke-width: 0.3;*/
+.path-animation {
+  transition: all 0.5s;
+}
+
+.path-animation:hover {
   fill: rgba(68,224,224,0.78);
   animation: animate_stroke 2s infinite;
 }
