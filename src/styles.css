@@ -127,17 +127,12 @@ p, div, img, td{
 
 }
 
-
-.tile-animation path, .tile-animation text, .tile-animation image {
-  cursor: pointer;
-}
-
 .path-animation {
   transition: all 0.5s;
 }
 
 .path-animation:hover {
-  fill: rgba(68,224,224,0.78);
+  /*fill: rgba(68,224,224,0.78);*/
   animation: animate_stroke 2s infinite;
 }
 
@@ -146,6 +141,11 @@ p, div, img, td{
   50% {stroke-width: 0.3}
   100% {stroke-width: 0.10}
 
+}
+
+
+.tile-animation path, .tile-animation text, .tile-animation image {
+  cursor: pointer;
 }
 
 svg text, svg image {

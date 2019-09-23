@@ -5,6 +5,7 @@ import {LocationService} from './location.service';
 import {FloorsService} from './floors.service';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
+import * as d3 from 'd3';
 
 
 @Injectable()
@@ -34,7 +35,6 @@ export class MapService {
 
   // private animationMapSource = new Subject<void>();
   // public animationMap$ = this.animationMapSource.asObservable();
-
 
 
   mapReady(map: L.Map) {
@@ -171,23 +171,23 @@ export class MapService {
       }
 
       // -- this is not beauty but works
-      if(difference==1) {
+      if (difference == 1) {
         updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
-      } else if(difference==2) {
+      } else if (difference == 2) {
         updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
         updatedArray[updatedArray.length - 3]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 3]._url.classList.remove('inactive-layer');
-      } else if(difference==3){
+      } else if (difference == 3) {
         updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
         updatedArray[updatedArray.length - 3]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 3]._url.classList.remove('inactive-layer');
         updatedArray[updatedArray.length - 4]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 4]._url.classList.remove('inactive-layer');
-      } else if(difference==4) {
-        updatedArray.forEach((map)=> {
+      } else if (difference == 4) {
+        updatedArray.forEach((map) => {
           map._url.classList.add('active-layer');
           map._url.classList.remove('inactive-layer');
         });
@@ -219,35 +219,46 @@ export class MapService {
           case 'kal':
             svgElement.setAttribute('viewBox', '0 0 500 500');
             this.layersKAL1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if(!ifSecondFloor) this.layersKAL1[this.layersKAL1.length - 1]._url.classList.add('inactive-layer');
+            if (!ifSecondFloor) {
+              this.layersKAL1[this.layersKAL1.length - 1]._url.classList.add('inactive-layer');
+            }
             break;
           case 'ber':
             svgElement.setAttribute('viewBox', '0 0 160 160');
             this.layersBER1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if(!ifSecondFloor) this.layersBER1[this.layersBER1.length - 1]._url.classList.add('inactive-layer');
+            if (!ifSecondFloor) {
+              this.layersBER1[this.layersBER1.length - 1]._url.classList.add('inactive-layer');
+            }
             break;
           case 'kor':
             svgElement.setAttribute('viewBox', '0 0 200 200');
             this.layersKOR1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if(!ifSecondFloor) this.layersKOR1[this.layersKOR1.length - 1]._url.classList.add('inactive-layer');
+            if (!ifSecondFloor) {
+              this.layersKOR1[this.layersKOR1.length - 1]._url.classList.add('inactive-layer');
+            }
             break;
           case 'sem':
             svgElement.setAttribute('viewBox', '0 0 170 170');
             this.layersSEM1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if(!ifSecondFloor) this.layersSEM1[this.layersSEM1.length - 1]._url.classList.add('inactive-layer');
+            if (!ifSecondFloor) {
+              this.layersSEM1[this.layersSEM1.length - 1]._url.classList.add('inactive-layer');
+            }
             break;
           case 'for':
             svgElement.setAttribute('viewBox', '0 0 100 100');
             this.layersFOR1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if(!ifSecondFloor) this.layersFOR1[this.layersFOR1.length - 1]._url.classList.add('inactive-layer');
+            if (!ifSecondFloor) {
+              this.layersFOR1[this.layersFOR1.length - 1]._url.classList.add('inactive-layer');
+            }
             break;
           case 'maz':
             svgElement.setAttribute('viewBox', '0 0 130 130');
             this.layersMAZ1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if(!ifSecondFloor) this.layersMAZ1[this.layersMAZ1.length - 1]._url.classList.add('inactive-layer');
+            if (!ifSecondFloor) {
+              this.layersMAZ1[this.layersMAZ1.length - 1]._url.classList.add('inactive-layer');
+            }
             break;
         }
-
 
 
       });
@@ -271,7 +282,7 @@ export class MapService {
         break;
       case 2: {
         //FOR1
-        this.layers.push(this.layersFOR1[0], this.layersFOR1[1]);
+        this.layers.push(this.layersFOR1[0]);
       }
         break;
       case 3: {
@@ -281,7 +292,7 @@ export class MapService {
         break;
       case 4: {
         //MAZ1
-        this.layers.push(this.layersMAZ1[0], this.layersMAZ1[1]);
+        this.layers.push(this.layersMAZ1[0]);
       }
         break;
       case 5: {
@@ -298,44 +309,52 @@ export class MapService {
 
 
   resetClassesInLayers() {
-    this.layers.forEach((map)=> {
+    this.layers.forEach((map) => {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
     });
-    this.layersKAL1.forEach((map)=> {
+    this.layersKAL1.forEach((map) => {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
     });
-    this.layersSEM1.forEach((map)=> {
+    this.layersSEM1.forEach((map) => {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
     });
-    this.layersMAZ1.forEach((map)=> {
+    this.layersMAZ1.forEach((map) => {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
     });
-    this.layersKOR1.forEach((map)=> {
+    this.layersKOR1.forEach((map) => {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
     });
-    this.layersFOR1.forEach((map)=> {
+    this.layersFOR1.forEach((map) => {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
     });
-    this.layersBER1.forEach((map)=> {
+    this.layersBER1.forEach((map) => {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
     });
   }
 
   addTileAnimation() {
-    this.layers.forEach((map)=> {
+    this.layers.forEach((map) => {
       map._url.classList.add('tile-animation');
       let children = map._url.lastElementChild.firstElementChild.firstElementChild.children;
-      for (let i=0; i<children.length; i++) {
+      for (let i = 0; i < children.length; i++) {
         let stroke = children[i].attributes.getNamedItem('stroke-width');
-        if(children[i].nodeName == 'path' && stroke) {
-          if(stroke.value == '0.1'){
+        if (children[i].nodeName == 'path' && stroke) {
+          if (stroke.value == '0.1') {
+            let color = children[i].attributes.getNamedItem('fill');
+            d3.select(children[i]).on("mouseover" , function () {
+              // @ts-ignore
+              d3.select(children[i]).style('fill', d3.color(color.value).darker());
+            }).on("mouseout", function () {
+              // @ts-ignore
+              d3.select(children[i]).style('fill', d3.color(color.value));
+            });
             children[i].classList.add('path-animation');
           }
         }
