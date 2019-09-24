@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import * as L from 'leaflet';
-import {LatLngBoundsExpression, svgOverlay} from 'leaflet';
+import {LatLngBoundsExpression, LatLngExpression, LeafletMouseEvent, svgOverlay} from 'leaflet';
 import {LocationService} from './location.service';
 import {FloorsService} from './floors.service';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import * as d3 from 'd3';
+
 
 
 @Injectable()
@@ -33,6 +34,9 @@ export class MapService {
     preferCanvas: true,
   };
 
+  coordinates;
+  marker: object;
+
   // private animationMapSource = new Subject<void>();
   // public animationMap$ = this.animationMapSource.asObservable();
 
@@ -41,6 +45,11 @@ export class MapService {
     map.addControl(L.control.zoom(
       {}
     ));
+
+    map.on('click', <LeafletMouseEvent>(e) => {
+      this.coordinates = e.latlng;
+      map.setView(this.coordinates, map.getZoom());
+    })
   }
 
 
@@ -66,7 +75,6 @@ export class MapService {
         this.layers.push(svgOverlay(svgElement, this.bounds[bounds]));
         this.layers[0]._url.classList.add('inactive-layer');
         this.addTileAnimation();
-        console.log(this.layers);
       });
   }
 
