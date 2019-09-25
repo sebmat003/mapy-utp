@@ -35,20 +35,40 @@ export class MapService {
   };
 
   coordinates;
-  marker: object;
-
-  // private animationMapSource = new Subject<void>();
-  // public animationMap$ = this.animationMapSource.asObservable();
+  marker;
 
 
+  icon = {
+    icon: L.icon({
+      iconSize: [40,60],
+      iconAnchor: [20,60],
+      iconUrl: '../assets/images/location-pin.svg'
+    })
+  };
   mapReady(map: L.Map) {
     map.addControl(L.control.zoom(
       {}
     ));
 
+    let clicked: boolean = false;
     map.on('click', <LeafletMouseEvent>(e) => {
       this.coordinates = e.latlng;
-      map.setView(this.coordinates, map.getZoom());
+      if(map.getZoom() < 8) {
+        map.setView(this.coordinates, map.getZoom() + 2);
+      } else if (map.getZoom() >=8 && map.getZoom() <=11) {
+        map.setView(this.coordinates, map.getZoom() + 1);
+      } else if (map.getZoom() >11 && map.getZoom() <13) {
+        map.setView(this.coordinates, map.getZoom());
+      } else {
+        map.setView(this.coordinates, map.getZoom() - 1);
+      }
+      if(!clicked) {
+        clicked = true;
+        this.marker = L.marker([this.coordinates.lat + 0.001, this.coordinates.lng], this.icon).addTo(map);
+      } else {
+        this.marker.setLatLng([this.coordinates.lat + 0.001, this.coordinates.lng]);
+      }
+
     })
   }
 
