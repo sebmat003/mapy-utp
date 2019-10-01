@@ -5,6 +5,7 @@
 }
 
 .options {
+  margin-right: 3%;
   visibility: hidden;
   margin-top: 3%;
   width: 51%;
@@ -51,3 +52,48 @@
 .transform-right {
   transform: translateX(25%);
 }
+
+.min-max-button .btn {
+  visibility: visible;
+  display: inline-block;
+  float: right;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  transform: translateY(1.7rem) translateX(1rem);
+  text-align: center;
+}
+
+.minimize {
+  /*transform: scale(0.7);*/
+  /*margin-left: -8%;*/
+  width: 50%;
+  margin-left: 25%;
+  font-size: 0.5rem;
+  padding: 1%;
+}
+
+.minimize .option {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.minimize .option img {
+  max-width: 1rem;
+  max-height: 1rem;
+}
+
+.minimize .wc p {
+  font-size: .6rem;
+}
+
+.minimize .min-max-button .btn {
+  max-width: 1rem;
+  max-height: 1rem;
+  transform: translateY(1rem) translateX(1rem);
+  font-size: 0.8rem;
+
+}
+

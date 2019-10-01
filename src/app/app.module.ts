@@ -43,6 +43,7 @@ import {MapService} from './services/map.service';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {MinimizeButtonService} from './services/minimize-button.service';
 
 
 
@@ -100,7 +101,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     MenuRestaurantService,
     MenuMobileService,
     FloorsService,
-    MapService
+    MapService,
+    MinimizeButtonService
   ],
   bootstrap: [AppComponent]
 })

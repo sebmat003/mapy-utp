@@ -1,8 +1,7 @@
-<div class="search-container">
-  <div class="search-panel" [ngClass]="{'transform-right' : transform, '': !transform}">
+<div class="search-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''" >
+  <div class="search-panel" [ngClass]="{'transform-right' : transform, '': !transform }" >
     <table>
       <tr>
-
         <ng-container *ngIf="!mobileVersion">
           <td class="loupe">
             <img src="../../../assets/images/loupe.svg" alt="">
@@ -13,7 +12,6 @@
             <img src="../../../assets/images/3-lines.png" alt="">
           </td>
         </ng-container>
-
 
         <ng-container *ngIf="searchingState==1">
           <td class="search-input">

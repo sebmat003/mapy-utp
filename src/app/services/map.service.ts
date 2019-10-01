@@ -36,7 +36,7 @@ export class MapService {
 
   coordinates;
   marker;
-
+  clicked: boolean = false;
 
   icon = {
     icon: L.icon({
@@ -50,7 +50,7 @@ export class MapService {
       {}
     ));
 
-    let clicked: boolean = false;
+    this.clicked = false;
     map.on('click', <LeafletMouseEvent>(e) => {
       this.coordinates = e.latlng;
       if(map.getZoom() < 8) {
@@ -62,8 +62,8 @@ export class MapService {
       } else {
         map.setView(this.coordinates, map.getZoom() - 1);
       }
-      if(!clicked) {
-        clicked = true;
+      if(!this.clicked) {
+        this.clicked = true;
         this.marker = L.marker([this.coordinates.lat + 0.001, this.coordinates.lng], this.icon).addTo(map);
       } else {
         this.marker.setLatLng([this.coordinates.lat + 0.001, this.coordinates.lng]);
@@ -140,6 +140,7 @@ export class MapService {
   }
 
   changeFloor() {
+    this.removeMarker();
     this.resetClassesInLayers();
     let location = this.LocationService.locationState;
     let floor = this.FloorsService.floorState;
@@ -294,6 +295,7 @@ export class MapService {
 
 
   changeLocation() {
+    this.removeMarker();
     this.resetClassesInLayers();
     let location = this.LocationService.locationState;
     this.layers = [];
@@ -389,6 +391,12 @@ export class MapService {
       }
     });
   }
+
+  removeMarker() {
+    this.clicked = false;
+    L.Map.prototype.removeControl(this.marker);
+  }
+
 
 
 }

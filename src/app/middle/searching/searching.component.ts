@@ -1,5 +1,6 @@
 import {Component,HostListener, Input, OnInit} from '@angular/core';
 import {MenuMobileService} from '../../services/menu-mobile.service';
+import {MinimizeButtonService} from '../../services/minimize-button.service';
 
 
 
@@ -17,7 +18,7 @@ export class SearchingComponent implements OnInit {
   mobileVersion: boolean = false;
 
 
-  constructor(private LeftMenuMobileService: MenuMobileService) {
+  constructor(private LeftMenuMobileService: MenuMobileService, public minimizeButtonService: MinimizeButtonService) {
     this.onResize();
   }
 

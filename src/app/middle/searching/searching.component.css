@@ -191,13 +191,26 @@ img {
 }
 
 
-.transform-right {
-  transform: translateX(25%);
-}
+
 
 .search-panel {
   transition-property: transform, -webkit-transform;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
 }
+@media only screen and (min-width: 1000px) {
+  .minimize {
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    font-size: 0.5rem;
+    margin-top: 0;
+  }
 
+}
+
+
+
+.transform-right {
+  transform: translateX(25%);
+}

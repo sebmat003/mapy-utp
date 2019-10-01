@@ -73,5 +73,9 @@
     "first-aid": "Pierwsza pomoc",
     "menu": "Menu Restauracja",
     "change-language": "Zmień język"
+  },
+  "min-max-button": {
+    "min": "Minimalizuj",
+    "max": "Maksymalizuj"
   }
 }
