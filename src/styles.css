@@ -96,6 +96,16 @@ p, div, img, td{
   outline: 0;
 }
 
+.invisible {
+  visibility: hidden;
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+  display: inline-block;
+}
+
 .inactive-layer {
   filter: brightness(60%);
 }
@@ -152,6 +162,19 @@ svg text, svg image {
   pointer-events: none !important;
 }
 
+
+.showing-up {
+  pointer-events: all !important;
+  animation-name: show-up;
+  animation-timing-function:  ease-in-out;
+  animation-iteration-count: 1;
+  -webkit-animation: show-up .2s ease-in-out 1;
+}
+
+@keyframes show-up {
+  0% {transform: scale(0)}
+  100% {transform: scale(1)}
+}
 
 
 

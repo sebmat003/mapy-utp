@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LocationService} from '../../services/location.service';
+import {MapService} from '../../services/map.service';
 
 @Component({
   selector: 'app-location',
@@ -9,13 +10,16 @@ import {LocationService} from '../../services/location.service';
 export class LocationComponent implements OnInit {
   @Input() private transform: boolean = false;
 
-  constructor(public LocationService: LocationService) { }
+  constructor(public LocationService: LocationService, public MapService: MapService) { }
 
   ngOnInit() {
   }
 
   openLocation() {
-    this.LocationService.showLocation = true;
-    this.LocationService.clickedButton = 0;
+    if(this.MapService.mapIsLoaded) {
+      this.LocationService.showLocation = true;
+      this.LocationService.clickedButton = 0;
+    }
+
   }
 }

@@ -46,8 +46,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MinimizeButtonService} from './services/minimize-button.service';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +92,8 @@ import {MinimizeButtonService} from './services/minimize-button.service';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+
   ],
   providers: [
     LocationService,

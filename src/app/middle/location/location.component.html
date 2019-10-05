@@ -10,7 +10,7 @@
       <p *ngIf="LocationService.locationState==5">{{'location.text' | translate}}: SEMINARYJNA</p>
     </div>
     <div class="button-box" (click)="openLocation()">
-      <button class="astext">{{'location.change' | translate}}</button>
+      <button class="astext" ngClass="{{MapService.mapIsLoaded ? '' : 'invisible'}}">{{'location.change' | translate}}</button>
     </div>
   </div>
 

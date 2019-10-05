@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
 import * as L from 'leaflet';
-import {LatLngBoundsExpression, LatLngExpression, LeafletMouseEvent, svgOverlay} from 'leaflet';
+import {LatLngBoundsExpression, svgOverlay} from 'leaflet';
 import {LocationService} from './location.service';
 import {FloorsService} from './floors.service';
 import {HttpClient} from '@angular/common/http';
-import {Subject} from 'rxjs';
 import * as d3 from 'd3';
 
 
@@ -19,6 +18,8 @@ export class MapService {
   private layersMAZ1 = [];
   private layersSEM1 = [];
   layers = [];
+
+  mapIsLoaded: boolean = false;
 
   bounds: LatLngBoundsExpression[] = [];
 
@@ -42,7 +43,8 @@ export class MapService {
     icon: L.icon({
       iconSize: [40,60],
       iconAnchor: [20,60],
-      iconUrl: '../assets/images/location-pin.svg'
+      iconUrl: '../assets/images/location-pin.svg',
+      className: 'showing-up'
     })
   };
   mapReady(map: L.Map) {
@@ -53,14 +55,23 @@ export class MapService {
     this.clicked = false;
     map.on('click', <LeafletMouseEvent>(e) => {
       this.coordinates = e.latlng;
+
+      //print coords
+      console.log(this.coordinates);
+
+      let difference = 0;
+      if(this.LocationService.locationState != 0) {
+        difference = 1;
+      }
+
       if(map.getZoom() < 8) {
-        map.setView(this.coordinates, map.getZoom() + 2);
+        map.setView(this.coordinates, map.getZoom() + 2 - difference);
       } else if (map.getZoom() >=8 && map.getZoom() <=11) {
-        map.setView(this.coordinates, map.getZoom() + 1);
+        map.setView(this.coordinates, map.getZoom() + 1 - difference);
       } else if (map.getZoom() >11 && map.getZoom() <13) {
-        map.setView(this.coordinates, map.getZoom());
+        map.setView(this.coordinates, map.getZoom() - difference);
       } else {
-        map.setView(this.coordinates, map.getZoom() - 1);
+        map.setView(this.coordinates, map.getZoom() - 1 - difference);
       }
       if(!this.clicked) {
         this.clicked = true;
@@ -82,6 +93,9 @@ export class MapService {
   initializeMap() {
     this.getInitializeContent('/assets/maps/KAL1/LEVEL_-1.svg', 0, 500);
     this.getInitializeContent('/assets/maps/KAL1/LEVEL_0.svg', 1, 500);
+    // this.getInitializeContent('/assets/maps/map.svg', 2, 1200);
+
+
   }
 
   getInitializeContent(url: string, bounds: number, viewBox: number) {
@@ -136,7 +150,7 @@ export class MapService {
     }
 
     this.addTileAnimation();
-
+    this.mapIsLoaded = true;
   }
 
   changeFloor() {
@@ -335,6 +349,7 @@ export class MapService {
     this.layers[this.layers.length - 1]._url.classList.add('active-layer');
     this.layers[this.layers.length - 1]._url.classList.remove('inactive-layer');
     this.addTileAnimation();
+
   }
 
 
@@ -393,8 +408,11 @@ export class MapService {
   }
 
   removeMarker() {
-    this.clicked = false;
-    L.Map.prototype.removeControl(this.marker);
+    if(this.marker != null) {
+      this.clicked = false;
+      L.Map.prototype.removeControl(this.marker);
+    }
+
   }
 
 

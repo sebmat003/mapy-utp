@@ -3,7 +3,6 @@ import {MenuMobileService} from '../../services/menu-mobile.service';
 import {MinimizeButtonService} from '../../services/minimize-button.service';
 
 
-
 @Component({
   selector: 'app-searching',
   templateUrl: './searching.component.html',
@@ -16,6 +15,7 @@ export class SearchingComponent implements OnInit {
   clicked: number = 0;
   private innerWidth: number;
   mobileVersion: boolean = false;
+
 
 
   constructor(private LeftMenuMobileService: MenuMobileService, public minimizeButtonService: MinimizeButtonService) {
@@ -34,6 +34,9 @@ export class SearchingComponent implements OnInit {
 
   microphone() {
     console.log('enable microphone');
+
+
+
   }
 
   closeMenu() {
