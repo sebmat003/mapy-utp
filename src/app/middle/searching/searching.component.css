@@ -206,11 +206,26 @@ img {
     font-size: 0.5rem;
     margin-top: 0;
   }
-
 }
-
-
 
 .transform-right {
   transform: translateX(25%);
+}
+
+.micro-enable::before {
+  content: '';
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: translateX(0.7rem) translateY(0.7rem);
+  border-radius: 50%;
+  background-color: #b60a00;
+  animation: ease-in-out blinking 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinking {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
 }

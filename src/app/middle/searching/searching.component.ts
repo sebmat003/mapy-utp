@@ -1,6 +1,7 @@
 import {Component,HostListener, Input, OnInit} from '@angular/core';
 import {MenuMobileService} from '../../services/menu-mobile.service';
 import {MinimizeButtonService} from '../../services/minimize-button.service';
+import {SpeechRecognitionService} from '@kamiazya/ngx-speech-recognition';
 
 
 @Component({
@@ -15,11 +16,21 @@ export class SearchingComponent implements OnInit {
   clicked: number = 0;
   private innerWidth: number;
   mobileVersion: boolean = false;
+  message: string;
+  private started: boolean = false;
 
 
 
-  constructor(private LeftMenuMobileService: MenuMobileService, public minimizeButtonService: MinimizeButtonService) {
+  constructor(private LeftMenuMobileService: MenuMobileService, public minimizeButtonService: MinimizeButtonService,
+              private speechRecognition: SpeechRecognitionService) {
     this.onResize();
+    this.speechRecognition.onresult = (e) => {
+      this.message = e.results[0].item(0).transcript;
+    };
+
+    this.speechRecognition.onaudioend = (e) => {
+      this.started = false;
+    }
   }
 
 
@@ -30,12 +41,18 @@ export class SearchingComponent implements OnInit {
   click() {
     this.display = !this.display;
     this.clicked = 0;
+    this.message = '';
   }
 
   microphone() {
-    console.log('enable microphone');
-
-
+    if(!this.started) {
+      this.message = '';
+      this.speechRecognition.start();
+      this.started = true;
+    } else {
+      this.speechRecognition.stop();
+      this.started = false;
+    }
 
   }
 

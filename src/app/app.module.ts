@@ -44,6 +44,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MinimizeButtonService} from './services/minimize-button.service';
+import {SpeechRecognitionModule, SpeechRecognitionService} from '@kamiazya/ngx-speech-recognition';
 
 
 @NgModule({
@@ -93,6 +94,11 @@ import {MinimizeButtonService} from './services/minimize-button.service';
         deps: [HttpClient]
       }
     }),
+    SpeechRecognitionModule.withConfig({
+      lang: 'pl-PL' || navigator.language,
+      interimResults: true,
+      maxAlternatives: 10,
+    })
 
   ],
   providers: [
@@ -101,7 +107,8 @@ import {MinimizeButtonService} from './services/minimize-button.service';
     MenuMobileService,
     FloorsService,
     MapService,
-    MinimizeButtonService
+    MinimizeButtonService,
+    SpeechRecognitionService
   ],
   bootstrap: [AppComponent]
 })

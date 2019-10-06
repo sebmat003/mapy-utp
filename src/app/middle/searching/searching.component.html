@@ -15,12 +15,12 @@
 
         <ng-container *ngIf="searchingState==1">
           <td class="search-input">
-            <input type="text" placeholder="{{'searching.search' | translate}}">
+            <input type="text" placeholder="{{'searching.search' | translate}}" value="{{this.message}}">
           </td>
         </ng-container>
         <ng-container *ngIf="searchingState==2">
           <td class="half-search-input">
-            <input type="text" placeholder="{{'searching.name' | translate}}">
+            <input type="text" placeholder="{{'searching.name' | translate}}" value="{{this.message}}">
           </td>
           <td class="half-search-input">
             <input type="text" placeholder="{{'searching.email' | translate}}">
@@ -28,13 +28,14 @@
         </ng-container>
         <ng-container *ngIf="searchingState==3">
           <td class="half-search-input">
-            <input type="text" placeholder="{{'searching.audience' | translate}}">
+            <input type="text" placeholder="{{'searching.audience' | translate}}" value="{{this.message}}">
           </td>
           <td class="half-search-input">
             <input type="text" placeholder="{{'searching.building' | translate}}">
           </td>
         </ng-container>
-        <td class="microphone" (click)="microphone()" type="button">
+        <td class="microphone" (click)="microphone()" type="button"
+            ngClass="{{this.started ? 'micro-enable' : ''}}">
           <img src="../../../assets/images/microphone.svg" alt="micro">
         </td>
         <td class="line"></td>
