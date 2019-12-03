@@ -1,0 +1,34 @@
+<!--left side-->
+<app-left-menu (emitStateMenu)="onTransform($event)" ></app-left-menu>
+<app-floors [transform]="transform"></app-floors>
+<app-location [transform]="transform"></app-location>
+
+<app-left-menu-mobile></app-left-menu-mobile>
+<!--middle-->
+
+<app-map></app-map>
+
+<app-navi-options [transform]="transform"></app-navi-options>
+<app-searching [transform]="transform"></app-searching>
+<app-list-searching [transform]="transform"></app-list-searching>
+<app-change-location *ngIf="LocationService.showLocation"></app-change-location>
+<app-menu-restaurant *ngIf="MenuRestaurantService.showMenu"></app-menu-restaurant>
+
+<app-change-floors *ngIf="FloorsService.showFloors"></app-change-floors>
+
+<app-room-employee-info *ngIf="SearchingService.clickedListItem"
+  [transform]="transform"></app-room-employee-info>
+
+<!--right side-->
+<!--<app-sizing-map></app-sizing-map>-->
+<app-bus></app-bus>
+<app-language></app-language>
+
+
+
+<!--bottom-->
+<app-footer></app-footer>
+
+<app-floors-mobile></app-floors-mobile>
+<app-location-mobile></app-location-mobile>
+

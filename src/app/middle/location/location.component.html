@@ -1,0 +1,17 @@
+<div class="location" [ngClass]="{'transform-right' : transform, '': !transform}">
+  <div class="location-background">
+    <div class="label">
+
+      <p *ngIf="LocationService.locationState==0">{{'location.text' | translate}}: KALISKIEGO</p>
+      <p *ngIf="LocationService.locationState==1">{{'location.text' | translate}}: BERNARDYŃSKA</p>
+      <p *ngIf="LocationService.locationState==2">{{'location.text' | translate}}: FORDOŃSKA</p>
+      <p *ngIf="LocationService.locationState==3">{{'location.text' | translate}}: KORDECKIEGO</p>
+      <p *ngIf="LocationService.locationState==4">{{'location.text' | translate}}: MAZOWIECKA</p>
+      <p *ngIf="LocationService.locationState==5">{{'location.text' | translate}}: SEMINARYJNA</p>
+    </div>
+    <div class="button-box" (click)="openLocation()">
+      <button class="astext" ngClass="{{MapService.mapIsLoaded ? '' : 'invisible'}}">{{'location.change' | translate}}</button>
+    </div>
+  </div>
+
+</div>

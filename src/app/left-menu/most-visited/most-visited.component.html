@@ -1,0 +1,47 @@
+<div class="div-container">
+  <div class="text">
+    <p>{{'most-visited.title' | translate}}</p>
+  </div>
+
+  <div class="most-visited">
+    <div class="most-visited--item" [ngClass]="{ 'active' : activeState==1}">
+      <p>{{'most-visited.shop' | translate}} /</p><p>{{'most-visited.vendings' | translate}}</p>
+    </div>
+    <div class="most-visited--item" [ngClass]="{ 'active' : activeState==2}">
+      <p>{{'most-visited.auditorium' | translate}}</p><p> {{'most-visited.novum' | translate}}</p>
+    </div>
+    <div class="most-visited--item" [ngClass]="{ 'active' : activeState==3}">
+      <p>{{'most-visited.reading' | translate}}</p>
+    </div>
+  </div>
+
+  <div class="images-container">
+      <div class="image-container" (click)="activeState=1">
+        <img [ngClass]="{ 'active' : activeState==1}" src="../../../assets/images/coffee-machines.png" alt="">
+      </div>
+      <div class="image-container" (click)="activeState=2">
+        <img  [ngClass]="{ 'active' : activeState==2}" src="../../../assets/images/Auditorium-novum.png" alt="">
+      </div>
+      <div class="image-container" (click)="activeState=3">
+        <img  [ngClass]="{ 'active' : activeState==3}" src="../../../assets/images/library.png" alt="">
+      </div>
+  </div>
+
+  <div class="buttons-container">
+    <div class="button-container" [ngClass]="{ 'hidden' : activeState!=1}">
+      <div class="navi btn" ><img src="../../../assets/images/navigation.svg" alt=""></div>
+      <div class="wheelchair btn"><img src="../../../assets/images/wheelchair-access-white.svg" alt=""></div>
+      <p>{{'most-visited.navigate' | translate}}</p>
+    </div>
+    <div class="button-container" [ngClass]="{ 'hidden' : activeState!=2}">
+      <div class="navi btn"><img src="../../../assets/images/navigation.svg" alt=""></div>
+      <div class="wheelchair btn"><img src="../../../assets/images/wheelchair-access-white.svg" alt=""></div>
+      <p>{{'most-visited.navigate' | translate}}</p>
+    </div>
+    <div class="button-container" [ngClass]="{ 'hidden' : activeState!=3}">
+      <div class="navi btn"><img src="../../../assets/images/navigation.svg" alt=""></div>
+      <div class="wheelchair btn"><img src="../../../assets/images/wheelchair-access-white.svg" alt=""></div>
+      <p>{{'most-visited.navigate' | translate}}</p>
+    </div>
+  </div>
+</div>

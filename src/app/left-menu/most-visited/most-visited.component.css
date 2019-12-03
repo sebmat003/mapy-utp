@@ -1,0 +1,162 @@
+.div-container {
+  margin: 2%;
+  width: 96%;
+  background-color: white;
+  height: 30%;
+  text-align: center;
+  border: .05rem solid #b5b5b5;
+  position: relative;
+  color: #1b272e;
+  text-transform: uppercase;
+}
+
+.text {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 15%;
+}
+.text p {
+  margin-top: 5%;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.most-visited {
+  font-size: 0.6rem;
+  font-weight: 600;
+  height: 15%;
+}
+
+.most-visited--item {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 20%;
+  height: 50%;
+  text-align: center;
+  margin: 0 2.7%;
+  opacity: 0.5;
+
+}
+
+.most-visited--item:first-child {
+  margin-left: 16%;
+}
+
+.most-visited--item:last-child {
+  margin-top: 1%;
+}
+
+.images-container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  height: 30%;
+}
+
+
+.image-container {
+  margin: 0 3.5%;
+  width: 18%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+
+.image-container:first-child {
+  margin-left: 17%;
+}
+
+.image-container img {
+  opacity: 0.5;
+  border: .1rem solid #1b272e;
+  background-color: #1b272e;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  cursor: pointer;
+}
+
+.buttons-container {
+  width: 100%;
+  height: 29%;
+  display: block;
+  position: relative;
+  float: left;
+}
+
+.button-container {
+  margin: 0 2.5%;
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+
+.button-container:first-child {
+  margin-left: 16.1%;
+}
+
+.button-container:last-child {
+  margin-left: 2.7%;
+}
+
+.button-container p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: .6rem;
+  font-style: italic;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 13%;
+  font-weight: 500;
+}
+
+.btn {
+  margin: 5% 0 0 5%;
+  width: 40%;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+}
+
+.btn img {
+  padding: 20%;
+  background-color: #1b272e;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.wheelchair {
+  margin-left: 10%;
+}
+
+.active {
+  opacity: 1 !important;
+}
+
+.hidden {
+  visibility: hidden;
+  /*display: none;*/
+}
+
+
+
+
+

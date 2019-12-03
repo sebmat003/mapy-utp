@@ -1,0 +1,86 @@
+{
+  "demo": {
+    "title": "Translation demo",
+    "text": "This is a simple demonstration app for ngx-translate"
+  },
+
+  "bus": {
+    "title": "Rozkład jazdy tramwajów/autobusów"
+  },
+
+  "change-location": {
+    "text": "Zmień lokalizację"
+  },
+
+  "footer": {
+    "title": "Informacja dnia"
+  },
+
+  "most-visited": {
+    "title": "Najczęściej odwiedzane",
+    "shop": "Sklepik",
+    "vendings" : "Automaty",
+    "auditorium": "Auditorium",
+    "novum": " Novum",
+    "reading": " Czytelnia",
+    "navigate": "Nawiguj"
+  },
+
+  "navigation-panel": {
+    "text1": "Wybierz punkt początkowy / kliknij na mapie",
+    "text2": "Wybierz punkt docelowy / kliknij na mapie"
+  },
+
+  "restaurant": {
+    "title": "Restauracja uniwersytecka",
+    "street": "ul.",
+    "menu-click": "Kliknij, aby zobaczyć"
+  },
+
+  "floor": {
+    "f4": "Piętro 4",
+    "f3": "Piętro 3",
+    "f2": "Piętro 2",
+    "f1": "Piętro 1",
+    "f0": "Parter",
+    "f-1": "Piwnica",
+    "change-floor": "Zmień piętro"
+  },
+
+  "location": {
+    "text": "Lokalizacja",
+    "change": "zmień"
+  },
+
+  "searching": {
+    "search": "Wyszukaj na UTP...",
+    "name": "Nazwisko i/lub imię",
+    "email": "Email/Telefon",
+    "audience": "Numer sali",
+    "building": "Budynek",
+    "searching": "Wyszukiwanie ogólne",
+    "employee": "Pracownik",
+    "room": "Pomieszczenie",
+    "no-results": "Brak wyników",
+    "select": "Wybierz"
+  },
+
+  "menu-mobile": {
+    "wc": "Toalety",
+    "changing-room": "Szatnia",
+    "elevator": "Winda",
+    "disabled": "Niepełnosprawni",
+    "xerox copy": "Ksero",
+    "shop": "Sklepik",
+    "first-aid": "Pierwsza pomoc",
+    "menu": "Menu Restauracja",
+    "change-language": "Zmień język"
+  },
+  "min-max-button": {
+    "min": "Minimalizuj",
+    "max": "Maksymalizuj"
+  },
+  "list-searching": {
+    "navigate": "Prowadź"
+  }
+}

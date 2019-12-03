@@ -1,0 +1,30 @@
+<div class="div-container">
+  <div class="floors-container" (clickOutside)="onClose()">
+    <div class="text">
+      <p> {{'floor.change-floor' | translate}} </p>
+    </div>
+    <div class="floors">
+      <table class="table-floors">
+        <tr class="floors-item" (click)="onClickItem(3)">
+          <td [ngClass]="{'active' : FloorsService.floorState == 3}">{{'floor.f3' | translate}}</td>
+        </tr>
+        <tr class="floors-item" (click)="onClickItem(2)">
+          <td [ngClass]="{'active' : FloorsService.floorState == 2}">{{'floor.f2' | translate}}</td>
+        </tr>
+        <tr class="floors-item" (click)="onClickItem(1)">
+          <td [ngClass]="{'active' : FloorsService.floorState == 1}">{{'floor.f1' | translate}}</td>
+        </tr>
+        <tr class="floors-item" (click)="onClickItem(0)">
+          <td [ngClass]="{'active' : FloorsService.floorState == 0}">{{'floor.f0' | translate}}</td>
+        </tr>
+        <tr class="floors-item" (click)="onClickItem(-1)">
+          <td [ngClass]="{'active' : FloorsService.floorState == -1}">{{'floor.f-1' | translate}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="close-button" (click)="onClose()">
+    <img src="../../../assets/images/x.png" alt="">
+  </div>
+</div>
+

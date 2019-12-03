@@ -1,0 +1,97 @@
+.options-container {
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+}
+
+.options {
+  margin-right: 3%;
+  visibility: hidden;
+  margin-top: 3%;
+  width: 51%;
+  display: inline-block;
+  position: relative;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+}
+
+.option {
+  visibility: visible;
+  display: inline-block;
+  float: right;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50px;
+  background-color: #efefef;
+}
+
+.option img {
+  max-width: 1.4rem;
+  max-height: 1.4rem;
+  overflow: hidden;
+  margin-top: .3rem;
+
+}
+
+.elevator img {
+  margin-left: .2rem;
+}
+
+.wc p {
+  text-align: center;
+  margin-top: .45rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #1b272e;
+}
+
+
+.transform-right {
+  transform: translateX(25%);
+}
+
+.min-max-button .btn {
+  visibility: visible;
+  display: inline-block;
+  float: right;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  transform: translateY(1.7rem) translateX(1rem);
+  text-align: center;
+}
+
+.minimize {
+  width: 50%;
+  margin-left: 30%;
+  font-size: 0.5rem;
+  padding: 1%;
+}
+
+.minimize .option {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.minimize .option img {
+  max-width: 1rem;
+  max-height: 1rem;
+}
+
+.minimize .wc p {
+  font-size: .6rem;
+}
+
+.minimize .min-max-button .btn {
+  max-width: 1rem;
+  max-height: 1rem;
+  transform: translateY(1rem) translateX(1rem);
+  font-size: 0.8rem;
+
+}
+

@@ -1,0 +1,20 @@
+:host-context (.transform-right) {
+  transform: translateX(100%);
+}
+
+
+@media only screen and (max-width: 1000px) {
+  app-bus, app-left-menu, app-navi-options, app-floors,
+   app-language, app-footer, app-location, app-sizing-map{
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  app-floors-mobile, app-location-mobile, app-change-language-mobile, app-left-menu-mobile,
+  app-employee-info-mobile, app-room-info-mobile, app-change-floors{
+    display: none;
+    visibility: hidden;
+  }
+}

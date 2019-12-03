@@ -1,0 +1,281 @@
+.search-container {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+  z-index: 4;
+  color: #1b272e;
+}
+
+.search-panel {
+  width: 51%;
+  display: inline-block;
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+  z-index: 4;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search-container {
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    z-index: 3 !important;
+
+    text-align: left;
+  }
+
+  .search-panel {
+    z-index: 2 !important;
+    width: 100%;
+    border-radius: 0;
+    transition: none !important;
+  }
+
+  .transform-right {
+    transform: none !important;
+  }
+
+  .dropdown {
+    width: 17%;
+    z-index: 3 !important;
+    transform: translateX(-100%) !important;
+  }
+
+  .dropdown-menu {
+    z-index: 3 !important;
+  }
+
+  .search-input {
+    width: 70% !important;
+    padding: 1.5rem .5rem;
+  }
+
+  .half-search-input {
+    width: 35% !important;
+    padding: 1.5rem 0;
+  }
+
+  .microphone {
+    width: 7% !important;
+    padding-left: 2%;
+  }
+
+  .options {
+    padding-left: 2% !important;
+    width: 7% !important;
+  }
+
+  .line {
+    width: .1% !important;
+  }
+
+  .loupe {
+    padding: 2% !important;
+  }
+
+  .loupe img {
+    max-width: 2.6rem !important;
+    max-height: 2.6rem !important;
+  }
+
+}
+
+.search-panel table {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+img {
+  max-width: 2rem;
+  max-height: 2rem;
+}
+
+.loupe {
+  width: 10%;
+  height: 2.3rem;
+  padding: 1% 2%;
+  cursor: pointer;
+}
+
+.loupe img {
+  max-width: 2.3rem;
+  max-height: 2.3rem;
+}
+
+.search-input, .half-search-input, .one-third-search-input {
+  margin: 1rem 0 1rem 1rem;
+  width: 79%;
+  text-align: left;
+}
+
+.half-search-input {
+  width: 39.5%;
+}
+
+.one-third-search-input {
+  width: 25%;
+}
+
+.search-input input {
+  width: 100%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border: transparent;
+}
+
+.search-input input:focus, .half-search-input input:focus{
+  outline: none;
+}
+
+.microphone {
+  width: 4%;
+  height: 2.1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.line {
+  width: .3%;
+  background-color: rgba(27, 39, 46, 0.4);
+  text-align: center;
+}
+
+.options {
+  width: 5%;
+  height: 2rem;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 5;
+  position: absolute;
+  visibility: hidden !important;
+
+
+}
+
+.dropdown-menu {
+  display: none;
+  z-index: 5;
+  float: left;
+  background-color: white;
+  transform: translateY(38%) translateX(-27%);
+  border: 1px solid #1b272e;
+}
+
+.dropdown-menu a {
+  display: block;
+  text-decoration: none;
+  font-size: .9rem;
+  padding: 0.7rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.dropdown-menu a:hover, .dropdown-menu a:active {
+  background-color: #efeeed;
+}
+
+.display {
+  display: inline-block;
+  visibility: visible;
+  z-index: 2;
+}
+
+.nodisplay {
+  display: none;
+  visibility: hidden;
+}
+
+.search-panel {
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+}
+@media only screen and (min-width: 1000px) {
+  .minimize {
+    width: 70%;
+    height: 50%;
+    margin-left: 15%;
+    font-size: 0.5rem;
+    margin-top: 0;
+  }
+  .minimize-mat-form, .minimize-first-mat-form, .minimize-last-mat-form {
+  }
+
+  .minimize-first-mat-form mat-form-field{
+    width: 60%;
+  }
+
+  .minimize-mat-form mat-form-field {
+    width: 60%;
+    transform: translateX(-35%);
+  }
+
+  .minimize-last-mat-form mat-form-field {
+    width: 60%;
+    transform: translateX(-35%);
+    margin-left: -10%;
+  }
+
+
+
+}
+
+.transform-right {
+  transform: translateX(25%);
+}
+
+.transform-right-dropdown .dropdown-menu {
+  transform: translateY(38%) translateX(-2%) !important;
+}
+
+.micro-enable::before {
+  content: '';
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: translateX(0.7rem) translateY(0.7rem);
+  border-radius: 50%;
+  background-color: #b60a00;
+  animation: ease-in-out blinking 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinking {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+}
+
+mat-form-field {
+  width: 80%;
+}
+:host ::ng-deep .mat-form-field-wrapper{
+  padding-bottom: 0;
+  margin-bottom: 1%;
+}
+
+:host ::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+.inactive-form {
+  visibility: hidden;
+  display: none;
+}
+
+.opacity-0-5 {
+  opacity: .5;
+}

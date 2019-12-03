@@ -1,0 +1,8 @@
+<div class="map-container">
+  <script>L_DISABLE_3D=true;</script>
+  <div class="map" leaflet
+       [leafletOptions]="this.mapService.options"
+       [leafletLayers]="this.mapService.layers"
+       (leafletMapReady)="this.mapService.mapReady($event)">
+</div>
+</div>

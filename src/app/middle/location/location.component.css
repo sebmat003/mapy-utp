@@ -1,0 +1,50 @@
+
+
+.location {
+  width: 25%;
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  height: 2rem;
+  display: inline-block;
+  color: #fff;
+  font-size: 0.7rem;
+  z-index: 3;
+  position: absolute;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+  visibility: hidden;
+}
+
+.location-background {
+  padding-top: 2%;
+  padding-left: 1%;
+  position: relative;
+  visibility: visible;
+  background-color: rgba(27, 39, 46, 0.2);
+  width: 60%;
+  height: 100%;
+  z-index: 3;
+  display: inline-block;
+  transform: translate(-2%);
+}
+
+
+.label  {
+  display: inline-block;
+  float: left;
+  visibility: visible;
+}
+
+.button-box {
+  margin-left: 0.7rem;
+  display: inline-block;
+  float: left;
+  visibility: visible;
+}
+
+.transform-right {
+  transform: translateX(100%);
+}
+
+

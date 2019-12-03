@@ -1,0 +1,242 @@
+.left-menu-mobile-container {
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #efeeed;
+  width: 75%;
+  position: fixed;
+  z-index: 10;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+  color: #1b272e;
+}
+
+.show {
+  display: block;
+  visibility: visible;
+}
+
+.noshow {
+  transform: translateX(-101%);
+}
+
+
+
+.left-menu-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  visibility: hidden;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
+  display: block;
+}
+
+.inactive-background {
+  visibility: hidden;
+  background-color: rgba(0,0,0,0);
+}
+
+.active-background {
+  display: block;
+  visibility: visible;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.options-container {
+  margin: 2%;
+  width: 100%;
+  height: 75%;
+  font-size: 1.7rem;
+}
+
+.table-options {
+  margin-left: 10%;
+  width: 80%;
+}
+
+.table-options tr {
+  cursor: pointer;
+}
+
+.table-options td {
+  overflow: hidden;
+  padding: 1%;
+}
+
+.table-options td:first-child {
+  width: 10%;
+  text-align: right;
+  padding-right: 5%;
+}
+
+.table-options td:last-child {
+  width: 50%;
+}
+
+.table-options img {
+  max-width: 75%;
+  max-height: 75%;
+  min-width: 75%;
+}
+
+.clearance {
+  cursor: default !important;
+}
+
+.clearance td {
+  padding: 4% 0;
+}
+
+.clearance td:first-child:before {
+  content: "";
+  border-top: .1rem solid rgba(191, 190, 189, 0.8);
+  width: 75%;
+  position: absolute;
+  transform: translateX(-12%);
+}
+
+
+@media only screen and (max-height: 850px) {
+  .table-options td {
+    padding: 0;
+  }
+  .clearance td {
+    padding: 4% 0;
+  }
+}
+
+@media only screen and (max-height: 700px) and (min-width: 750px) {
+  .table-options img {
+    max-width: 50%;
+    max-height: 50%;
+    min-width: 50%;
+  }
+  .options-container {
+    font-size: 1.6rem;
+  }
+  .table-options td {
+    padding: 1%;
+  }
+  .clearance td {
+    padding: 2% 0;
+  }
+}
+
+@media only screen and (max-height: 650px) and (min-width: 650px) {
+  .table-options img {
+    max-width: 40%;
+    max-height: 40%;
+    min-width: 40%;
+  }
+  .options-container {
+    font-size: 1.5rem;
+  }
+  .table-options td {
+    padding: 0;
+  }
+  .clearance td {
+    padding: 2% 0;
+  }
+}
+
+
+@media only screen and (max-height: 450px) and (min-width: 650px) {
+  .table-options img {
+    max-width: 30%;
+    max-height: 30%;
+    min-width: 30%;
+  }
+  .options-container {
+    font-size: 1.2rem;
+  }
+  .table-options td {
+    padding: 0;
+  }
+  .clearance td {
+    padding: 1% 0;
+  }
+}
+
+@media only screen and (max-height: 400px) and (max-width: 650px) {
+  .table-options img {
+    max-width: 15%;
+    max-height: 15%;
+    min-width: 15%;
+  }
+  .options-container {
+    font-size: .8rem;
+  }
+  .table-options td {
+    padding: 0;
+  }
+  .clearance td {
+    padding: 1% 0;
+  }
+}
+
+
+@media only screen and (min-height: 400px) and (max-width: 400px) {
+  .table-options img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+  }
+
+  .options-container {
+    font-size: 1.2rem;
+  }
+
+  .table-options td:last-child {
+    padding: 2%;
+  }
+}
+
+@media only screen and (min-height: 400px) and (max-height: 500px) and  (min-width: 450px) and (max-width:650px) {
+  .table-options img {
+    max-width: 60%;
+    max-height: 60%;
+    min-width: 60%;
+  }
+
+  .options-container {
+    font-size: 1.2rem;
+  }
+
+  .table-options td:last-child {
+    padding: 0;
+  }
+  .clearance td {
+    padding: 2% 0;
+  }
+}
+
+@media only screen and (max-width: 200px) {
+  .options-container {
+    font-size: .7rem;
+  }
+}
+
+@media only screen and (max-height:200px) {
+  .table-options img {
+    max-width: 30%;
+    max-height: 30%;
+    min-width: 30%;
+  }
+
+  .options-container {
+    font-size: .6rem;
+  }
+  .table-options td {
+    padding: 0;
+  }
+
+  .clearance td:first-child:before {
+    border-top: .05rem solid rgba(191, 190, 189, 0.8);
+  }
+}

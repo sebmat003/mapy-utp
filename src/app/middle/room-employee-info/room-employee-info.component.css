@@ -1,0 +1,172 @@
+.container {
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  animation: fade-in 0.1s linear;
+}
+
+@keyframes fade-in  {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.hidden-box {
+  visibility: hidden;
+
+}
+
+.info-box {
+  visibility: visible;
+  display: inline-block;
+  text-align: left;
+  width: 25%;
+  height: auto;
+  background-color: white;
+  margin-top: 10%;
+  border-radius: 5px;
+  animation: show-up 0.1s linear;
+}
+
+@keyframes show_up  {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 25%;
+  }
+}
+
+.title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+
+  background-color: #323c44;
+  text-align: center;
+  display: table;
+  position: relative;
+}
+
+.img {
+  display: inline-block;
+  position: relative;
+  width: 15%;
+  height: 100%;
+  float: left;
+}
+
+.img img {
+  max-height: 100%;
+  max-width: 100%;
+  color: white;
+  padding: 25%;
+}
+
+.name {
+  padding: 5%;
+  display: table;
+  width: 85%;
+  height: 100%;
+  position: relative;
+  float: left;
+  font-size: 1rem;
+  color: white;
+}
+
+.name p{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.information, .email {
+  font-size: 0.8rem;
+  margin-top: 3%;
+}
+
+.information {
+  padding-bottom: 3%;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.row {
+  margin-left: 3%;
+  width: 100%;
+  display: inline-block;
+  padding: 1%;
+  font-weight: 300;
+}
+
+.row p {
+  display: inline;
+  font-weight: 500;
+}
+
+
+
+.button-box {
+  display: inline-block;
+  width: 100%;
+  height: 10%;
+  text-align: right;
+}
+
+.navi-button {
+  margin: 1% 3%;
+  width: 30%;
+  height: 80%;
+  background-color: #323c44;
+  border-radius: 4px;
+  border-width: 0;
+  cursor: pointer;
+  text-align: center;
+  padding: 1%;
+  transition: all;
+  transition-duration: 0.2s;
+  display: table;
+  position: relative;
+  float: right;
+}
+
+.navi-button:hover {
+  background-color: #1b272e;
+}
+
+.navi-button label {
+  display: table-cell;
+  vertical-align: center;
+  color: white;
+  font-size: .8rem;
+  cursor: pointer;
+  position: relative;
+  float: left;
+  padding: 1%;
+  transform: translateY(15%);
+}
+
+.navi-button img {
+  display: table-cell;
+  vertical-align: center;
+  max-width: 20%;
+  max-height: 20%;
+  margin-left: 5%;
+  margin-right: 10%;
+  position: relative;
+  float: left;
+  padding: 1%;
+}
+
+.transform-right {
+  transform: translateX(12.5%);
+}

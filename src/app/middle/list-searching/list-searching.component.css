@@ -1,0 +1,185 @@
+.list-container {
+  width: 100%;
+  text-align: center;
+  z-index: 4;
+  color: #1b272e;
+  margin-top: -0.7rem;
+}
+
+.list {
+  width: 51%;
+  height: auto;
+  max-height: 20rem;
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  text-decoration: none;
+  list-style-type: none;
+  transition: transform;
+  transition-duration: 0.2s;
+  overflow: auto;
+}
+
+.list ul {
+  overflow-y: auto;
+}
+
+.list li {
+  background-color: white;
+  border: 1px solid #1b272e;
+  padding: 1%;
+  margin: 1%;
+  list-style-type: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.icon {
+  width: 10%;
+  display: inline-block;
+  text-align: center;
+
+}
+
+.icon img {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
+
+.item-info {
+  display: inline-block;
+  width: 70%;
+  text-align: left;
+  transform: translateY(-30%);
+}
+
+.item-info p {
+  padding: 1%;
+  display: inline;
+}
+
+.navi-buttons {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+  height: 100%;
+}
+
+.navi-button {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 50%;
+  background-color: #323c44;
+  border-radius: 5px;
+  border-width: 0;
+  cursor: pointer;
+  text-align: center;
+  padding: 1%;
+  transition: all;
+  transition-duration: 0.2s;
+}
+
+.navi-button:hover {
+  background-color: #1b272e;
+}
+
+.navi-button label {
+  display: inline-block;
+  color: white;
+  font-size: .8rem;
+  transform: translateY(-50%);
+  margin-left: 5%;
+  margin-top: 2%;
+  cursor: pointer;
+}
+
+.navi-button img {
+  display: inline-block;
+  max-width: 20%;
+  max-height: 20%;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+.transform-right {
+  transform: translateX(25%);
+}
+
+.small-text {
+  font-size: 0.7rem;
+}
+
+
+@media only screen and (min-width: 1000px) {
+  .minimize {
+    display: none;
+    visibility: hidden;
+  }
+
+  .minimize .navi-button label {
+    font-size: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .list-container {
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2 !important;
+    text-align: left;
+    margin: 7% 0 0;
+  }
+  .list {
+    z-index: 2 !important;
+    width: 100%;
+    height: 35rem;
+  }
+  .transform-right {
+    transform: none !important;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .list-container {
+    margin: 8% 0 0;
+  }
+
+  .list {
+    height: 35rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .list-container {
+    margin: 10% 0 0;
+  }
+
+  .list {
+    height: 30rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .list-container {
+    margin: 12% 0 0;
+  }
+
+  .list {
+    height: 25rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .list-container {
+    margin: 16% 0 0;
+  }
+
+  .list {
+    height: 20rem;
+  }
+}

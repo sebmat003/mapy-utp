@@ -1,0 +1,330 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170.0" height="170.0"> 
+ <style type="text/css"><![CDATA[@keyframes pulse2 {0% {stroke-width: 0.1} 50% {stroke-width: 1.0} 100% {stroke-width: 0.1}
+@-moz-keyframes pulse2 {0% {stroke-width: 0.1} 50% {stroke-width: 1.0} 100% {stroke-width: 0.1}
+]]></style> 
+ <g transform="translate(85.0,85.0)"> 
+  <g transform="matrix(0.707 0.409 -0.707 0.409 0 -0.816)"> 
+   <g transform="translate(-85.0,-85.0)"> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 71.80000000000001,113.7 78.4,113.7 78.4,114.1 83.4,114.1 83.4,113.7 90.10000000000001,113.7 90.10000000000001,110.2 119.30000000000001,110.2 119.30000000000001,110.1 124.0,110.1 124.0,124.8 136.4,124.8 136.4,110.2 137.60000000000002,110.2 137.60000000000002,100.0 119.30000000000001,100.0 119.30000000000001,88.1 119.10000000000001,88.1 119.10000000000001,86.5 122.10000000000001,86.5 122.10000000000001,63.0 107.60000000000001,63.0 107.60000000000001,84.1 108.9,84.1 108.9,96.9 108.5,96.9 108.5,97.30000000000001 107.60000000000001,97.30000000000001 107.60000000000001,96.9 107.30000000000001,96.9 106.60000000000001,94.1 90.10000000000001,94.1 90.10000000000001,92.5 84.10000000000001,92.5 84.10000000000001,92.30000000000001 77.6,92.30000000000001 77.6,92.5 71.7,92.5 71.7,94.1 55.300000000000004,94.1 54.5,96.6 54.5,96.7 54.0,96.7 54.0,97.1 53.0,97.1 53.0,96.7 52.800000000000004,96.7 52.800000000000004,75.9 42.5,75.9 42.5,99.7 23.0,99.7 23.0,106.4 25.3,106.4 25.3,115.30000000000001 24.8,115.4 24.5,115.5 24.3,115.6 24.0,115.80000000000001 23.8,116.0 23.5,116.4 23.3,116.80000000000001 23.2,117.1 23.2,118.1 23.5,118.7 23.7,119.0 24.0,119.30000000000001 24.3,119.5 24.7,119.7 25.2,119.80000000000001 25.3,119.80000000000001 25.3,124.8 37.7,124.8 37.7,110.1 42.5,110.1 42.5,110.2 71.80000000000001,110.2 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 42.5,79.8 45.5,79.8 45.5,94.5 42.5,94.5 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 39.3,103.2 37.400000000000006,103.2 37.400000000000006,106.4 25.3,106.4 25.3,107.9 30.200000000000003,107.9 30.200000000000003,107.80000000000001 32.0,107.80000000000001 37.5,107.80000000000001 37.5,110.0 37.7,110.0 37.7,110.1 39.900000000000006,110.1 39.900000000000006,108.5 39.400000000000006,108.5 39.400000000000006,103.2 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 129.3,121.5 130.9,121.5 130.9,113.7 129.3,113.7 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 37.400000000000006,103.2 37.400000000000006,99.7 42.5,99.7 42.5,94.5 45.5,94.5 45.5,97.6 48.6,97.6 48.6,100.5 64.7,100.5 72.30000000000001,100.5 72.30000000000001,100.0 78.6,100.0 78.6,100.1 83.1,100.1 83.1,100.0 84.0,100.0 89.5,100.0 89.5,100.5 113.2,100.5 113.2,97.5 116.2,97.5 116.2,83.9 118.4,83.9 118.4,84.1 118.7,84.1 118.7,86.5 119.10000000000001,86.5 119.10000000000001,88.1 119.30000000000001,88.1 119.30000000000001,100.0 119.2,100.0 119.2,103.1 89.7,103.1 89.7,103.7 82.6,103.7 82.6,103.6 72.1,103.6 72.1,103.1 39.400000000000006,103.1 39.400000000000006,103.2 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 54.5,100.5 57.1,100.5 57.1,98.30000000000001 54.5,98.30000000000001 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 79.1,103.6 82.6,103.6 82.6,114.1 79.1,114.1 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 129.10000000000002,111.6 127.7,111.6 127.7,113.1 129.3,113.1 129.3,111.6 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 124.60000000000001,108.0 126.10000000000001,108.0 126.10000000000001,109.5 124.60000000000001,109.5 124.60000000000001,109.2 124.4,109.2 124.4,108.1 124.60000000000001,108.1 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 116.2,91.1 118.7,91.1 118.7,88.7 116.2,88.7 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 115.9,85.9 115.0,85.9 115.0,88.1 115.0,88.2 115.80000000000001,88.2 115.9,88.2 115.9,87.9 116.0,87.9 116.0,85.9 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 78.9,109.2 77.6,109.2 77.6,111.9 78.9,111.9 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 42.3,103.1 43.1,103.1 43.1,100.6 42.3,100.6 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 79.30000000000001,108.9 82.5,108.9 82.5,110.6 79.30000000000001,110.6 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 30.200000000000003,107.80000000000001 32.0,107.80000000000001 32.0,119.5 30.1,119.5 30.1,115.80000000000001 30.3,115.80000000000001 30.3,113.4 28.6,113.4 28.6,111.30000000000001 30.200000000000003,111.30000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 42.5,75.9 45.6,75.9 45.6,79.8 42.5,79.8 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 45.5,85.0 52.800000000000004,85.0 52.800000000000004,75.9 45.6,75.9 45.6,79.8 45.5,79.8 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 45.5,85.0 52.800000000000004,85.0 52.800000000000004,96.7 53.0,96.7 53.0,97.6 45.5,97.6 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 23.0,99.7 28.6,99.7 28.6,103.9 23.0,103.9 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 23.0,103.9 26.7,103.9 26.7,106.4 23.0,106.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 26.7,103.9 28.6,103.9 28.6,106.4 26.7,106.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 28.6,99.7 32.8,99.7 32.8,106.4 28.6,106.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 32.8,99.7 37.400000000000006,99.7 37.400000000000006,106.4 32.8,106.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 39.400000000000006,103.1 42.900000000000006,103.1 42.900000000000006,110.2 42.5,110.2 42.5,110.1 39.900000000000006,110.1 39.900000000000006,108.5 39.400000000000006,108.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 42.900000000000006,103.1 45.900000000000006,103.1 45.900000000000006,110.2 42.900000000000006,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 45.900000000000006,103.1 54.6,103.1 54.6,110.2 45.900000000000006,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 54.6,103.1 60.400000000000006,103.1 60.400000000000006,110.2 54.6,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 60.400000000000006,103.1 63.2,103.1 63.2,110.2 60.400000000000006,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 63.2,103.1 72.1,103.1 72.1,110.2 63.2,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 72.1,103.6 79.1,103.6 79.1,114.1 78.4,114.1 78.4,113.7 71.80000000000001,113.7 71.80000000000001,110.2 72.1,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 68.80000000000001,97.7 70.7,97.7 70.7,100.5 68.80000000000001,100.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 62.0,94.1 65.7,94.1 65.7,97.1 66.1,97.1 66.1,99.9 66.1,100.5 61.7,100.5 61.7,98.30000000000001 62.0,98.30000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 71.7,94.1 71.7,92.5 75.30000000000001,92.5 75.30000000000001,100.0 72.30000000000001,100.0 72.30000000000001,100.5 71.9,100.5 71.9,94.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 75.30000000000001,92.5 77.6,92.5 77.6,92.30000000000001 78.9,92.30000000000001 78.9,93.1 78.4,93.1 78.4,100.0 75.30000000000001,100.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 25.3,112.4 28.6,112.4 28.6,113.4 25.3,113.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 25.3,107.9 30.200000000000003,107.9 30.200000000000003,111.30000000000001 28.6,111.30000000000001 28.6,112.4 25.3,112.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 32.1,107.80000000000001 37.5,107.80000000000001 37.5,110.0 37.7,110.0 37.7,113.9 32.0,113.9 32.0,107.80000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 32.0,113.9 37.7,113.9 37.7,119.5 32.0,119.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 28.9,119.5 37.7,119.5 37.7,124.8 28.9,124.8 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 28.9,124.8 25.3,124.8 25.3,119.5 28.9,119.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 25.3,113.4 30.3,113.4 30.3,115.80000000000001 25.3,115.80000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 107.30000000000001,103.1 113.10000000000001,103.1 113.10000000000001,110.2 107.30000000000001,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 113.10000000000001,103.1 118.9,103.1 118.9,110.2 113.10000000000001,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 83.5,92.30000000000001 84.10000000000001,92.30000000000001 84.10000000000001,92.5 90.10000000000001,92.5 90.10000000000001,94.1 89.7,94.1 89.7,100.0 83.5,100.0 83.5,93.4 83.0,93.4 83.0,92.30000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 85.8,103.7 82.6,103.7 82.6,107.2 85.8,107.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 82.6,107.2 82.6,109.30000000000001 85.8,109.30000000000001 85.8,107.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 85.8,103.7 87.7,103.7 87.7,107.2 87.4,107.2 87.4,113.7 83.4,113.7 83.4,114.1 82.6,114.1 82.6,109.30000000000001 85.8,109.30000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.4,107.2 89.4,107.2 89.7,107.2 89.7,110.2 90.10000000000001,110.2 90.10000000000001,113.7 87.4,113.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.7,103.7 89.7,103.7 89.7,107.2 87.7,107.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 89.7,103.1 93.8,103.1 93.8,105.7 89.7,105.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 93.8,103.1 95.60000000000001,103.1 95.60000000000001,105.7 93.8,105.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 95.60000000000001,103.1 98.60000000000001,103.1 98.60000000000001,110.2 95.60000000000001,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 89.7,105.7 95.60000000000001,105.7 95.60000000000001,110.2 89.7,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 98.60000000000001,103.1 103.7,103.1 103.7,105.80000000000001 104.7,105.80000000000001 104.7,106.9 101.4,106.9 101.4,105.5 98.60000000000001,105.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 98.60000000000001,105.5 101.4,105.5 101.4,110.2 98.60000000000001,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 101.4,106.9 104.7,106.9 104.7,110.2 101.4,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 103.7,103.1 107.30000000000001,103.1 107.30000000000001,105.80000000000001 103.7,105.80000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 104.7,105.80000000000001 107.30000000000001,105.80000000000001 107.30000000000001,110.2 104.7,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 119.2,100.0 119.2,103.1 124.4,103.1 124.4,100.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 118.9,103.1 124.4,103.1 124.4,110.1 119.30000000000001,110.1 119.30000000000001,110.2 118.9,110.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 124.4,100.0 137.60000000000002,100.0 137.60000000000002,110.2 136.4,110.2 136.4,110.0 124.60000000000001,110.0 124.60000000000001,110.1 124.4,110.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 129.3,110.0 124.60000000000001,110.0 124.60000000000001,110.1 124.0,110.1 124.0,113.7 129.3,113.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 124.0,113.7 124.0,117.6 129.3,117.6 129.3,113.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 124.0,117.6 124.0,120.9 129.3,120.9 129.3,117.6 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 124.0,120.9 124.0,124.8 129.3,124.8 129.3,120.9 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 129.3,121.5 136.4,121.5 136.4,124.8 129.3,124.8 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 130.9,113.7 130.9,121.5 136.4,121.5 136.4,113.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 129.3,110.0 136.4,110.0 136.4,110.2 136.4,113.7 129.3,113.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 89.7,94.1 94.3,94.1 94.3,97.7 96.10000000000001,97.7 96.10000000000001,99.9 96.10000000000001,100.5 89.5,100.5 89.5,100.0 89.7,100.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 96.10000000000001,94.80000000000001 96.10000000000001,96.5 96.10000000000001,97.7 96.10000000000001,100.5 100.0,100.5 100.0,94.1 96.10000000000001,94.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 94.3,94.1 96.10000000000001,94.1 96.10000000000001,97.7 94.3,97.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 100.0,94.1 103.60000000000001,94.1 103.60000000000001,100.5 100.0,100.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 103.60000000000001,94.1 106.60000000000001,94.1 107.30000000000001,96.9 107.60000000000001,96.9 107.60000000000001,97.6 107.10000000000001,97.6 107.10000000000001,100.5 103.60000000000001,100.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 60.0,94.1 62.0,94.1 62.0,98.30000000000001 60.0,98.30000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 55.300000000000004,94.1 54.5,96.6 54.5,98.30000000000001 60.0,98.30000000000001 60.0,97.30000000000001 58.1,97.30000000000001 58.1,94.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 58.1,94.1 60.0,94.1 60.0,97.30000000000001 58.1,97.30000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 60.2,98.30000000000001 61.7,98.30000000000001 61.7,100.5 60.2,100.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 58.900000000000006,98.30000000000001 58.900000000000006,99.9 58.900000000000006,100.5 60.2,100.5 60.2,98.30000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 57.1,98.30000000000001 57.1,100.5 58.900000000000006,100.5 58.900000000000006,98.30000000000001 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 108.9,91.5 114.0,91.5 114.0,88.4 116.2,88.4 116.2,97.30000000000001 116.2,97.5 108.60000000000001,97.5 108.60000000000001,97.30000000000001 108.5,97.30000000000001 108.5,96.9 108.9,96.9 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 114.0,91.5 108.9,91.5 108.9,88.4 114.0,88.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 116.2,88.4 116.2,83.9 108.9,83.9 108.9,88.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 107.60000000000001,75.7 115.30000000000001,75.7 115.30000000000001,83.9 108.9,83.9 108.9,84.1 107.60000000000001,84.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 118.60000000000001,63.0 122.10000000000001,63.0 122.10000000000001,67.9 118.60000000000001,67.9 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 118.60000000000001,67.9 122.10000000000001,67.9 122.10000000000001,71.9 118.60000000000001,71.9 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 118.60000000000001,71.9 122.10000000000001,71.9 122.10000000000001,75.4 118.60000000000001,75.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 118.60000000000001,75.4 122.10000000000001,75.4 122.10000000000001,79.4 118.60000000000001,79.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 120.60000000000001,84.4 120.60000000000001,86.5 122.10000000000001,86.5 122.10000000000001,84.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 118.60000000000001,79.4 122.10000000000001,79.4 122.10000000000001,84.4 119.80000000000001,84.4 119.80000000000001,83.3 118.60000000000001,83.3 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 120.60000000000001,86.5 118.7,86.5 118.7,84.1 118.4,84.1 118.4,83.6 118.5,83.6 118.5,83.3 119.80000000000001,83.3 119.80000000000001,84.4 120.60000000000001,84.4 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 118.60000000000001,63.0 107.60000000000001,63.0 107.60000000000001,75.7 115.30000000000001,75.7 115.30000000000001,83.9 118.4,83.9 118.4,83.6 118.5,83.6 118.60000000000001,83.3 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 113.2,97.5 108.60000000000001,97.5 108.60000000000001,97.30000000000001 108.5,97.30000000000001 107.60000000000001,97.30000000000001 107.60000000000001,97.6 107.10000000000001,97.6 107.10000000000001,100.5 113.2,100.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 48.6,97.6 53.0,97.6 53.0,97.1 54.0,97.1 54.0,96.7 54.5,96.7 54.5,97.1 54.5,100.5 48.6,100.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 78.9,92.30000000000001 83.0,92.30000000000001 83.0,93.4 83.5,93.4 83.5,100.0 83.1,100.0 83.1,100.1 78.6,100.1 78.6,100.0 78.4,100.0 78.4,93.1 78.9,93.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 30.1,115.80000000000001 25.3,115.80000000000001 25.3,115.30000000000001 24.8,115.4 24.5,115.5 24.3,115.6 24.0,115.80000000000001 23.8,116.0 23.5,116.4 23.3,116.80000000000001 23.2,117.1 23.2,118.1 23.5,118.7 23.7,119.0 24.0,119.30000000000001 24.3,119.5 24.7,119.7 25.2,119.80000000000001 25.3,119.80000000000001 25.3,119.5 30.1,119.5 Z " /> 
+    <image x="69.10595031247581" y="98.35595031247581" width="1.2880993750483622" height="1.2880993750483622" href="http://mapy.utp.edu.pl/images/lift_white.svg" /> 
+    <image x="63.271989011071945" y="97.02198901107195" width="1.4560219778561074" height="1.4560219778561074" href="http://mapy.utp.edu.pl/images/cloakroom_white.svg" /> 
+    <image x="68.16965527485812" y="95.66965527485812" width="1.1606894502837555" height="1.1606894502837555" href="http://mapy.utp.edu.pl/images/relax_white.svg" /> 
+    <image x="72.26177546462687" y="95.51177546462687" width="2.4764490707462588" height="2.4764490707462588" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="75.87101486592495" y="95.37101486592495" width="2.7579702681501135" height="2.7579702681501135" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="26.85" y="112.6" width="0.8" height="0.8" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="131.84572082547663" y="110.34572082547665" width="2.8085583490467165" height="2.8085583490467165" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="60.2" y="95.45" width="1.6" height="1.6" href="http://mapy.utp.edu.pl/images/restauracja_white.svg" /> 
+    <image x="56.122305806940986" y="95.87230580694099" width="1.2553883861180228" height="1.2553883861180228" href="http://mapy.utp.edu.pl/images/restauracja_white.svg" /> 
+    <image x="58.2830620668426" y="95.0330620668426" width="1.433875866314801" height="1.433875866314801" href="http://mapy.utp.edu.pl/images/restauracja_white.svg" /> 
+    <image x="60.60402020253554" y="98.60402020253554" width="0.7919595949289284" height="0.7919595949289284" href="http://mapy.utp.edu.pl/images/restauracja_white.svg" /> 
+    <image x="59.13121822170829" y="98.6312182217083" width="0.7375635565834212" height="0.7375635565834212" href="http://mapy.utp.edu.pl/images/restauracja_white.svg" /> 
+    <image x="57.54392982996035" y="98.54392982996035" width="0.9121403400793039" height="0.9121403400793039" href="http://mapy.utp.edu.pl/images/restauracja_white.svg" /> 
+    <image x="109.42199033822062" y="97.92199033822062" width="1.6560193235587506" height="1.6560193235587506" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="50.679268618852674" y="98.17926861885267" width="1.6414627622946583" height="1.6414627622946583" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="55.176938048724224" y="98.42693804872422" width="1.146123902551548" height="1.146123902551548" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="79.52433066034426" y="95.02433066034426" width="2.951338679311471" height="2.951338679311471" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="128.1" y="112.10000000000001" width="0.7999999999999955" height="0.7999999999999955" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="124.75916810842415" y="108.50916810842415" width="0.481663783151689" height="0.481663783151689" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="116.84884717615601" y="89.34884717615601" width="1.302305647687975" height="1.302305647687975" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="115.19471324955052" y="86.94471324955052" width="0.6105735008989561" height="0.6105735008989561" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="77.72999999999999" y="109.97999999999999" width="1.0400000000000091" height="1.0400000000000091" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="42.43" y="101.42999999999999" width="0.6400000000000035" height="0.6400000000000035" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="26.0383347775863" y="116.5383347775863" width="1.9233304448274025" height="1.9233304448274025" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="80.32000000000001" y="109.07000000000001" width="1.359999999999991" height="1.359999999999991" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <text x="44.0" y="78.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6200000000000003" font-family="Open Sans">
+     91
+    </text> 
+    <text x="49.0" y="81.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     28
+    </text> 
+    <text x="49.0" y="92.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     29
+    </text> 
+    <text x="26.0" y="102.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8400000000000006" font-family="Open Sans">
+     21c
+    </text> 
+    <text x="25.0" y="105.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5" font-family="Open Sans">
+     21a
+    </text> 
+    <text x="27.75" y="105.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.38000000000000045" font-family="Open Sans">
+     21b
+    </text> 
+    <text x="31.0" y="103.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8399999999999992" font-family="Open Sans">
+     22
+    </text> 
+    <text x="35.25" y="103.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9200000000000017" font-family="Open Sans">
+     23
+    </text> 
+    <text x="41.0" y="106.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     6
+    </text> 
+    <text x="44.0" y="106.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6000000000000001" font-family="Open Sans">
+     5
+    </text> 
+    <text x="50.0" y="106.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     4
+    </text> 
+    <text x="57.5" y="106.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     3a
+    </text> 
+    <text x="61.75" y="106.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5599999999999995" font-family="Open Sans">
+     3b
+    </text> 
+    <text x="67.5" y="106.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     2
+    </text> 
+    <text x="75.75" y="108.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     1
+    </text> 
+    <text x="27.5" y="110.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     20
+    </text> 
+    <text x="34.75" y="110.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     14
+    </text> 
+    <text x="35.0" y="116.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     15
+    </text> 
+    <text x="33.25" y="122.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     16
+    </text> 
+    <text x="27.0" y="122.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7199999999999996" font-family="Open Sans">
+     17
+    </text> 
+    <text x="27.75" y="114.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.48000000000000115" font-family="Open Sans">
+     18
+    </text> 
+    <text x="110.25" y="106.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     77a
+    </text> 
+    <text x="116.0" y="106.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     77b
+    </text> 
+    <text x="86.75" y="96.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     46
+    </text> 
+    <text x="84.25" y="105.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6400000000000006" font-family="Open Sans">
+     83a
+    </text> 
+    <text x="84.25" y="108.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.4200000000000017" font-family="Open Sans">
+     83b
+    </text> 
+    <text x="85.0" y="111.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     82a
+    </text> 
+    <text x="88.5" y="110.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5400000000000006" font-family="Open Sans">
+     82b
+    </text> 
+    <text x="88.5" y="105.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.4" font-family="Open Sans">
+     80
+    </text> 
+    <text x="91.75" y="104.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5200000000000017" font-family="Open Sans">
+     79b
+    </text> 
+    <text x="94.75" y="104.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.3600000000000023" font-family="Open Sans">
+     79c
+    </text> 
+    <text x="97.0" y="106.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6000000000000001" font-family="Open Sans">
+     79d
+    </text> 
+    <text x="92.75" y="108.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     79a
+    </text> 
+    <text x="101.75" y="104.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7600000000000023" font-family="Open Sans">
+     78e
+    </text> 
+    <text x="100.0" y="107.85" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5599999999999995" font-family="Open Sans">
+     78d
+    </text> 
+    <text x="103.0" y="108.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6599999999999995" font-family="Open Sans">
+     78c
+    </text> 
+    <text x="105.5" y="104.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5400000000000035" font-family="Open Sans">
+     78a
+    </text> 
+    <text x="106.0" y="108.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5200000000000017" font-family="Open Sans">
+     78b
+    </text> 
+    <text x="121.75" y="101.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6199999999999989" font-family="Open Sans">
+     69b
+    </text> 
+    <text x="121.75" y="106.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     69c
+    </text> 
+    <text x="131.25" y="105.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     69a
+    </text> 
+    <text x="125.96666666666668" y="111.26666666666668" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7400000000000007" font-family="Open Sans">
+     69d
+    </text> 
+    <text x="126.75" y="115.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999984" font-family="Open Sans">
+     89
+    </text> 
+    <text x="126.75" y="119.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6600000000000024" font-family="Open Sans">
+     87
+    </text> 
+    <text x="126.75" y="122.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999984" font-family="Open Sans">
+     88
+    </text> 
+    <text x="132.75" y="123.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6599999999999995" font-family="Open Sans">
+     85b
+    </text> 
+    <text x="133.5" y="117.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     85a
+    </text> 
+    <text x="91.75" y="97.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     47
+    </text> 
+    <text x="98.0" y="97.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999984" font-family="Open Sans">
+     48a
+    </text> 
+    <text x="95.25" y="96.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.3600000000000023" font-family="Open Sans">
+     48b
+    </text> 
+    <text x="101.75" y="97.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7200000000000017" font-family="Open Sans">
+     49
+    </text> 
+    <text x="105.25" y="97.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8" font-family="Open Sans">
+     50
+    </text> 
+    <text x="111.75" y="94.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     54b
+    </text> 
+    <text x="111.75" y="90.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6199999999999989" font-family="Open Sans">
+     54a
+    </text> 
+    <text x="112.5" y="85.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     59
+    </text> 
+    <text x="111.25" y="79.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     55e
+    </text> 
+    <text x="120.5" y="65.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     55a
+    </text> 
+    <text x="120.5" y="70.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     55b
+    </text> 
+    <text x="120.25" y="73.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     55c
+    </text> 
+    <text x="120.25" y="77.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     55d
+    </text> 
+    <text x="121.25" y="85.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.30000000000000004" font-family="Open Sans">
+     68c
+    </text> 
+    <text x="120.0" y="82.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     68a
+    </text> 
+    <text x="120.0" y="84.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.4400000000000006" font-family="Open Sans">
+     68b
+    </text> 
+    <text x="113.25" y="70.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     55f
+    </text> 
+    <path fill="#ababab" stroke="none" stroke-width="0" fill-rule="evenodd" d="M 148.0,131.5 22.5,131.5 20.0,131.0 20.0,134.5 22.5,135.0 148.0,135.0 Z " /> 
+    <path fill="#ababab" stroke="none" stroke-width="0" fill-rule="evenodd" d="M 148.0,131.5 168.0,131.5 168.0,135.0 148.0,135.0 Z " /> 
+    <path fill="#ababab" stroke="none" stroke-width="0" fill-rule="evenodd" d="M 144.5,131.5 149.0,131.5 149.0,99.0 149.0,93.0 144.5,93.0 Z " /> 
+    <path fill="#ababab" stroke="none" stroke-width="0" fill-rule="evenodd" d="M 40.5,131.5 41.5,129.0 43.0,126.5 45.5,123.5 49.5,121.0 54.5,119.0 59.5,117.5 66.0,116.0 73.5,115.5 85.0,115.5 86.5,115.5 86.5,117.5 73.5,117.5 66.0,118.0 59.5,119.5 54.5,121.0 49.5,123.0 46.5,125.0 44.5,127.5 43.0,130.0 42.5,131.5 Z " /> 
+    <path fill="#ababab" stroke="none" stroke-width="0" fill-rule="evenodd" d="M 119.5,131.5 117.5,131.5 117.0,130.0 115.5,127.0 113.0,124.5 110.0,122.0 105.5,120.0 100.0,119.0 94.0,118.0 89.0,117.5 86.5,117.5 86.5,115.5 89.0,115.5 94.0,116.0 100.0,117.0 105.5,118.0 110.0,120.0 113.5,122.5 116.5,125.5 118.5,129.0 Z " /> 
+    <path fill="#ababab" stroke="none" stroke-width="0" fill-rule="evenodd" d="M 144.5,93.0 121.5,61.5 123.0,60.0 123.5,60.0 124.5,60.0 149.0,93.0 Z " /> 
+    <path fill="#ababab" stroke="none" stroke-width="0" fill-rule="evenodd" d="M 122.5,62.5 107.0,62.5 107.0,60.0 122.5,60.0 123.0,60.0 123.5,60.0 Z " /> 
+   </g> 
+  </g> 
+ </g> 
+</svg>

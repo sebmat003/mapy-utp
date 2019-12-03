@@ -1,0 +1,87 @@
+{
+  "demo": {
+    "title": "Translation demo",
+    "text": "This is a simple demonstration app for ngx-translate"
+  },
+
+  "bus": {
+    "title": "Tram/bus timetable"
+  },
+
+  "change-location": {
+    "text": "Change location"
+  },
+
+  "footer": {
+    "title": "Info day"
+  },
+
+  "most-visited": {
+    "title": "Most visited",
+    "shop": "Shop",
+    "vendings" : "Vendings",
+    "auditorium": "Auditorium",
+    "novum": " Novum",
+    "reading": " Reading room",
+    "navigate": "Navigate"
+  },
+
+  "navigation-panel": {
+    "text1": "Choose starting point / click on the map",
+    "text2": "Choose destination point / click on the map"
+  },
+
+  "restaurant": {
+    "title": "University Restaurant",
+    "street": "st.",
+    "menu-click": "Click to view"
+  },
+
+  "floor": {
+    "f4": "Floor 4",
+    "f3": "Floor 3",
+    "f2": "Floor 2",
+    "f1": "Floor 1",
+    "f0": "Parterre",
+    "f-1": "Basement",
+    "change-floor": "Change floor"
+  },
+
+  "location": {
+    "text": "Location",
+    "change": "change"
+  },
+
+  "searching": {
+    "search": "Search on UTP...",
+    "name": "Surname and/or first name",
+    "email": "E-mail/Phone",
+    "audience": "Room number",
+    "building": "Building",
+    "searching": "General searching",
+    "employee": "Employee",
+    "room": "Room",
+    "no-results": "No results",
+    "select": "Select"
+  },
+
+  "menu-mobile": {
+    "wc": "Toilets",
+    "changing-room": "Changing room",
+    "elevator": "Elevator",
+    "disabled": "Disabled",
+    "xerox copy": "Xerox Copy",
+    "shop": "Shop",
+    "first-aid": "First aid",
+    "menu": "Menu Restaurant",
+    "change-language": "Change language"
+  },
+
+  "min-max-button": {
+    "min": "Minimize",
+    "max": "Maximize"
+  },
+  "list-searching": {
+    "navigate": "Navigate"
+  }
+}

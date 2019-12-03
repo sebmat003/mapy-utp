@@ -1,0 +1,385 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200.0" height="200.0"> 
+ <style type="text/css"><![CDATA[@keyframes pulse2 {0% {stroke-width: 0.1} 50% {stroke-width: 1.0} 100% {stroke-width: 0.1}
+@-moz-keyframes pulse2 {0% {stroke-width: 0.1} 50% {stroke-width: 1.0} 100% {stroke-width: 0.1}
+]]></style> 
+ <g transform="translate(100.0,100.0)"> 
+  <g transform="matrix(0.707 0.409 -0.707 0.409 0 -0.816)"> 
+   <g transform="translate(-100.0,-100.0)"> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 122.0,161.25 136.75,161.25 136.75,167.0 145.75,167.0 145.75,166.5 146.25,166.5 146.25,167.0 155.25,167.0 155.25,161.25 170.0,161.25 170.0,179.0 160.25,179.0 160.25,179.25 159.75,179.25 159.75,179.75 155.75,179.75 155.75,179.25 155.25,179.25 155.25,178.5 146.25,178.5 146.25,179.0 145.75,179.0 145.75,178.5 136.75,178.5 136.75,179.25 136.25,179.25 136.25,179.75 132.25,179.75 132.25,179.25 131.75,179.25 131.75,179.0 122.0,179.0 122.0,175.75 118.25,175.75 118.25,172.0 119.75,172.0 119.75,171.0 122.0,171.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 132.0,161.25 136.75,161.25 136.75,167.0 140.0,167.0 140.0,171.25 135.75,171.25 135.75,179.75 132.5,179.75 132.5,171.25 132.0,171.25 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 139.75,171.25 142.5,171.25 142.5,173.0 139.75,173.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 159.25,171.25 163.0,171.25 163.0,172.75 159.25,172.75 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 150.25,167.0 155.25,167.0 155.25,168.25 155.75,168.25 155.75,169.0 159.5,169.0 159.5,171.25 150.25,171.25 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 155.25,161.25 159.75,161.25 159.75,168.0 159.5,168.0 159.5,169.0 155.75,169.0 155.75,168.25 155.25,168.25 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 159.5,168.0 163.0,168.0 163.0,171.25 159.5,171.25 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 122.0,161.25 128.75,161.25 128.75,171.25 122.0,171.25 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 128.75,161.25 132.0,161.25 132.0,168.0 128.75,168.0 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 128.75,168.0 132.0,168.0 132.0,171.25 128.75,171.25 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 135.75,171.25 139.75,171.25 139.75,178.5 136.75,178.5 136.75,179.25 136.25,179.25 136.25,179.75 135.75,179.75 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 139.75,173.0 142.5,173.0 142.5,178.5 139.75,178.5 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 142.5,171.25 146.0,171.25 146.0,179.0 145.75,179.0 145.75,178.5 142.5,178.5 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 146.0,171.25 152.0,171.25 152.0,178.5 146.25,178.5 146.25,179.0 146.0,179.0 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 152.0,171.25 156.0,171.25 156.0,179.75 155.75,179.75 155.75,179.25 155.25,179.25 155.25,178.5 152.0,178.5 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 156.0,171.25 159.25,171.25 159.25,179.75 156.0,179.75 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 163.0,171.25 170.0,171.25 170.0,179.0 163.0,179.0 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 159.25,172.75 163.0,172.75 163.0,179.0 160.25,179.0 160.25,179.25 159.75,179.25 159.75,179.75 159.25,179.75 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 140.0,167.0 145.75,167.0 145.75,166.5 146.0,166.5 146.0,171.25 140.0,171.25 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 146.0,166.5 146.25,166.5 146.25,167.0 150.25,167.0 150.25,171.25 146.0,171.25 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 159.75,161.25 163.0,161.25 163.0,168.0 159.75,168.0 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 163.0,161.25 170.0,161.25 170.0,171.25 163.0,171.25 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 122.0,171.25 125.75,171.25 125.75,179.0 122.0,179.0 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 125.75,171.25 128.75,171.25 128.75,179.0 125.75,179.0 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 128.75,171.25 132.5,171.25 132.5,173.5 128.75,173.5 Z " /> 
+    <path fill="#872163" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 128.75,173.5 132.5,173.5 132.5,179.75 132.25,179.75 132.25,179.25 131.75,179.25 131.75,179.0 128.75,179.0 Z " /> 
+    <text x="125.5" y="167.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     18
+    </text> 
+    <text x="130.5" y="164.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.65" font-family="Open Sans">
+     19
+    </text> 
+    <text x="130.5" y="169.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.65" font-family="Open Sans">
+     17
+    </text> 
+    <text x="138.25" y="174.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8" font-family="Open Sans">
+     16C
+    </text> 
+    <text x="141.25" y="175.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.55" font-family="Open Sans">
+     16B
+    </text> 
+    <text x="144.25" y="174.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     16A
+    </text> 
+    <text x="149.0" y="174.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     15B
+    </text> 
+    <text x="153.75" y="174.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8" font-family="Open Sans">
+     15
+    </text> 
+    <text x="157.75" y="175.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.65" font-family="Open Sans">
+     14C
+    </text> 
+    <text x="166.5" y="175.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     14A
+    </text> 
+    <text x="161.25" y="175.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.75" font-family="Open Sans">
+     14B
+    </text> 
+    <text x="142.75" y="169.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9500000000000001" font-family="Open Sans">
+     20
+    </text> 
+    <text x="148.0" y="169.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8500000000000001" font-family="Open Sans">
+     16
+    </text> 
+    <text x="161.25" y="164.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.65" font-family="Open Sans">
+     12
+    </text> 
+    <text x="166.5" y="166.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     13
+    </text> 
+    <text x="124.0" y="175.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.75" font-family="Open Sans"></text> 
+    <text x="127.25" y="175.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6000000000000001" font-family="Open Sans"></text> 
+    <text x="130.5" y="172.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.45" font-family="Open Sans"></text> 
+    <text x="130.5" y="176.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.75" font-family="Open Sans"></text> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 171.3,118.3 203.3,118.3 220.4,118.3 220.4,113.0 235.0,113.0 235.0,113.5 234.7,113.5 234.7,116.6 234.4,116.6 234.4,119.6 234.10000000000002,119.6 234.10000000000002,122.6 233.8,122.6 233.8,125.6 233.5,125.6 233.5,128.6 233.2,128.6 233.2,131.6 232.9,131.6 232.9,134.6 224.3,134.6 224.3,135.5 213.3,135.5 212.6,134.6 210.9,134.6 210.4,135.5 171.3,135.5 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 177.4,125.1 177.4,128.7 185.3,128.7 185.3,125.1 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 185.3,125.1 209.9,125.1 209.9,128.7 185.3,128.7 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 209.9,125.1 209.9,123.4 215.8,123.4 215.8,128.6 223.6,128.6 223.6,131.1 220.0,131.1 220.0,135.5 213.8,135.5 213.8,134.0 213.3,132.0 209.9,132.0 210.9,129.4 209.9,129.4 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 215.8,123.4 218.9,123.4 219.0,128.6 215.8,128.6 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 218.9,123.4 223.2,123.4 223.6,128.6 219.0,128.6 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 227.8,125.6 229.10000000000002,125.6 229.10000000000002,128.5 227.8,128.5 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 223.6,128.6 227.3,128.6 227.3,131.5 223.9,131.5 223.8,131.1 223.6,131.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 227.8,125.6 227.8,128.5 225.5,128.5 225.4,125.6 Z " /> 
+    <image x="216.16930517957488" y="124.79430517957486" width="2.41138964085027" height="2.41138964085027" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="225.89090191391068" y="126.31590191391068" width="1.4681961721786383" height="1.4681961721786383" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 87.0,83.0 87.0,133.0 71.5,133.0 71.5,83.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 78.0,87.5 78.0,88.0 77.6,88.0 77.6,87.5 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 87.0,105.75 87.0,110.0 84.75,110.0 84.75,108.25 82.25,108.25 82.25,105.75 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 82.25,105.75 82.25,108.25 81.5,108.25 81.5,105.75 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 80.5,115.75 78.0,115.75 78.0,133.0 80.5,133.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 80.5,110.0 78.0,110.0 78.0,114.75 80.5,114.75 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 80.5,114.75 80.5,115.75 78.0,115.75 78.0,114.75 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 81.5,105.75 81.5,110.0 71.5,110.0 71.5,105.75 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 80.5,105.75 78.0,105.75 78.0,97.25 80.5,97.25 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 80.5,92.25 78.0,92.25 78.0,95.75 80.5,95.75 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 80.5,95.75 80.5,97.25 78.0,97.25 78.0,95.75 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,83.0 87.0,87.75 80.5,87.75 80.5,83.0 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,87.75 87.0,92.25 80.5,92.25 80.5,87.75 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 80.5,83.0 80.5,92.25 71.5,92.25 71.5,83.0 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,92.25 87.0,101.0 80.5,101.0 80.5,92.25 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,101.0 87.0,105.75 83.5,105.75 83.5,101.0 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 83.5,101.0 83.5,105.75 80.5,105.75 80.5,101.0 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 84.75,108.25 84.75,110.0 81.5,110.0 81.5,108.25 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,110.0 87.0,114.75 83.5,114.75 83.5,110.0 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,114.75 87.0,119.25 80.5,119.25 80.5,116.5 84.0,116.5 84.0,114.75 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 84.0,114.75 84.0,116.5 80.5,116.5 80.5,114.75 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 83.5,111.5 83.5,114.75 80.5,114.75 80.5,111.5 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 83.5,110.0 83.5,111.5 80.5,111.5 80.5,110.0 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,119.25 87.0,123.75 80.5,123.75 80.5,119.25 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,123.75 87.0,128.25 80.5,128.25 80.5,123.75 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,128.25 87.0,133.0 80.5,133.0 80.5,128.25 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 75.0,92.25 75.0,96.75 71.5,96.75 71.5,92.25 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 78.0,92.25 78.0,96.75 75.0,96.75 75.0,92.25 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 78.0,96.75 78.0,101.25 71.5,101.25 71.5,96.75 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 78.0,101.25 78.0,105.75 71.5,105.75 71.5,101.25 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 78.0,110.0 78.0,114.75 71.5,114.75 71.5,110.0 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 78.0,114.75 78.0,128.25 71.5,128.25 71.5,114.75 Z " /> 
+    <path fill="#f41b0a" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 78.0,128.25 78.0,133.0 71.5,133.0 71.5,128.25 Z " /> 
+    <image x="82.91690481051548" y="108.66690481051548" width="1.1661903789690602" height="1.1661903789690602" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="81.575" y="106.7" width="0.6000000000000001" height="0.6000000000000001" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="84.18698541872654" y="111.68698541872654" width="2.12602916254693" height="2.12602916254693" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="81.21897503240933" y="111.96897503240933" width="1.5620499351813308" height="1.5620499351813308" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="78.85" y="114.85" width="0.8" height="0.8" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="78.66690481051548" y="95.91690481051548" width="1.1661903789690602" height="1.1661903789690602" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <text x="83.75" y="85.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9500000000000001" font-family="Open Sans">
+     5b
+    </text> 
+    <text x="83.75" y="90.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     5a
+    </text> 
+    <text x="76.5" y="87.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     05
+    </text> 
+    <text x="83.75" y="96.625" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     7
+    </text> 
+    <text x="85.25" y="103.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     8b
+    </text> 
+    <text x="82.0" y="103.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6000000000000001" font-family="Open Sans">
+     8a
+    </text> 
+    <text x="83.75" y="117.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     10
+    </text> 
+    <text x="82.25" y="115.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.35000000000000003" font-family="Open Sans">
+     18
+    </text> 
+    <text x="82.0" y="110.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.30000000000000004" font-family="Open Sans"></text> 
+    <text x="83.75" y="121.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     11
+    </text> 
+    <text x="83.75" y="126.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     12
+    </text> 
+    <text x="84.0" y="130.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9500000000000001" font-family="Open Sans">
+     13
+    </text> 
+    <text x="73.25" y="94.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     6b
+    </text> 
+    <text x="76.5" y="94.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6000000000000001" font-family="Open Sans">
+     6a
+    </text> 
+    <text x="74.75" y="99.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     4
+    </text> 
+    <text x="74.75" y="103.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     3
+    </text> 
+    <text x="74.75" y="112.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9500000000000001" font-family="Open Sans">
+     17
+    </text> 
+    <text x="74.75" y="121.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     16
+    </text> 
+    <text x="74.75" y="130.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9500000000000001" font-family="Open Sans">
+     15
+    </text> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 65.5,160.0 65.5,171.0 71.0,171.0 78.0,171.0 83.5,171.0 83.5,175.5 83.5,187.0 79.0,187.0 74.5,187.0 70.0,187.0 65.5,187.0 60.5,187.0 60.0,175.5 59.0,160.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 65.5,165.0 65.5,167.5 63.5,167.5 63.5,165.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 79.0,175.5 79.0,174.0 73.0,174.0 73.0,175.5 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 73.0,171.0 73.0,175.5 70.0,175.5 70.0,173.0 71.0,173.0 71.0,171.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 66.5,175.5 66.5,174.0 65.5,174.0 65.5,175.5 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 64.0,165.0 64.0,164.0 62.5,164.0 62.5,165.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 59.5,165.0 62.5,165.0 62.5,164.0 64.0,164.0 64.0,165.0 65.5,165.0 65.5,160.0 59.0,160.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 65.5,167.5 65.5,175.5 60.0,175.5 59.5,167.5 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 63.5,165.0 62.5,165.0 62.5,166.5 63.5,166.5 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 63.5,166.5 63.5,167.5 59.5,167.5 59.5,165.0 62.5,165.0 62.5,166.5 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 60.0,175.5 60.5,187.0 83.5,187.0 83.5,175.5 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 74.5,171.0 74.5,172.5 73.0,172.5 73.0,171.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 74.5,172.5 74.5,174.0 73.0,174.0 73.0,172.5 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 71.0,171.0 71.0,173.0 70.0,173.0 70.0,171.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 79.0,171.0 79.0,174.0 76.5,174.0 76.5,171.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 76.5,171.0 74.5,171.0 74.5,174.0 76.5,174.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 83.5,171.0 83.5,175.5 79.0,175.5 79.0,171.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 70.0,171.0 70.0,175.5 67.5,175.5 67.5,171.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 67.5,171.0 67.5,175.5 66.5,175.5 66.5,171.0 Z " /> 
+    <path fill="#d4588c" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 66.5,171.0 66.5,174.0 65.5,174.0 65.5,171.0 Z " /> 
+    <image x="62.743875030502686" y="165.8438750305027" width="0.5122499389946308" height="0.5122499389946308" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="73.43121822170828" y="171.5312182217083" width="0.7375635565834298" height="0.7375635565834298" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="73.4559069893183" y="172.65590698931828" width="0.688186021363412" height="0.688186021363412" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="76.93162509150807" y="171.73162509150805" width="1.5367498169838851" height="1.5367498169838851" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="65.5" y="172.1" width="0.8" height="0.8" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <text x="63.5" y="164.2" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.2" font-family="Open Sans">
+     2
+    </text> 
+    <text x="63.7" y="162.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     1
+    </text> 
+    <text x="62.3" y="171.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     4
+    </text> 
+    <text x="60.599999999999994" y="165.8" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5" font-family="Open Sans">
+     3
+    </text> 
+    <text x="71.9" y="181.2" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     10
+    </text> 
+    <text x="70.6" y="171.9" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.2" font-family="Open Sans">
+     7
+    </text> 
+    <text x="75.5" y="172.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.4" font-family="Open Sans">
+     8
+    </text> 
+    <text x="81.4" y="173.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     9
+    </text> 
+    <text x="68.75" y="173.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5" font-family="Open Sans">
+     6
+    </text> 
+    <text x="67.0" y="173.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.2" font-family="Open Sans">
+     5
+    </text> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 77.8,76.5 80.0,73.0 98.5,73.0 98.5,83.2 89.2,83.2 89.2,83.0 86.0,83.0 86.0,82.2 85.8,82.2 85.8,81.5 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 89.4,83.2 89.2,83.2 89.2,83.0 86.0,83.0 86.0,82.2 85.8,82.2 85.8,81.5 86.1,81.4 86.6,81.4 86.6,80.1 84.5,78.9 87.1,78.9 87.1,77.7 87.2,77.7 87.2,77.6 89.4,77.6 Z " /> 
+    <path fill="#ff6d00" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 77.8,76.5 80.0,73.0 83.8,73.0 83.8,77.6 82.5,79.5 Z " /> 
+    <path fill="#ff6d00" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 83.8,73.0 88.4,73.0 88.4,77.6 83.8,77.6 Z " /> 
+    <path fill="#ff6d00" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 88.4,73.0 93.9,73.0 93.9,77.6 88.4,77.6 Z " /> 
+    <path fill="#ff6d00" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 93.9,73.0 98.5,73.0 98.5,77.6 93.9,77.6 Z " /> 
+    <path fill="#ff6d00" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 98.5,77.6 98.5,83.2 89.4,83.2 89.4,77.6 Z " /> 
+    <path fill="#ff6d00" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 85.8,81.5 86.1,81.4 86.6,81.4 86.6,80.1 84.5,78.9 87.1,78.9 87.1,77.7 87.2,77.7 87.2,77.6 83.8,77.6 82.5,79.5 Z " /> 
+    <image x="84.3" y="79.2" width="0.4" height="0.4" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <text x="81.6" y="75.3" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     3A
+    </text> 
+    <text x="86.1" y="75.3" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9199999999999989" font-family="Open Sans">
+     3
+    </text> 
+    <text x="91.15" y="75.3" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9199999999999989" font-family="Open Sans">
+     4
+    </text> 
+    <text x="96.2" y="75.3" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9199999999999989" font-family="Open Sans">
+     4A
+    </text> 
+    <text x="93.8" y="79.7" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     5
+    </text> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 76.7,67.8 73.3,67.8 73.3,59.4 79.5,59.4 79.5,14.0 98.0,14.0 98.0,17.799999999999997 98.0,29.4 98.0,32.4 98.0,59.7 98.0,67.0 79.8,67.0 79.8,67.8 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 86.4,23.099999999999994 86.4,21.4 87.9,21.4 87.9,23.099999999999994 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 98.0,19.199999999999996 98.0,17.599999999999994 95.4,17.599999999999994 95.4,19.199999999999996 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 95.4,19.199999999999996 95.4,17.599999999999994 84.0,17.599999999999994 84.0,19.199999999999996 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 91.3,52.2 93.8,52.2 93.8,56.7 93.0,56.7 93.0,57.0 92.7,57.0 92.7,58.0 93.4,58.0 93.4,60.7 94.6,60.7 94.6,61.6 91.3,61.6 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 94.6,61.6 94.6,59.7 98.0,59.7 98.0,61.6 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 96.4,61.6 96.4,63.1 98.0,63.1 98.0,61.6 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 73.3,67.8 73.3,59.4 79.5,59.4 79.5,67.0 79.8,67.0 79.8,67.8 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 81.7,67.0 81.7,61.6 79.5,61.6 79.5,67.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 79.5,61.6 79.5,57.0 91.3,57.0 91.3,61.6 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 79.5,57.0 79.5,52.2 91.3,52.2 91.3,57.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 79.5,52.2 86.2,52.2 86.0,42.599999999999994 89.8,42.599999999999994 89.7,26.299999999999997 79.5,26.299999999999997 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 86.2,52.2 86.0,42.599999999999994 89.8,42.599999999999994 89.8,33.199999999999996 98.0,33.199999999999996 98.0,52.2 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 89.8,33.199999999999996 89.7,26.299999999999997 98.0,26.299999999999997 98.0,33.199999999999996 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 86.4,23.099999999999994 86.4,26.299999999999997 98.0,26.299999999999997 98.0,19.199999999999996 86.4,19.199999999999996 86.4,21.4 87.9,21.4 87.9,23.099999999999994 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 84.0,26.299999999999997 84.0,19.199999999999996 86.4,19.199999999999996 86.4,26.299999999999997 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 79.5,26.299999999999997 79.5,23.5 84.0,23.5 84.0,26.299999999999997 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 84.0,19.199999999999996 79.5,19.199999999999996 79.5,23.5 84.0,23.5 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 79.5,19.199999999999996 79.5,14.0 84.0,14.0 84.0,19.199999999999996 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 84.0,17.599999999999994 84.0,14.0 86.4,14.0 86.4,17.599999999999994 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 86.4,17.599999999999994 89.1,17.599999999999994 89.1,14.0 86.4,14.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 89.1,17.599999999999994 89.1,14.0 92.5,14.0 92.5,17.599999999999994 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 92.5,17.599999999999994 94.0,17.599999999999994 94.0,16.599999999999994 93.6,16.599999999999994 93.6,14.0 92.5,14.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 94.0,17.599999999999994 95.4,17.599999999999994 95.4,14.0 93.6,14.0 93.6,16.599999999999994 94.0,16.599999999999994 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 95.4,15.5 98.0,15.5 98.0,14.0 95.4,14.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 95.4,17.599999999999994 98.0,17.599999999999994 98.0,15.5 95.4,15.5 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 93.8,54.3 93.8,52.2 98.0,52.2 98.0,54.3 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 93.8,54.3 93.8,56.9 98.0,56.9 98.0,54.3 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 94.6,56.9 94.6,59.7 98.0,59.7 98.0,56.9 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 93.4,60.7 94.6,60.7 94.6,56.9 93.8,56.9 93.8,56.7 93.0,56.7 93.0,57.0 92.7,57.0 92.7,58.0 93.4,58.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 98.0,63.1 98.0,67.0 95.3,67.0 95.3,63.1 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 95.3,63.1 90.7,63.1 90.7,67.0 95.3,67.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 92.6,63.1 92.6,61.6 96.4,61.6 96.4,63.1 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 90.7,63.1 86.7,63.1 86.7,67.0 90.7,67.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 86.7,63.1 84.8,63.1 84.8,61.6 81.7,61.6 81.7,67.0 86.7,67.0 Z " /> 
+    <path fill="#fec901" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 84.8,61.6 84.8,63.1 92.6,63.1 92.6,61.6 Z " /> 
+    <image x="86.69656863804983" y="21.796568638049816" width="0.9068627239003674" height="0.9068627239003674" href="http://mapy.utp.edu.pl/images/small_stairs_white.svg" /> 
+    <image x="92.66058874503047" y="15.660588745030461" width="0.6788225099390792" height="0.6788225099390792" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="94.01667816105622" y="15.01667816105622" width="0.9666436778875616" height="0.9666436778875616" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="96.03156900131727" y="15.881569001317263" width="1.3368619973654692" height="1.3368619973654692" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="93.74000000000001" y="57.99" width="0.5199999999999958" height="0.5199999999999958" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="93.9" y="61.9" width="1.2000000000000002" height="1.2000000000000002" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <text x="76.25" y="63.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     14
+    </text> 
+    <text x="80.5" y="64.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.4400000000000006" font-family="Open Sans">
+     8b
+    </text> 
+    <text x="85.75" y="59.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9200000000000004" font-family="Open Sans">
+     8a
+    </text> 
+    <text x="85.5" y="54.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9599999999999995" font-family="Open Sans">
+     10
+    </text> 
+    <text x="85.0" y="36.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     4
+    </text> 
+    <text x="92.0" y="42.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     12
+    </text> 
+    <text x="94.25" y="29.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     12A
+    </text> 
+    <text x="89.75" y="22.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     3
+    </text> 
+    <text x="85.0" y="22.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.48000000000000115" font-family="Open Sans">
+     2
+    </text> 
+    <text x="81.75" y="24.9" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5599999999999995" font-family="Open Sans">
+     1c
+    </text> 
+    <text x="81.75" y="21.349999999999994" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8600000000000009" font-family="Open Sans">
+     1b
+    </text> 
+    <text x="81.775" y="16.599999999999994" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     1a
+    </text> 
+    <text x="85.0" y="15.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.48000000000000115" font-family="Open Sans">
+     19
+    </text> 
+    <text x="87.75" y="15.799999999999997" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5399999999999977" font-family="Open Sans">
+     20a
+    </text> 
+    <text x="90.8" y="15.799999999999997" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6800000000000012" font-family="Open Sans">
+     20b
+    </text> 
+    <text x="96.7" y="14.75" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.30000000000000004" font-family="Open Sans">
+     5
+    </text> 
+    <text x="95.9" y="53.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.4199999999999989" font-family="Open Sans">
+     11
+    </text> 
+    <text x="96.0" y="55.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5200000000000004" font-family="Open Sans">
+     9
+    </text> 
+    <text x="96.25" y="58.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5600000000000008" font-family="Open Sans">
+     13
+    </text> 
+    <text x="97.25" y="65.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5400000000000006" font-family="Open Sans">
+     6
+    </text> 
+    <text x="92.0" y="65.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999998" font-family="Open Sans">
+     6a
+    </text> 
+    <text x="88.5" y="65.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999998" font-family="Open Sans">
+     7b
+    </text> 
+    <text x="83.75" y="64.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     7c
+    </text> 
+    <text x="88.5" y="62.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.30000000000000004" font-family="Open Sans">
+     7a
+    </text> 
+    <path fill="#ababab" stroke="none" stroke-width="0" fill-rule="evenodd" d="M -50.0,190.5 98.0,192.0 217.0,192.5 340.0,193.0 340.5,204.0 235.5,203.0 96.0,202.0 -3.0,201.5 -50.0,200.5 Z " /> 
+   </g> 
+  </g> 
+ </g> 
+</svg>

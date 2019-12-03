@@ -1,0 +1,15 @@
+<div class="left-menu-container" [ngClass]="{ 'show': showLeftMenu, 'noshow': !showLeftMenu}">
+  <app-logo></app-logo>
+  <app-navigation-panel></app-navigation-panel>
+  <app-search-panel></app-search-panel>
+  <app-most-visited></app-most-visited>
+  <app-restaurant></app-restaurant>
+</div>
+<div class="button-container" [ngClass]="{ 'open-button': showLeftMenu, 'hide-button': !showLeftMenu}">
+  <div class="button" (click)="toggleMenu()">
+    <div class="triangle" [ngClass]="{ 'triangle-right': showLeftMenu, 'triangle-left': !showLeftMenu}"></div>
+  </div>
+</div>
+
+
+

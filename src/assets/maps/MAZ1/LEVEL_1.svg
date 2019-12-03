@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130.0" height="130.0"> 
+ <style type="text/css"><![CDATA[@keyframes pulse2 {0% {stroke-width: 0.1} 50% {stroke-width: 1.0} 100% {stroke-width: 0.1}
+@-moz-keyframes pulse2 {0% {stroke-width: 0.1} 50% {stroke-width: 1.0} 100% {stroke-width: 0.1}
+]]></style> 
+ <g transform="translate(65.0,65.0)"> 
+  <g transform="matrix(0.707 0.409 -0.707 0.409 0 -0.816)"> 
+   <g transform="translate(-65.0,-65.0)"> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 75.5,56.0 75.5,49.0 87.5,49.0 87.5,56.0 98.0,56.0 98.0,85.0 87.0,85.0 87.0,84.0 40.0,84.0 40.0,85.0 29.0,85.0 29.0,56.0 37.0,56.0 37.0,53.5 40.0,53.5 40.0,56.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 76.5,50.0 76.5,56.0 76.0,56.0 76.0,69.0 81.5,69.0 82.0,62.0 80.5,62.0 80.5,50.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 87.0,69.0 87.0,72.5 40.0,72.5 40.0,69.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 40.0,72.5 37.0,72.5 37.0,56.0 40.0,56.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 37.0,72.5 37.0,78.0 40.0,78.0 40.0,72.5 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 34.5,78.0 34.5,80.5 40.0,80.5 40.0,78.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 87.0,60.5 90.0,60.5 90.0,78.5 87.0,78.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 80.5,50.0 80.5,54.5 87.5,54.5 87.5,50.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 29.0,68.5 37.0,68.5 37.0,73.0 29.0,73.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 37.0,53.5 40.0,53.5 40.0,56.0 37.0,56.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 76.0,69.0 76.0,56.0 63.5,56.0 63.5,69.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 53.0,56.0 63.5,56.0 63.5,69.0 53.0,69.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 53.0,56.0 53.0,69.0 40.0,69.0 40.0,56.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 40.0,72.5 40.0,84.0 47.0,84.0 47.0,72.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 29.0,73.0 29.0,78.0 37.0,78.0 37.0,73.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 34.5,80.5 34.5,85.0 40.0,85.0 40.0,80.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 29.0,78.0 34.5,78.0 34.5,85.0 29.0,85.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 81.7,67.1 81.5,69.0 84.5,69.0 84.5,67.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 84.5,69.0 87.0,69.0 87.0,66.7 85.1,66.7 85.1,67.1 84.5,67.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 81.75,65.5 82.0,64.0 87.0,64.0 87.0,66.7 85.1,66.7 85.1,67.1 81.6,67.1 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,56.0 90.0,56.0 90.0,60.5 87.0,60.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 90.0,56.0 98.0,56.0 98.0,60.5 90.0,60.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 90.0,60.5 98.0,60.5 98.0,64.5 90.0,64.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 90.0,64.5 98.0,64.5 98.0,68.5 90.0,68.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 90.0,68.5 98.0,68.5 98.0,73.0 90.0,73.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 90.0,73.0 98.0,73.0 98.0,78.5 90.0,78.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,78.5 92.5,78.5 92.5,85.0 87.0,85.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 92.5,78.5 98.0,78.5 98.0,85.0 92.5,85.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 87.0,72.5 87.0,84.0 80.0,84.0 80.0,72.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 80.0,72.5 80.0,84.0 72.5,84.0 72.5,72.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 72.5,72.5 72.5,84.0 65.5,84.0 65.5,72.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 61.0,72.5 61.0,84.0 65.5,84.0 65.5,72.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 54.0,72.5 54.0,76.5 59.0,76.5 59.0,72.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 54.0,76.5 54.0,84.0 57.5,84.0 57.5,76.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 57.5,76.5 61.0,76.5 61.0,84.0 57.5,84.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 48.5,72.5 48.5,75.0 54.0,75.0 54.0,72.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 47.0,75.0 50.5,75.0 50.5,84.0 47.0,84.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 50.5,75.0 54.0,75.0 54.0,84.0 50.5,84.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 29.0,56.0 37.0,56.0 37.0,60.5 29.0,60.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 29.0,60.5 29.0,64.5 37.0,64.5 37.0,60.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 29.0,64.5 37.0,64.5 37.0,68.5 29.0,68.5 Z " /> 
+    <image x="82.38754845034029" y="50.38754845034029" width="3.2249030993194197" height="3.2249030993194197" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="81.98081939870458" y="57.23081939870459" width="3.5383612025908264" height="3.5383612025908264" href="http://mapy.utp.edu.pl/images/relax_white.svg" /> 
+    <image x="31.211145618000167" y="69.21114561800017" width="3.577708763999664" height="3.577708763999664" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="37.778889744907204" y="54.278889744907204" width="1.4422205101855958" height="1.4422205101855958" href="http://mapy.utp.edu.pl/images/lift_white.svg" /> 
+    <image x="82.36754446796633" y="67.36754446796633" width="1.2649110640673524" height="1.2649110640673524" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="85.10604568792816" y="67.60604568792816" width="0.7879086241436944" height="0.7879086241436944" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="83.96334368540005" y="64.96334368540005" width="1.0733126291998991" height="1.0733126291998991" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <text x="69.5" y="62.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     129a
+    </text> 
+    <text x="58.0" y="62.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     129b
+    </text> 
+    <text x="47.0" y="62.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     128
+    </text> 
+    <text x="43.5" y="78.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     121
+    </text> 
+    <text x="33.0" y="75.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     124
+    </text> 
+    <text x="37.0" y="83.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     122
+    </text> 
+    <text x="32.0" y="81.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     123
+    </text> 
+    <text x="88.5" y="58.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.6000000000000001" font-family="Open Sans">
+     107
+    </text> 
+    <text x="94.0" y="58.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     108
+    </text> 
+    <text x="94.0" y="62.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8" font-family="Open Sans">
+     109
+    </text> 
+    <text x="94.0" y="66.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8" font-family="Open Sans">
+     110
+    </text> 
+    <text x="94.0" y="71.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     111
+    </text> 
+    <text x="94.0" y="75.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     111a
+    </text> 
+    <text x="90.0" y="81.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     112
+    </text> 
+    <text x="95.0" y="81.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     112a
+    </text> 
+    <text x="83.0" y="78.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     115
+    </text> 
+    <text x="76.5" y="78.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     117
+    </text> 
+    <text x="69.5" y="78.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     118
+    </text> 
+    <text x="63.5" y="78.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     118a
+    </text> 
+    <text x="56.5" y="74.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8" font-family="Open Sans">
+     119b
+    </text> 
+    <text x="56.5" y="80.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     119
+    </text> 
+    <text x="58.5" y="80.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     119a
+    </text> 
+    <text x="51.0" y="74.0" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.5" font-family="Open Sans">
+     120b
+    </text> 
+    <text x="49.0" y="79.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     120
+    </text> 
+    <text x="52.5" y="79.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7000000000000001" font-family="Open Sans">
+     120a
+    </text> 
+    <text x="33.0" y="58.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.9" font-family="Open Sans">
+     127
+    </text> 
+    <text x="33.0" y="62.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8" font-family="Open Sans">
+     126
+    </text> 
+    <text x="33.0" y="66.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8" font-family="Open Sans">
+     125
+    </text> 
+   </g> 
+  </g> 
+ </g> 
+</svg>

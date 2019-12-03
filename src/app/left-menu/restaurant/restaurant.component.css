@@ -1,0 +1,94 @@
+.restaurant-container {
+  margin: 2%;
+  width: 96%;
+  background-color: white;
+  height: 20%;
+  text-align: center;
+  border: .05rem solid #b5b5b5;
+  position: relative;
+  color: #1b272e;
+
+}
+
+.text {
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 5% 0 4% 0;
+  text-transform: uppercase;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 40%;
+  margin-left: 10%;
+
+}
+
+.image {
+  height: auto;
+}
+.image img {
+  border: .13rem solid #1b272e;
+  background-color: #1b272e;
+  border-radius: 20%;
+  -webkit-border-radius: 20%;
+  max-width: 65%;
+  max-height: 30%;
+  overflow: hidden;
+}
+
+.address {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.menu-container {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: 40%;
+  cursor: pointer;
+}
+
+.menu {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  padding-top: 5%;
+}
+
+.menu img {
+  margin-left: 20%;
+  max-width: 20%;
+  max-height: 20%;
+  display: inline-block;
+  float: left;
+}
+
+.menu p{
+  width: 10%;
+  display: inline-block;
+  float: left;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 6% 0;
+
+}
+
+.menu-text-info {
+  position: relative;
+  width: 85%;
+  display: inline-block;
+  font-size: 0.8rem;
+  text-align: center;
+  font-style: italic;
+  margin: 0 4% 0 0;
+
+  padding-bottom: 5%;
+
+}

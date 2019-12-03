@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100.0" height="100.0"> 
+ <style type="text/css"><![CDATA[@keyframes pulse2 {0% {stroke-width: 0.1} 50% {stroke-width: 1.0} 100% {stroke-width: 0.1}
+@-moz-keyframes pulse2 {0% {stroke-width: 0.1} 50% {stroke-width: 1.0} 100% {stroke-width: 0.1}
+]]></style> 
+ <g transform="translate(50.0,50.0)"> 
+  <g transform="matrix(0.707 0.409 -0.707 0.409 0 -0.816)"> 
+   <g transform="translate(-50.0,-50.0)"> 
+    <path fill="#ababab" stroke="lightgray" stroke-width="0.25" fill-rule="evenodd" d="M 33.9,29.1 43.8,29.1 43.8,36.2 85.2,36.2 85.2,35.0 93.0,35.0 93.0,49.0 33.9,49.0 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 50.7,40.1 50.7,41.5 89.5,41.5 89.5,40.1 Z " /> 
+    <path fill="#ababab" stroke="white" stroke-width="0" fill-rule="evenodd" d="M 33.9,36.7 39.8,36.7 39.8,40.1 50.7,40.1 50.7,41.5 39.8,41.5 39.8,42.400000000000006 39.5,42.400000000000006 39.5,42.7 33.9,42.7 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 36.2,32.0 38.2,32.0 38.2,34.0 36.2,34.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 89.5,35.0 93.0,35.0 93.0,41.5 89.5,41.5 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 50.0,41.5 39.8,41.5 39.8,42.400000000000006 39.5,42.400000000000006 39.5,42.7 33.9,42.7 33.9,49.0 50.0,49.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 50.0,41.5 59.5,41.5 59.5,49.0 50.0,49.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 59.5,41.5 64.5,41.5 64.5,49.0 59.5,49.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 64.5,41.5 79.5,41.5 79.5,49.0 64.5,49.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 79.5,41.5 84.5,41.5 84.5,49.0 79.5,49.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 84.5,41.5 93.0,41.5 93.0,49.0 84.5,49.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 89.5,35.0 89.5,40.1 85.2,40.1 85.2,35.0 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 85.2,36.2 85.2,40.1 80.0,40.1 80.0,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 80.0,36.2 80.0,40.1 74.80000000000001,40.1 74.80000000000001,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 74.80000000000001,36.2 74.80000000000001,40.1 67.0,40.1 67.0,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 67.0,36.2 67.0,40.1 59.5,40.1 59.5,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 59.5,36.2 59.5,40.1 56.800000000000004,40.1 56.800000000000004,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 56.800000000000004,36.2 56.800000000000004,40.1 55.5,40.1 55.5,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 55.5,36.2 55.5,40.1 49.900000000000006,40.1 49.900000000000006,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 49.900000000000006,36.2 49.900000000000006,40.1 44.7,40.1 44.7,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 44.7,40.1 39.8,40.1 39.8,36.7 43.8,36.7 43.8,36.2 44.7,36.2 Z " /> 
+    <path fill="#bfc2c7" stroke="white" stroke-width="0.1" fill-rule="evenodd" d="M 39.8,29.1 43.8,29.1 43.8,36.7 39.8,36.7 Z " /> 
+    <image x="36.634314575050766" y="32.43431457505076" width="1.1313708498984762" height="1.1313708498984762" href="http://mapy.utp.edu.pl/images/lift_white.svg" /> 
+    <image x="36.78238773964358" y="33.882387739643576" width="0.8352245207128434" height="0.8352245207128434" href="http://mapy.utp.edu.pl/images/platform_white.svg" /> 
+    <image x="89.85" y="36.975" width="2.8000000000000003" height="2.8000000000000003" href="http://mapy.utp.edu.pl/images/stairs_white.svg" /> 
+    <image x="69.34" y="36.54" width="3.119999999999999" height="3.119999999999999" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="61.69" y="36.59" width="3.119999999999999" height="3.119999999999999" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="57.201316701949494" y="37.201316701949494" width="1.8973665961010224" height="1.8973665961010224" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <image x="40.199999999999996" y="31.299999999999997" width="3.2" height="3.2" href="http://mapy.utp.edu.pl/images/toilet_white.svg" /> 
+    <text x="42.0" y="45.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     411
+    </text> 
+    <text x="54.75" y="45.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     410
+    </text> 
+    <text x="62.0" y="45.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     409
+    </text> 
+    <text x="72.0" y="45.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     408
+    </text> 
+    <text x="82.0" y="45.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     407
+    </text> 
+    <text x="88.75" y="45.25" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="1.0" font-family="Open Sans">
+     406
+    </text> 
+    <text x="87.375" y="37.5" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.8599999999999994" font-family="Open Sans">
+     405
+    </text> 
+    <text x="82.625" y="38.125" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999998" font-family="Open Sans">
+     404
+    </text> 
+    <text x="77.375" y="38.125" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999998" font-family="Open Sans">
+     403
+    </text> 
+    <text x="56.150000000000006" y="38.150000000000006" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.26000000000000084" font-family="Open Sans">
+     412
+    </text> 
+    <text x="52.7" y="38.150000000000006" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999998" font-family="Open Sans">
+     402
+    </text> 
+    <text x="47.300000000000004" y="38.150000000000006" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999998" font-family="Open Sans">
+     401
+    </text> 
+    <text x="42.2" y="38.35" alignment-baseline="middle" text-anchor="middle" fill="white" font-weight="normal" font-size="0.7799999999999998" font-family="Open Sans">
+     400
+    </text> 
+   </g> 
+  </g> 
+ </g> 
+</svg>

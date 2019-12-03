@@ -1,0 +1,52 @@
+<ng-container *ngIf="searchingService.employeeInfoData !== null">
+  <div class="container">
+    <div class="hidden-box" [ngClass]="{'transform-right' : transform, '': !transform }"
+    >
+      <div class="info-box"
+           (clickOutside)="closeInfoBox(); ">
+        <div class="title">
+          <div class="img">
+            <img src="../../../assets/images/employee-white.svg" alt="employee">
+          </div>
+          <div class="name">
+            <p>{{searchingService.employeeInfoData?.firstName}} {{searchingService.employeeInfoData?.lastName}}</p>
+          </div>
+        </div>
+        <div class="information" *ngFor="let item of searchingService.employeeInfoData?.additionalData">
+          <div class="row" *ngIf="item.unitName !== null">
+            <p>Jednostka:</p> {{item.unitName}}
+          </div>
+          <div class="row" *ngIf="item.subUnitName !== null">
+            <p>Komórka:</p> {{item.subUnitName}}
+          </div>
+          <div class="row" *ngIf="item.job !== null">
+            <p>Stanowisko:</p> {{item.job}}
+          </div>
+          <div class="row" *ngIf="item.building !== null">
+            <p>Budynek:</p> {{item.building}}, {{item?.campus}}
+          </div>
+          <div class="row" *ngIf="item.room !== null">
+            <p>Pokój:</p> {{item.room}}, {{item.floor}}
+          </div>
+          <div class="row" *ngIf="item.phoneNumber !== null">
+            <p>Telefon:</p> {{item.phoneNumber}}
+          </div>
+          <!--<div class="row" *ngIf="item?.consultations !== null">-->
+          <!--<p>Konsultacje:</p>-->
+          <!--</div>-->
+        </div>
+        <div class="email">
+          <div class="row">
+            <p>Email:</p> {{searchingService.employeeInfoData?.aliasUTP['0']}}
+          </div>
+        </div>
+        <div class="button-box">
+          <button class="navi-button" type="button">
+            <img src="../../../assets/images/navigation.svg" alt="navigate">
+            <label>{{'list-searching.navigate' | translate}}</label>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

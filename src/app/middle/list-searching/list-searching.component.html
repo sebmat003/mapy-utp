@@ -1,0 +1,104 @@
+<!-- list for searching state 1 -->
+<ng-container *ngIf="searchingService.searchingState==1 && searchingService.roomAndEmployeeData != null">
+  <div class="list-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''">
+    <div class="list" [ngClass]="{'transform-right' : transform, '': !transform }">
+      <ul>
+        <li *ngFor="let item of searchingService.roomAndEmployeeData.rooms"
+            (click)="clickedItem(item.roomNumber, 1)">
+          <div class="icon">
+            <img src="../../../assets/images/door.svg" alt="room">
+          </div>
+          <div class="item-info">
+            <p>{{item.roomNumber | slice:0:60}}</p>
+            <p class="small-text">{{item.departmentName | slice:0:60}} </p>
+          </div>
+          <div class="navi-buttons">
+            <ng-container *ngIf="item.roomId !== null">
+              <button class="navi-button" type="button" (click)="navigate();$event.stopPropagation()">
+                <img src="../../../assets/images/navigation.svg" alt="navigate">
+                <label>{{'list-searching.navigate' | translate}}</label>
+              </button>
+            </ng-container>
+          </div>
+        </li>
+        <li *ngFor="let item of searchingService.roomAndEmployeeData.employees"
+            (click)="clickedItem(item.uid, 2)">
+          <div class="icon">
+            <img src="../../../assets/images/employee.svg" alt="employee">
+          </div>
+          <div class="item-info">
+            <p>{{item.firstName}}</p>
+            <p>{{item.lastName}}</p>
+          </div>
+          <div class="navi-buttons">
+            <ng-container *ngIf="item.additionalData[0].roomSpaceManagerId !== null">
+              <button class="navi-button" type="button" (click)="navigate();$event.stopPropagation()">
+                <img src="../../../assets/images/navigation.svg" alt="navigate">
+                <label>{{'list-searching.navigate' | translate}}</label>
+              </button>
+            </ng-container>
+            <!--<button class="navi-button" type="button">-->
+            <!--<img src="../../../assets/images/wheelchair-access-white.svg" alt="navigate">-->
+            <!--<label>{{'list-searching.navigate' | translate}}</label>-->
+            <!--</button>-->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>
+
+<!--list for searching state 2-->
+<ng-container *ngIf="searchingService.employeesInUnitData != null && searchingService.searchingState==2">
+  <div class="list-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''">
+    <div class="list" [ngClass]="{'transform-right' : transform, '': !transform }">
+      <ul>
+        <li *ngFor="let item of searchingService.employeesInUnitData"
+            (click)="clickedItem(item.uid, 2)">
+          <div class="icon">
+            <img src="../../../assets/images/employee.svg" alt="employee">
+          </div>
+          <div class="item-info">
+            <p>{{item.firstName}}</p>
+            <p>{{item.lastName}}</p>
+          </div>
+          <ng-container *ngIf="item.additionalData[0].roomSpaceManagerId !== null">
+            <div class="navi-buttons">
+              <button class="navi-button" type="button" (click)="navigate();$event.stopPropagation()">
+                <img src="../../../assets/images/navigation.svg" alt="navigate">
+                <label>{{'list-searching.navigate' | translate}}</label>
+              </button>
+            </div>
+          </ng-container>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>
+<!--list for searching state 3-->
+<ng-container *ngIf="searchingService.roomsData != null && searchingService.searchingState==3">
+  <div class="list-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''">
+    <div class="list" [ngClass]="{'transform-right' : transform, '': !transform }">
+      <ul>
+        <li *ngFor="let item of searchingService.roomsData?.content"
+            (click)="clickedItem(item.roomNumber, 1)">
+          <div class="icon">
+            <img src="../../../assets/images/door.svg" alt="room">
+          </div>
+          <div class="item-info">
+            <p>{{item.roomNumber | slice:0:60}}</p>
+            <p class="small-text">{{item.departmentName | slice:0:60}} </p>
+          </div>
+          <div class="navi-buttons">
+            <ng-container *ngIf="item.roomId !== null">
+              <button class="navi-button" type="button" (click)="navigate();$event.stopPropagation()">
+                <img src="../../../assets/images/navigation.svg" alt="navigate">
+                <label>{{'list-searching.navigate' | translate}}</label>
+              </button>
+            </ng-container>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,31 @@
+<div class="options-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''">
+  <div class="options" [ngClass]="{'transform-right' : transform, '': !transform}">
+    <div class="min-max-button">
+      <div class="btn" type="button" (click)="minimizeButtonService.ifMinimize = !minimizeButtonService.ifMinimize"
+           title="{{ minimizeButtonService.ifMinimize ? ['min-max-button.max' | translate] : ['min-max-button.min' | translate]}}">
+        {{ minimizeButtonService.ifMinimize ? '+' : '-'}}</div>
+    </div>
+    <div class="option first-aid" title="{{'menu-mobile.first-aid' | translate}}">
+      <img src="../../../assets/images/first-aid-kit.svg" alt="">
+    </div>
+    <div class="option wheelchair" title="{{'menu-mobile.disabled' | translate}}">
+      <img src="../../../assets/images/wheelchair-access.svg" alt="">
+    </div>
+    <div class="option elevator" title="{{'menu-mobile.elevator' | translate}}">
+      <img src="../../../assets/images/elevator.svg" alt="">
+    </div>
+    <div class="option shop" title="{{'menu-mobile.shop' | translate}}">
+      <img src="../../../assets/images/fork.svg" alt="">
+    </div>
+    <div class="option printer" title="{{'menu-mobile.xerox copy' | translate}}">
+      <img src="../../../assets/images/printer.svg" alt="">
+    </div>
+    <div class="option changing-room" title="{{'menu-mobile.changing-room' | translate}}">
+      <img src="../../../assets/images/hanger.svg" alt="">
+    </div>
+    <div class="option wc" title="{{'menu-mobile.wc' | translate}}">
+      <p>WC</p>
+    </div>
+
+  </div>
+</div>

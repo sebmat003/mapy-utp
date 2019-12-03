@@ -1,0 +1,62 @@
+<ng-container *ngIf="searchingService.leftInputState==1">
+  <ng-container *ngIf="searchingService.leftSearchFilter != ''">
+    <div class="list-container">
+      <ul>
+        <ng-container *ngIf="(searchingService.dummyData |
+       filter: {name: searchingService.leftSearchFilter, employee: searchingService.leftSearchFilter}) as result">
+          <li *ngFor="let item of result">
+            <div class="item-info">
+              <p>{{item.name}}</p> &nbsp;
+              <p>{{item.employee}}</p>
+            </div>
+            <div class="navi-buttons">
+              <div class="select-button" type="button">
+                <p>{{ 'searching.select' | translate}}</p>
+              </div>
+            </div>
+          </li>
+          <li class="no-hover">
+            <div class="no-results" *ngIf="result.length === 0">
+              <p>{{ 'searching.no-results' | translate}}</p>
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </ng-container>
+</ng-container>
+
+
+<ng-container *ngIf="searchingService.leftInputState==2">
+  <ng-container *ngIf="searchingService.leftSearchFilter2 !=''">
+    <div class="list-container">
+      <ul>
+        <ng-container *ngIf="(searchingService.dummyData |
+       filter: {name: searchingService.leftSearchFilter2, employee: searchingService.leftSearchFilter2}) as result">
+          <li *ngFor="let item of searchingService.dummyData |
+       filter: {name: searchingService.leftSearchFilter2, employee: searchingService.leftSearchFilter2}">
+            <div class="item-info transformY">
+              <p>{{item.name}}</p> &nbsp;
+              <p>{{item.employee}}</p>
+            </div>
+            <div class="navi-buttons">
+              <div class="navi-button" type="button">
+                <img src="../../../assets/images/navigation.svg" alt="navigate">
+              </div>
+              <div class="navi-button" type="button">
+                <img src="../../../assets/images/wheelchair-access-white.svg" alt="navigate">
+              </div>
+            </div>
+          </li>
+          <li class="no-hover">
+            <div class="no-results" *ngIf="result.length === 0">
+              <p>{{ 'searching.no-results' | translate}}</p>
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </ng-container>
+</ng-container>
+
+
