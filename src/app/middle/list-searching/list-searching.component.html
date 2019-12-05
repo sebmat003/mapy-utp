@@ -4,7 +4,7 @@
     <div class="list" [ngClass]="{'transform-right' : transform, '': !transform }">
       <ul>
         <li *ngFor="let item of searchingService.roomAndEmployeeData.rooms"
-            (click)="clickedItem(item.roomNumber, 1)">
+            (click)="clickedItem(item.roomId, 1)">
           <div class="icon">
             <img src="../../../assets/images/door.svg" alt="room">
           </div>
@@ -28,7 +28,7 @@
           </div>
           <div class="item-info">
             <p>{{item.firstName}}</p>
-            <p>{{item.lastName}}</p>
+            <p class="margin-left-minus5">{{item.lastName}}</p>
           </div>
           <div class="navi-buttons">
             <ng-container *ngIf="item.additionalData[0].roomSpaceManagerId !== null">
@@ -60,7 +60,7 @@
           </div>
           <div class="item-info">
             <p>{{item.firstName}}</p>
-            <p>{{item.lastName}}</p>
+            <p class="margin-left-minus5">{{item.lastName}}</p>
           </div>
           <ng-container *ngIf="item.additionalData[0].roomSpaceManagerId !== null">
             <div class="navi-buttons">
@@ -81,7 +81,7 @@
     <div class="list" [ngClass]="{'transform-right' : transform, '': !transform }">
       <ul>
         <li *ngFor="let item of searchingService.roomsData?.content"
-            (click)="clickedItem(item.roomNumber, 1)">
+            (click)="clickedItem(item.roomId, 1)">
           <div class="icon">
             <img src="../../../assets/images/door.svg" alt="room">
           </div>
