@@ -62,7 +62,12 @@
     "employee": "Pracownik",
     "room": "Pomieszczenie",
     "no-results": "Brak wyników",
-    "select": "Wybierz"
+    "select": "Wybierz",
+    "select-unit": "Wybierz jednostkę",
+    "select-sub-unit": "Wybierz istytut, zakład lub dział",
+    "select-campus": "Wybierz kampus",
+    "select-building": "Wybierz budynek",
+    "select-floor": "Wybierz piętro"
   },
 
   "menu-mobile": {
@@ -82,5 +87,19 @@
   },
   "list-searching": {
     "navigate": "Prowadź"
+  },
+
+  "info-panel": {
+    "unit": "Jednostka:",
+    "subUnit": "Komórka:",
+    "job": "Stanowisko:",
+    "building": "Budynek:",
+    "room": "Pokój:",
+    "phoneNumber": "Telefon:",
+    "consultations": "Konsultacje:",
+    "email": "Email:",
+    "campus": "Kampus:",
+    "floor": "Piętro:",
+    "address": "Adres:"
   }
 }

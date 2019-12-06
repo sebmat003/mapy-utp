@@ -15,28 +15,28 @@
         <div class="information" *ngFor="let item of searchingService.employeeInfoData?.additionalData">
           <ng-container *ngIf="item.unitName !== null && item.unitName !== ''">
             <div class="row">
-              <p>Jednostka:</p> {{item.unitName}}
+              <p>{{'info-panel.unit' | translate}}</p> {{item.unitName}}
             </div>
           </ng-container>
           <ng-container *ngIf="item.subUnitName !== null && item.subUnitName !== ''">
             <div class="row">
-              <p>Komórka:</p> {{item.subUnitName}}
+              <p>{{'info-panel.subUnit' | translate}}</p> {{item.subUnitName}}
             </div>
           </ng-container>
           <ng-container *ngIf="item.job !== null && item.job !== ''">
             <div class="row">
-              <p>Stanowisko:</p> {{item.job}}
+              <p>{{'info-panel.job' | translate}}</p> {{item.job}}
             </div>
           </ng-container>
           <ng-container *ngIf="item.building !== null && item.building !== ''">
             <div class="row">
-              <p>Budynek:</p> {{item.building}}, {{item?.campus}}
+              <p>{{'info-panel.building' | translate}}</p> {{item.building}}, {{item?.campus}}
             </div>
           </ng-container>
           <ng-container *ngIf="item.room !== null && item.room !== ' '">
             <div class="row">
               <div class="room-label">
-                <p>Pokój:</p> {{item.room}}, {{item.floor}}
+                <p>{{'info-panel.room' | translate}}</p> {{item.room}}, {{item.floor}}
               </div>
               <div class="button-room-box" *ngIf="item.roomSpaceManagerId !== null">
                 <button class="room-button" type="button">
@@ -48,12 +48,12 @@
           </ng-container>
           <ng-container *ngIf="item.phoneNumber !== null && item.phoneNumber !== ''">
             <div class="row">
-              <p>Telefon:</p> {{item.phoneNumber}}
+              <p>{{'info-panel.phoneNumber' | translate}}</p> {{item.phoneNumber}}
             </div>
           </ng-container>
           <ng-container *ngIf="searchingService.consultations !== null && searchingService.consultations.length !== 0">
             <div class="row">
-              <p>Konsultacje:</p>
+              <p>{{'info-panel.consultations' | translate}}</p>
               <ng-container *ngFor="let subItem of searchingService.consultations">
                 <ng-container *ngFor="let i of subItem | keyvalue">
                   <p id="consultations">{{i.key}}: {{i.value.from}}-{{i.value.to}} </p>
@@ -64,7 +64,7 @@
         </div>
         <div class="email">
           <div class="row">
-            <p>Email:</p> {{searchingService.employeeInfoData?.aliasUTP['0']}}
+            <p>{{'info-panel.email' | translate}}</p> {{searchingService.employeeInfoData?.aliasUTP['0']}}
           </div>
         </div>
       </div>
@@ -88,41 +88,41 @@
             <p>{{searchingService?.roomInfoData['0'].roomNumber}}</p>
           </div>
         </div>
-        <div class="information">
+        <div class="information" id="margin-bottom">
           <ng-container *ngIf="searchingService?.roomInfoData['0'].campusName !== null
            && searchingService?.roomInfoData['0'].campusName !== undefined">
             <div class="row">
-              <p>Kampus:</p> {{searchingService?.roomInfoData['0'].campusName}}
+              <p>{{'info-panel.campus' | translate}}</p> {{searchingService?.roomInfoData['0'].campusName}}
             </div>
           </ng-container>
           <ng-container *ngIf="searchingService?.roomInfoData['0'].departmentName !== null
            && searchingService?.roomInfoData['0'].departmentName !== ''">
             <div class="row">
-              <p>Jednostka:</p> {{searchingService?.roomInfoData['0'].departmentName}}
+              <p>{{'info-panel.unit' | translate}}</p> {{searchingService?.roomInfoData['0'].departmentName}}
             </div>
           </ng-container>
           <ng-container *ngIf="searchingService?.roomInfoData['0'].roomMinorUnit !== null
            && searchingService?.roomInfoData['0'].roomMinorUnit !== ''">
             <div class="row">
-              <p>Komórka:</p> {{searchingService?.roomInfoData['0'].roomMinorUnit}}
+              <p>{{'info-panel.subUnit' | translate}}</p> {{searchingService?.roomInfoData['0'].roomMinorUnit}}
             </div>
           </ng-container>
           <ng-container *ngIf="searchingService?.roomInfoData['0'].buildingName !== null
           && searchingService?.roomInfoData['0'].buildingName !== ''">
             <div class="row">
-              <p>Budynek:</p> {{searchingService?.roomInfoData['0'].buildingName}}
+              <p>{{'info-panel.building' | translate}}</p> {{searchingService?.roomInfoData['0'].buildingName}}
             </div>
           </ng-container>
           <ng-container *ngIf="searchingService?.roomInfoData['0'].floorName !== null
           && searchingService?.roomInfoData['0'].floorName !== ''">
             <div class="row">
-              <p>Piętro:</p> {{searchingService?.roomInfoData['0'].floorName}}
+              <p>{{'info-panel.floor' | translate}}</p> {{searchingService?.roomInfoData['0'].floorName}}
             </div>
           </ng-container>
           <ng-container *ngIf="searchingService?.roomInfoData['0'].buildingAddress !== null
           && searchingService?.roomInfoData['0'].buildingAddress !== ''">
             <div class="row">
-              <p>Adres:</p> {{searchingService?.roomInfoData['0'].buildingAddress}}
+              <p>{{'info-panel.address' | translate}}</p> {{searchingService?.roomInfoData['0'].buildingAddress}}
             </div>
           </ng-container>
 

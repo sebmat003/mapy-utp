@@ -62,7 +62,12 @@
     "employee": "Employee",
     "room": "Room",
     "no-results": "No results",
-    "select": "Select"
+    "select": "Select",
+    "select-unit": "Select unit",
+    "select-sub-unit": "Select department",
+    "select-campus": "Select campus",
+    "select-building": "Select building",
+    "select-floor": "Select floor"
   },
 
   "menu-mobile": {
@@ -83,5 +88,18 @@
   },
   "list-searching": {
     "navigate": "Navigate"
+  },
+  "info-panel": {
+    "unit": "Unit:",
+    "subUnit": "Section:",
+    "job": "Position:",
+    "building": "Building:",
+    "room": "Room:",
+    "phoneNumber": "Phone number:",
+    "consultations": "Consultations:",
+    "email": "Email:",
+    "campus": "Campus:",
+    "floor": "Floor:",
+    "address": "Address:"
   }
 }

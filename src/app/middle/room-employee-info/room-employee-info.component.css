@@ -50,12 +50,12 @@
 .title {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  width: 100%;
-
   background-color: #323c44;
   text-align: center;
   display: table;
   position: relative;
+  width: 100%;
+  min-width: 100%;
 }
 
 .img {
@@ -193,6 +193,10 @@
 #consultations {
   display: block !important;
   font-weight: 300;
+}
+
+#margin-bottom {
+  margin-bottom: 2%;
 }
 
 .row p {
