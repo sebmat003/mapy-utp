@@ -18,8 +18,8 @@
             <input type="text"
                    #input
                    placeholder="{{'searching.search' | translate}}"
-                   value="{{this.message}}"
-                   (input)="searchingService.getRoomAndEmployeeData(input.value)"
+                   [(ngModel)]="this.message"
+                   (input)="this.searchingService.getRoomAndEmployeeData(input.value);"
             >
           </td>
         </ng-container>
@@ -84,10 +84,10 @@
             <img src="../../../assets/images/microphone.svg" alt="micro">
           </td>
         </ng-container>
-          <td class="line"></td>
-          <td class="options" (click)="click()" type="button">
-            <img src="../../../assets/images/down-arrow.svg" alt="">
-          </td>
+        <td class="line"></td>
+        <td class="options" (click)="click()" type="button">
+          <img src="../../../assets/images/down-arrow.svg" alt="">
+        </td>
       </tr>
     </table>
   </div>
@@ -95,9 +95,9 @@
   <div class="dropdown" [ngClass]="{ 'transform-right-dropdown' : transform, '': !transform} ">
     <div class="dropdown-menu" (clickOutside)="closeMenu()" [clickOutsideEvents]="'click,touchstart'"
          [ngClass]="{'display': display, 'nodisplay': !display}">
-        <a (click)="dropdownClick(1)">{{'searching.searching' | translate}}</a>
-        <a (click)="dropdownClick(2)">{{'searching.employee' | translate}}</a>
-        <a (click)="dropdownClick(3)">{{'searching.room' | translate}}</a>
+      <a (click)="dropdownClick(1)">{{'searching.searching' | translate}}</a>
+      <a (click)="dropdownClick(2)">{{'searching.employee' | translate}}</a>
+      <a (click)="dropdownClick(3)">{{'searching.room' | translate}}</a>
     </div>
 
   </div>

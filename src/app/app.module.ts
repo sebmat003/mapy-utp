@@ -44,7 +44,6 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MinimizeButtonService} from './services/minimize-button.service';
-import {SpeechRecognitionModule, SpeechRecognitionService} from '@kamiazya/ngx-speech-recognition';
 import { ListSearchingComponent } from './middle/list-searching/list-searching.component';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import {SearchingService} from './services/searching.service';
@@ -53,10 +52,11 @@ import {FilterPipe} from './pipes/filter.pipe';
 import { SearchPanelComponent } from './left-menu/search-panel/search-panel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {VarDirective} from './directives/var.directive';
 import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-employee-info.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,11 +109,6 @@ import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-empl
         deps: [HttpClient]
       }
     }),
-    SpeechRecognitionModule.withConfig({
-      lang: 'pl-PL' || navigator.language,
-      interimResults: true,
-      maxAlternatives: 10,
-    }),
     FilterPipeModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -129,12 +124,12 @@ import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-empl
     FloorsService,
     MapService,
     MinimizeButtonService,
-    SpeechRecognitionService,
     SearchingService
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
 
 
 // required for AOT compilation

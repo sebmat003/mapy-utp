@@ -110,7 +110,6 @@ export class SearchingService {
         '&buildingId=' + buildingId + '&floorId=' + floorId, {responseType: 'json'})
         .subscribe((data) => {
           this.roomsData = data;
-          console.log(this.roomsData);
         });
     } else {
       this.roomsData = null;
@@ -143,7 +142,6 @@ export class SearchingService {
   resetInfoData() {
     this.roomInfoData = null;
     this.employeeInfoData = null;
-    console.log('reset info data');
   }
 
   resetInputs() {

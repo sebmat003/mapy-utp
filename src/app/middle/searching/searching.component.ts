@@ -1,9 +1,11 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {MenuMobileService} from '../../services/menu-mobile.service';
 import {MinimizeButtonService} from '../../services/minimize-button.service';
-import {SpeechRecognitionService} from '@kamiazya/ngx-speech-recognition';
 import {SearchingService} from '../../services/searching.service';
 
+export interface IWindow extends Window {
+  webkitSpeechRecognition: any;
+}
 
 @Component({
   selector: 'app-searching',
@@ -16,9 +18,9 @@ export class SearchingComponent implements OnInit {
   clicked: number = 0;
   private innerWidth: number;
   mobileVersion: boolean = false;
-  message: string;
+  message: string = '';
   public started: boolean = false;
-
+  vSearch: any = null;
   unitOptionValue: any;
   buildingOptionValue: any;
   floorOptionValue: any;
@@ -27,35 +29,19 @@ export class SearchingComponent implements OnInit {
   unitSelected = false;
   campusSelected = false;
   buildingSelected = false;
-
-
   campusId = null;
   buildingId = null;
   floorId = null;
 
-
-
-
-
   constructor(private LeftMenuMobileService: MenuMobileService, public minimizeButtonService: MinimizeButtonService,
-              private speechRecognition: SpeechRecognitionService, public searchingService: SearchingService) {
+              public searchingService: SearchingService) {
     this.onResize();
-    this.speechRecognition.onresult = (e) => {
-      this.message = e.results[0].item(0).transcript;
-      if(this.searchingService.searchingState == 1){}
-      this.searchingService.getRoomAndEmployeeData(this.message);
-
-    };
-
-    this.speechRecognition.onaudioend = (e) => {
-      this.started = false;
-    }
   }
-
 
   ngOnInit() {
     this.onResize();
   }
+
 
   click() {
     this.display = !this.display;
@@ -64,26 +50,40 @@ export class SearchingComponent implements OnInit {
   }
 
   microphone() {
-    if(!this.started) {
-      this.message = '';
-      this.speechRecognition.start();
-      this.started = true;
+    if (!this.started) {
+      const {webkitSpeechRecognition}: IWindow = <IWindow>window;
+      if (webkitSpeechRecognition != undefined) {
+        this.started = true;
+        this.message = '';
+        this.vSearch = new webkitSpeechRecognition();
+        this.vSearch.continuous = false;
+        this.vSearch.interimresults = false;
+        this.vSearch.lang = 'pl-PL';
+        this.vSearch.start();
+        this.vSearch.onresult = (e) => {
+          this.message = e.results[0][0].transcript;
+          this.vSearch.stop();
+          this.started = false;
+          this.searchingService.getRoomAndEmployeeData(this.message);
+        };
+
+      }
     } else {
-      this.speechRecognition.stop();
+      this.vSearch.stop();
       this.started = false;
     }
-
   }
 
   closeMenu() {
-    if(this.display) {
-      if(this.clicked == 1) {
+    if (this.display) {
+      if (this.clicked == 1) {
         this.display = false;
-      } else this.clicked = 1;
+      } else {
+        this.clicked = 1;
+      }
     }
 
   }
-
 
   dropdownClick(number: number) {
     this.searchingService.searchingState = number;
@@ -133,6 +133,7 @@ export class SearchingComponent implements OnInit {
 
 
   }
+
   //state = 3, searching rooms
   clickedBuilding(buildingId: number | string) {
     this.buildingId = buildingId;
@@ -145,9 +146,12 @@ export class SearchingComponent implements OnInit {
     this.searchingService.getRoomsData(this.campusId, this.buildingId, this.floorId);
 
   }
+
   //state = 3, searching rooms
   clickedFloor(floorId: number | string) {
     this.floorId = floorId;
     this.searchingService.getRoomsData(this.campusId, this.buildingId, this.floorId);
   }
+
+
 }
