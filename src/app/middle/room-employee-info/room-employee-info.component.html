@@ -1,9 +1,8 @@
 <ng-container *ngIf="searchingService.employeeInfoData !== null">
   <div class="container">
-    <div class="hidden-box" [ngClass]="{'transform-right' : transform, '': !transform }"
-    >
+    <div class="transform-box" [ngClass]="{'transform-right' : transform, '': !transform }">
       <div class="info-box"
-           (clickOutside)="closeInfoBox(); ">
+           (clickOutside)="closeInfoBox(); " >
         <div class="title">
           <div class="img">
             <img src="../../../assets/images/employee-white.svg" alt="employee">
@@ -76,7 +75,7 @@
 <ng-container *ngIf="searchingService.roomInfoData !== null
               && searchingService.roomInfoData['0'] !== null">
   <div class="container">
-    <div class="hidden-box" [ngClass]="{'transform-right' : transform, '': !transform }"
+    <div class="transform-box" [ngClass]="{'transform-right' : transform, '': !transform }"
     >
       <div class="info-box"
            (clickOutside)="closeInfoBox(); ">
