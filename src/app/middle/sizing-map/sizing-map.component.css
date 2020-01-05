@@ -33,5 +33,11 @@
   cursor: pointer;
   overflow: hidden;
   word-wrap: break-word;
+}
 
+@media only screen and (max-width: 1000px) {
+  .size-buttons {
+    visibility: hidden;
+    display: none;
+  }
 }

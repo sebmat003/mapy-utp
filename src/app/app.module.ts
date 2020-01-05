@@ -18,16 +18,10 @@ import { LanguageComponent } from './middle/language/language.component';
 import { SizingMapComponent } from './middle/sizing-map/sizing-map.component';
 import { ChangeLocationComponent } from './change-location/change-location.component';
 import { MenuRestaurantComponent } from './menu-restaurant/menu-restaurant.component';
-import { PlanComponent } from './plan/plan.component';
 import { BusComponent } from './bus/bus.component';
 import { FooterComponent } from './footer/footer.component';
-import { TodayPlanComponent } from './plan/today-plan/today-plan.component';
-import { WeekPlanComponent } from './plan/week-plan/week-plan.component';
-import { RoomInfoMobileComponent } from './mobile-version/room-info-mobile/room-info-mobile.component';
-import { EmployeeInfoMobileComponent } from './mobile-version/employee-info-mobile/employee-info-mobile.component';
 import { LeftMenuMobileComponent } from './mobile-version/left-menu-mobile/left-menu-mobile.component';
 import { OptionsComponent } from './mobile-version/left-menu-mobile/options/options.component';
-import { ChangeLanguageMobileComponent } from './mobile-version/change-language-mobile/change-language-mobile.component';
 import { LocationMobileComponent } from './mobile-version/location-mobile/location-mobile.component';
 import { FloorsMobileComponent } from './mobile-version/floors-mobile/floors-mobile.component';
 import { ChangeFloorsComponent } from './mobile-version/change-floors/change-floors.component';
@@ -76,16 +70,10 @@ import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-empl
     SizingMapComponent,
     ChangeLocationComponent,
     MenuRestaurantComponent,
-    PlanComponent,
     BusComponent,
     FooterComponent,
-    TodayPlanComponent,
-    WeekPlanComponent,
-    RoomInfoMobileComponent,
-    EmployeeInfoMobileComponent,
     LeftMenuMobileComponent,
     OptionsComponent,
-    ChangeLanguageMobileComponent,
     LocationMobileComponent,
     FloorsMobileComponent,
     ChangeFloorsComponent,

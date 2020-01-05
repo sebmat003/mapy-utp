@@ -41,7 +41,7 @@ export class SearchingService {
 
 
   //info component about employee/room
-  numberOfClicks: number = 0;
+  numberOfClicks: number = 1;
   clickedListItem = false;
 
 

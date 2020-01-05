@@ -8,9 +8,11 @@ import * as d3 from 'd3';
 import {SearchingService} from './searching.service';
 
 
-
 @Injectable()
 export class MapService {
+
+  //TODO bedzie 9 lokalizacji, wiec wartoby zrobić 1 tablice, która pokrywa jakąś lokalizację
+  //TODO na raz bedzie ładowana 1 lokalizacja
 
   private layersKAL1 = [];
   private layersFOR1 = [];
@@ -32,7 +34,7 @@ export class MapService {
     zoomControl: false,
     center: [250, 90],
     // maxBounds: [[0, -1], [5, 6]],
-    maxBounds: [[120,-120], [350, 320]],
+    maxBounds: [[120, -120], [350, 320]],
     maxBoundsViscosity: 1,
     attributionControl: false,
     preferCanvas: true,
@@ -44,12 +46,13 @@ export class MapService {
 
   icon = {
     icon: L.icon({
-      iconSize: [40,60],
-      iconAnchor: [20,60],
+      iconSize: [40, 60],
+      iconAnchor: [20, 60],
       iconUrl: '../assets/images/location-pin.svg',
       className: 'showing-up'
     })
   };
+
   mapReady(map: L.Map) {
 
     this.bounds.push([[-100, 0], [400, 500]]);
@@ -67,31 +70,29 @@ export class MapService {
     map.on('click', <LeafletMouseEvent>(e) => {
       this.coordinates = e.latlng;
 
-      //print coords
-      console.log(this.coordinates);
 
       let difference = 0;
-      if(this.LocationService.locationState != 0) {
+      if (this.LocationService.locationState != 0) {
         difference = 1;
       }
 
-      if(map.getZoom() < 4) {
+      if (map.getZoom() < 4) {
         map.setView(this.coordinates, map.getZoom() + 2 - difference);
-      } else if (map.getZoom() >=4 && map.getZoom() <=6) {
+      } else if (map.getZoom() >= 4 && map.getZoom() <= 6) {
         map.setView(this.coordinates, map.getZoom() + 1 - difference);
-      } else if (map.getZoom() >6 && map.getZoom() <8) {
+      } else if (map.getZoom() > 6 && map.getZoom() < 8) {
         map.setView(this.coordinates, map.getZoom() - difference);
       } else {
         map.setView(this.coordinates, map.getZoom() - 1 - difference);
       }
-      if(!this.clicked) {
+      if (!this.clicked) {
         this.clicked = true;
         this.marker = L.marker([this.coordinates.lat + 0.001, this.coordinates.lng], this.icon).addTo(map);
       } else {
         this.marker.setLatLng([this.coordinates.lat + 0.001, this.coordinates.lng]);
       }
 
-    })
+    });
   }
 
 
@@ -101,7 +102,7 @@ export class MapService {
               private searchingService: SearchingService) {
 
     this.initializeMap();
-    this.initializeFloors();
+    // this.initializeFloors();
   }
 
   // initializing first map (KAL1 - 2 floors)
@@ -126,6 +127,7 @@ export class MapService {
         this.layers.push(svgOverlay(svgElement, this.bounds[bounds]));
         // this.layers[0]._url.classList.add('inactive-layer');
         this.addTileAnimation();
+        this.getIdRoomInMap();
       });
   }
 
@@ -407,10 +409,10 @@ export class MapService {
         if (children[i].nodeName == 'polygon' && objecttype) {
           if (objecttype.value == 'room') {
             let color = children[i].attributes.getNamedItem('fill');
-            d3.select(children[i]).on("mouseover" , function () {
+            d3.select(children[i]).on('mouseover', function () {
               // @ts-ignore
               d3.select(children[i]).style('fill', d3.color(color.value).darker());
-            }).on("mouseout", function () {
+            }).on('mouseout', function () {
               // @ts-ignore
               d3.select(children[i]).style('fill', d3.color(color.value));
             });
@@ -421,14 +423,31 @@ export class MapService {
     });
   }
 
+  getIdRoomInMap() {
+    this.layers.forEach((map) => {
+      let children = map._url.lastElementChild.children;
+      for (let i = 0; i < children.length; i++) {
+        let objecttype = children[i].attributes.getNamedItem('objecttype');
+        let objectid = children[i].attributes.getNamedItem('objectid');
+        if (children[i].nodeName == 'polygon' && objecttype && objectid) {
+          if (objecttype.value == 'room') {
+            d3.select(children[i]).on('click', ()=> {
+              this.searchingService.getRoomInfoData(objectid.value);
+              this.searchingService.clickedListItem = true;
+            })
+          }
+        }
+      }
+    });
+  }
+
   removeMarker() {
-    if(this.marker != null) {
+    if (this.marker != null) {
       this.clicked = false;
       L.Map.prototype.removeControl(this.marker);
     }
 
   }
-
 
 
 }

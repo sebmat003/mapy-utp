@@ -24,7 +24,7 @@
           </td>
         </ng-container>
         <ng-container *ngIf="searchingService.searchingState==2">
-          <td class="half-search-input">
+          <td class="half-search-input" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
             <mat-form-field>
               <mat-select placeholder="{{'searching.select-unit' | translate}}">
                 <mat-option *ngFor="let item of searchingService.unitsData; let i of index"
@@ -34,7 +34,7 @@
               </mat-select>
             </mat-form-field>
           </td>
-          <td class="half-search-input">
+          <td class="half-search-input" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
             <mat-form-field [ngClass]="this.unitSelected ? '' : 'inactive-form'">
               <mat-select placeholder="{{'searching.select-sub-unit' | translate}}" [(ngModel)]="unitOptionValue">
                 <mat-option *ngFor="let item of unitItem?.listChildren"
@@ -47,7 +47,7 @@
         </ng-container>
         <ng-container *ngIf="searchingService.searchingState==3">
           <td class="one-third-search-input"
-              [ngClass]="minimizeButtonService.ifMinimize ? 'minimize-first-mat-form' : ''">
+              [ngClass]="minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
             <mat-form-field>
               <mat-select placeholder="{{'searching.select-campus' | translate}}">
                 <mat-option *ngFor="let item of searchingService.campusData?.content"
