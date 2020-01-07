@@ -2,12 +2,16 @@
   <div class="location-background">
     <div class="label">
 
-      <p *ngIf="LocationService.locationState==0">{{'location.text' | translate}}: KALISKIEGO</p>
-      <p *ngIf="LocationService.locationState==1">{{'location.text' | translate}}: BERNARDYŃSKA</p>
-      <p *ngIf="LocationService.locationState==2">{{'location.text' | translate}}: FORDOŃSKA</p>
-      <p *ngIf="LocationService.locationState==3">{{'location.text' | translate}}: KORDECKIEGO</p>
-      <p *ngIf="LocationService.locationState==4">{{'location.text' | translate}}: MAZOWIECKA</p>
-      <p *ngIf="LocationService.locationState==5">{{'location.text' | translate}}: SEMINARYJNA</p>
+      <p *ngIf="LocationService.locationState==1">{{'location.text' | translate}}: KORDECKIEGO</p>
+      <p *ngIf="LocationService.locationState==2">{{'location.text' | translate}}: KALISKIEGO</p>
+      <p *ngIf="LocationService.locationState==3">{{'location.text' | translate}}: KALISKIEGO 12-14</p>
+      <p *ngIf="LocationService.locationState==4">{{'location.text' | translate}}: BERNARDYŃSKA</p>
+      <p *ngIf="LocationService.locationState==5">{{'location.text' | translate}}: FORDOŃSKA</p>
+      <p *ngIf="LocationService.locationState==6">{{'location.text' | translate}}: MAZOWIECKA</p>
+      <p *ngIf="LocationService.locationState==7">{{'location.text' | translate}}: SEMINARYJNA 3-5</p>
+      <p *ngIf="LocationService.locationState==8">{{'location.text' | translate}}: KOSZAROWA</p>
+      <p *ngIf="LocationService.locationState==9">{{'location.text' | translate}}: SUCHA</p>
+      <p *ngIf="LocationService.locationState==10">{{'location.text' | translate}}: HETMAŃSKA</p>
     </div>
     <div class="button-box" (click)="openLocation()">
       <button class="astext" ngClass="{{MapService.mapIsLoaded ? '' : 'invisible'}}">{{'location.change' | translate}}</button>

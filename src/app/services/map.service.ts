@@ -11,26 +11,17 @@ import {SearchingService} from './searching.service';
 @Injectable()
 export class MapService {
 
-  //TODO bedzie 9 lokalizacji, wiec wartoby zrobić 1 tablice, która pokrywa jakąś lokalizację
-  //TODO na raz bedzie ładowana 1 lokalizacja
-
-  private layersKAL1 = [];
-  private layersFOR1 = [];
-  private layersBER1 = [];
-  private layersKOR1 = [];
-  private layersMAZ1 = [];
-  private layersSEM1 = [];
+  currentLocationMaps = [];
   layers = [];
-
   mapIsLoaded: boolean = false;
 
   bounds = [];
 
   options = {
     crs: L.CRS.Simple,
-    zoom: 3,
-    minZoom: 3,
-    maxZoom: 10,
+    zoom: 2,
+    minZoom: 2,
+    maxZoom: 8,
     zoomControl: false,
     center: [250, 90],
     // maxBounds: [[0, -1], [5, 6]],
@@ -56,11 +47,10 @@ export class MapService {
   mapReady(map: L.Map) {
 
     this.bounds.push([[-100, 0], [400, 500]]);
-    // this.bounds.push([[0.015, 0], [5.015, 5]]);
-    // this.bounds.push([[0.03, 0], [5.03, 5]]);
-    // this.bounds.push([[0.045, 0], [5.045, 5]]);
-    // this.bounds.push([[0.06, 0], [5.06, 5]]);
-
+    this.bounds.push([[-100, -1], [401, 501]]);
+    this.bounds.push([[-100, -2], [402, 502]]);
+    this.bounds.push([[-100, -3], [403, 503]]);
+    this.bounds.push([[-100, -4], [404, 504]]);
 
     map.addControl(L.control.zoom(
       {}
@@ -70,20 +60,10 @@ export class MapService {
     map.on('click', <LeafletMouseEvent>(e) => {
       this.coordinates = e.latlng;
 
-
-      let difference = 0;
-      if (this.LocationService.locationState != 0) {
-        difference = 1;
-      }
-
       if (map.getZoom() < 4) {
-        map.setView(this.coordinates, map.getZoom() + 2 - difference);
+        map.setView(this.coordinates, map.getZoom() + 2);
       } else if (map.getZoom() >= 4 && map.getZoom() <= 6) {
-        map.setView(this.coordinates, map.getZoom() + 1 - difference);
-      } else if (map.getZoom() > 6 && map.getZoom() < 8) {
-        map.setView(this.coordinates, map.getZoom() - difference);
-      } else {
-        map.setView(this.coordinates, map.getZoom() - 1 - difference);
+        map.setView(this.coordinates, map.getZoom() + 1);
       }
       if (!this.clicked) {
         this.clicked = true;
@@ -95,75 +75,67 @@ export class MapService {
     });
   }
 
-
   constructor(private LocationService: LocationService,
               private FloorsService: FloorsService,
               private httpClient: HttpClient,
               private searchingService: SearchingService) {
 
     this.initializeMap();
-    // this.initializeFloors();
   }
 
-  // initializing first map (KAL1 - 2 floors)
-  initializeMap() {
-    this.getInitializeContent(
-      'https://api-dev.kb.utp.edu.pl/maps/svg/generate?campus=2&level=0&mapSize=5000&isIsometric=true&fontSize=3',
-      0, 5000);
-    // this.getInitializeContent('/assets/maps/KAL1/LEVEL_-1.svg', 0, 500);
-    // this.getInitializeContent('/assets/maps/KAL1/LEVEL_0.svg', 1, 500);
-
-
+  //starting in campus 2 (Kaliskiego)
+  async initializeMap() {
+    for(let i=-1; i<4; i++) {
+      //only for testing ! -  all levels are the same
+      await this.getLocationMaps(
+        'https://api-dev.kb.utp.edu.pl/maps/svg/generate?campus=2&level=' + 0 + '&mapSize=5000&isIsometric=true&fontSize=3',
+        i + 1, 5000);
+    }
+    this.layers.push(this.currentLocationMaps[0], this.currentLocationMaps[1]);
+    this.layers[0]._url.classList.add('inactive-layer');
+    this.mapIsLoaded = true;
+    this.addTileAnimation();
+    this.getIdRoomInMap();
   }
 
-  getInitializeContent(url: string, bounds: number, viewBox: number) {
-    this.httpClient.get(url, {responseType: 'text'})
-      .subscribe((data) => {
+  async getLocationMaps(url: string, bounds: number, viewBox: number) {
+    await this.httpClient.get(url, {responseType: 'text'})
+      .toPromise()
+      .then((data) => {
         data = data.substring(data.indexOf('\n') + 1);
         data = data.substring(data.lastIndexOf('\n') + 1, -1);
         let svgElement: SVGElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svgElement.innerHTML = data;
         svgElement.setAttribute('viewBox', '0 0 ' + viewBox + ' ' + viewBox);
-        this.layers.push(svgOverlay(svgElement, this.bounds[bounds]));
-        // this.layers[0]._url.classList.add('inactive-layer');
-        this.addTileAnimation();
-        this.getIdRoomInMap();
+        this.currentLocationMaps.push(svgOverlay(svgElement, this.bounds[bounds]));
       });
   }
 
-  // initialize all maps
-  async initializeFloors() {
-    let start_floor = -1;
-    let end_floor = 3;
-    let ifSecondFloor = false;
-    for (start_floor; start_floor <= end_floor; start_floor++) {
+  async changeLocation() {
+    this.mapIsLoaded = false;
+    this.removeMarker();
+    this.resetClassesInLayers();
+    this.searchingService.resetInputs();
+    this.layers = [];
+    this.currentLocationMaps = [];
 
-      ifSecondFloor = start_floor == 0;
+    // ONLY FOR TESTING ALL LOCATIONS HAVE "KALISKIEGO" MAPS
+    let location =  2; //this.LocationService.locationState;
 
-      await this.getSvgContent('kal', '/assets/maps/KAL1/LEVEL_' + start_floor + '.svg', start_floor + 1, ifSecondFloor);
-      await this.getSvgContent('ber', '/assets/maps/BER1/LEVEL_' + start_floor + '.svg', start_floor + 1, ifSecondFloor);
-      await this.getSvgContent('kor', '/assets/maps/KOR1/LEVEL_' + start_floor + '.svg', start_floor + 1, ifSecondFloor);
-      await this.getSvgContent('sem', '/assets/maps/SEM1/LEVEL_' + start_floor + '.svg', start_floor + 1, ifSecondFloor);
+    for(let i=-1; i<4; i++) {
+      //only for testing ! -  all levels are the same
+      await this.getLocationMaps(
+        'https://api-dev.kb.utp.edu.pl/maps/svg/generate?campus='+ location + '&level=' + 0 + '&mapSize=5000&isIsometric=true&fontSize=3',
+        i + 1, 5000);
     }
-
-    start_floor = 0;
-    end_floor = 3;
-
-    for (start_floor; start_floor <= end_floor; start_floor++) {
-      ifSecondFloor = start_floor == 1;
-      await this.getSvgContent('for', '/assets/maps/FOR1/LEVEL_' + start_floor + '.svg', start_floor, ifSecondFloor);
-    }
-
-    start_floor = 0;
-    end_floor = 4;
-
-    for (start_floor; start_floor <= end_floor; start_floor++) {
-      ifSecondFloor = start_floor == 1;
-      await this.getSvgContent('maz', '/assets/maps/MAZ1/LEVEL_' + start_floor + '.svg', start_floor, ifSecondFloor);
-    }
-
-    // this.addTileAnimation();
     this.mapIsLoaded = true;
+    this.layers.push(this.currentLocationMaps[0], this.currentLocationMaps[1]);
+    this.layers[0]._url.classList.add('inactive-layer');
+
+    this.addTileAnimation();
+    this.getIdRoomInMap();
+    // this.layers[this.layers.length - 1]._url.classList.add('active-layer');
+    // this.layers[this.layers.length - 1]._url.classList.remove('inactive-layer');
   }
 
   changeFloor() {
@@ -172,77 +144,40 @@ export class MapService {
     this.searchingService.resetInputs();
     let location = this.LocationService.locationState;
     let floor = this.FloorsService.floorState;
-    switch (location) {
-      case 0: {
-        //KAL1
-        this.layers = this.updateArray(this.layers, this.layersKAL1, floor, location);
-      }
-        break;
-      case 1: {
-        //BER1
-        this.layers = this.updateArray(this.layers, this.layersBER1, floor, location);
-      }
-        break;
-      case 2: {
-        //FOR1
-        this.layers = this.updateArray(this.layers, this.layersFOR1, floor, location);
-      }
-        break;
-      case 3: {
-        //KOR1
-        this.layers = this.updateArray(this.layers, this.layersKOR1, floor, location);
-      }
-        break;
-      case 4: {
-        //MAZ1
-        this.layers = this.updateArray(this.layers, this.layersMAZ1, floor, location);
-      }
-        break;
-      case 5: {
-        //SEM1
-        this.layers = this.updateArray(this.layers, this.layersSEM1, floor, location);
-      }
-        break;
-    }
+    this.layers = this.updateArray(this.layers, this.currentLocationMaps, floor, location);
   }
 
   updateArray(current_layers, location_array, floor_number: number, location: number) {
     let updatedArray = current_layers;
     let updatedArray_length = updatedArray.length;
     let difference = 0;
-    if (location == 0 || location == 1 || location == 3 || location == 5) {
+    if (location == 1 || location == 2 || location == 6 ||  location == 7) {
       difference = updatedArray_length - (floor_number + 2);
-    } else if (location == 2 || location == 4) {
+    } else if (location == 4 || location == 5) {
       difference = updatedArray_length - (floor_number + 1);
     }
-
 
     if (difference > 0) {
       for (let i = 0; i < difference; i++) {
         updatedArray[updatedArray.length - 1]._url.classList.add('remove-layer');
-
         setTimeout(() => {
           updatedArray[updatedArray.length - 1]._url.classList.remove('remove-layer');
           updatedArray.pop();
         }, 250);
       }
-
-      // -- this is not beauty but works
       if (difference == 1) {
         updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
       } else if (difference == 2) {
-        updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
-        updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
-        updatedArray[updatedArray.length - 3]._url.classList.add('active-layer');
-        updatedArray[updatedArray.length - 3]._url.classList.remove('inactive-layer');
+        for (let i=2; i<=3; i++) {
+          updatedArray[updatedArray.length - i]._url.classList.add('active-layer');
+          updatedArray[updatedArray.length - i]._url.classList.remove('inactive-layer');
+        }
       } else if (difference == 3) {
-        updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
-        updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
-        updatedArray[updatedArray.length - 3]._url.classList.add('active-layer');
-        updatedArray[updatedArray.length - 3]._url.classList.remove('inactive-layer');
-        updatedArray[updatedArray.length - 4]._url.classList.add('active-layer');
-        updatedArray[updatedArray.length - 4]._url.classList.remove('inactive-layer');
+        for (let i=2; i<=4; i++) {
+          updatedArray[updatedArray.length - i]._url.classList.add('active-layer');
+          updatedArray[updatedArray.length - i]._url.classList.remove('inactive-layer');
+        }
       } else if (difference == 4) {
         updatedArray.forEach((map) => {
           map._url.classList.add('active-layer');
@@ -257,148 +192,11 @@ export class MapService {
       updatedArray[updatedArray.length - 1]._url.classList.add('active-layer');
       updatedArray[updatedArray.length - 1]._url.classList.remove('inactive-layer');
     }
-    // this.addTileAnimation();
+    this.addTileAnimation();
+    this.getIdRoomInMap();
     return updatedArray;
   }
 
-  async getSvgContent(location: string, url: string, bounds: number, ifSecondFloor: boolean) {
-    await this.httpClient.get(url, {responseType: 'text'})
-      .toPromise()
-      .then((data) => {
-        // cut the first line: ( <svg> tags )
-        data = data.substring(data.indexOf('\n') + 1);
-        // cut the last line:
-        data = data.substring(data.lastIndexOf('\n') + 1, -1);
-
-        let svgElement: SVGElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svgElement.innerHTML = data;
-        switch (location) {
-          case 'kal':
-            svgElement.setAttribute('viewBox', '0 0 500 500');
-            this.layersKAL1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if (!ifSecondFloor) {
-              this.layersKAL1[this.layersKAL1.length - 1]._url.classList.add('inactive-layer');
-            }
-            break;
-          case 'ber':
-            svgElement.setAttribute('viewBox', '0 0 160 160');
-            this.layersBER1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if (!ifSecondFloor) {
-              this.layersBER1[this.layersBER1.length - 1]._url.classList.add('inactive-layer');
-            }
-            break;
-          case 'kor':
-            svgElement.setAttribute('viewBox', '0 0 200 200');
-            this.layersKOR1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if (!ifSecondFloor) {
-              this.layersKOR1[this.layersKOR1.length - 1]._url.classList.add('inactive-layer');
-            }
-            break;
-          case 'sem':
-            svgElement.setAttribute('viewBox', '0 0 170 170');
-            this.layersSEM1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if (!ifSecondFloor) {
-              this.layersSEM1[this.layersSEM1.length - 1]._url.classList.add('inactive-layer');
-            }
-            break;
-          case 'for':
-            svgElement.setAttribute('viewBox', '0 0 100 100');
-            this.layersFOR1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if (!ifSecondFloor) {
-              this.layersFOR1[this.layersFOR1.length - 1]._url.classList.add('inactive-layer');
-            }
-            break;
-          case 'maz':
-            svgElement.setAttribute('viewBox', '0 0 130 130');
-            this.layersMAZ1.push(svgOverlay(svgElement, this.bounds[bounds]));
-            if (!ifSecondFloor) {
-              this.layersMAZ1[this.layersMAZ1.length - 1]._url.classList.add('inactive-layer');
-            }
-            break;
-        }
-
-
-      });
-  }
-
-
-  changeLocation() {
-    this.removeMarker();
-    this.resetClassesInLayers();
-    this.searchingService.resetInputs();
-
-    let location = this.LocationService.locationState;
-    this.layers = [];
-    switch (location) {
-      case 0: {
-        //KAL1
-        this.layers.push(this.layersKAL1[0], this.layersKAL1[1]);
-      }
-        break;
-      case 1: {
-        //BER1
-        this.layers.push(this.layersBER1[0], this.layersBER1[1]);
-      }
-        break;
-      case 2: {
-        //FOR1
-        this.layers.push(this.layersFOR1[0]);
-      }
-        break;
-      case 3: {
-        //KOR1
-        this.layers.push(this.layersKOR1[0], this.layersKOR1[1]);
-      }
-        break;
-      case 4: {
-        //MAZ1
-        this.layers.push(this.layersMAZ1[0]);
-      }
-        break;
-      case 5: {
-        //SEM1
-        this.layers.push(this.layersSEM1[0], this.layersSEM1[1]);
-      }
-        break;
-    }
-
-    this.layers[this.layers.length - 1]._url.classList.add('active-layer');
-    this.layers[this.layers.length - 1]._url.classList.remove('inactive-layer');
-    // this.addTileAnimation();
-
-  }
-
-
-  resetClassesInLayers() {
-    this.layers.forEach((map) => {
-      map._url.classList.add('inactive-layer');
-      map._url.classList.remove('active-layer');
-    });
-    this.layersKAL1.forEach((map) => {
-      map._url.classList.add('inactive-layer');
-      map._url.classList.remove('active-layer');
-    });
-    this.layersSEM1.forEach((map) => {
-      map._url.classList.add('inactive-layer');
-      map._url.classList.remove('active-layer');
-    });
-    this.layersMAZ1.forEach((map) => {
-      map._url.classList.add('inactive-layer');
-      map._url.classList.remove('active-layer');
-    });
-    this.layersKOR1.forEach((map) => {
-      map._url.classList.add('inactive-layer');
-      map._url.classList.remove('active-layer');
-    });
-    this.layersFOR1.forEach((map) => {
-      map._url.classList.add('inactive-layer');
-      map._url.classList.remove('active-layer');
-    });
-    this.layersBER1.forEach((map) => {
-      map._url.classList.add('inactive-layer');
-      map._url.classList.remove('active-layer');
-    });
-  }
 
   addTileAnimation() {
     this.layers.forEach((map) => {
@@ -441,14 +239,57 @@ export class MapService {
     });
   }
 
+  displayRoomOnMap(locationId: number, floorName: string, roomId: number ) {
+    if(locationId != this.LocationService.locationState) {
+      this.LocationService.locationState = locationId;
+      this.changeLocation();
+    }
+
+    let floor = null;
+
+    switch (floorName) {
+      case "Piwnica": {
+        floor = -1;
+      } break;
+      case "Parter": {
+        floor = 0;
+      } break;
+      case "I piętro": {
+        floor = 1;
+      } break;
+      case "II piętro": {
+        floor = 2;
+      } break;
+      case "III piętro": {
+        floor = 3;
+      } break;
+      case "IV piętro": {
+        floor = 4;
+      } break;
+    }
+
+    if(floor != this.FloorsService.floorState) {
+      this.FloorsService.floorState = floor;
+      this.changeFloor();
+    }
+  }
+
   removeMarker() {
     if (this.marker != null) {
       this.clicked = false;
       L.Map.prototype.removeControl(this.marker);
     }
-
   }
 
-
+  resetClassesInLayers() {
+    this.layers.forEach((map) => {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
+    this.currentLocationMaps.forEach((map) => {
+      map._url.classList.add('inactive-layer');
+      map._url.classList.remove('active-layer');
+    });
+  }
 }
 

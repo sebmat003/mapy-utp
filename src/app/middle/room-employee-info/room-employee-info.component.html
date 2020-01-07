@@ -38,7 +38,9 @@
                 <p>{{'info-panel.room' | translate}}</p> {{item.room}}, {{item.floor}}
               </div>
               <div class="button-room-box" *ngIf="item.roomSpaceManagerId !== null">
-                <button class="room-button" type="button">
+                <button class="room-button" type="button"
+                (click)="navigateToEmployeeRoom(item.roomSpaceManagerId)"
+                >
                   <img src="../../../assets/images/navigation.svg" alt="navigate">
                   <label>{{'list-searching.navigate' | translate}}</label>
                 </button>
@@ -128,7 +130,10 @@
         </div>
         <div class="button-box">
           <button class="navi-button" type="button">
-            <img src="../../../assets/images/navigation.svg" alt="navigate">
+            <img src="../../../assets/images/navigation.svg" alt="navigate"
+            (click)="navigateToRoom(searchingService.roomInfoData[0].campusId,
+            searchingService.roomInfoData[0].floorName,
+             searchingService.roomInfoData[0].roomId)">
             <label>{{'list-searching.navigate' | translate}}</label>
           </button>
         </div>

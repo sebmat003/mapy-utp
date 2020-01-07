@@ -3,7 +3,7 @@
     <div class="line"></div>
     <div class="text-floors">
       <table class="table-floors">
-        <tr *ngIf="LocationService.locationState==4">
+        <tr *ngIf="LocationService.locationState==6">
           <td><div class="triangle" [ngClass]="{'hidden' : FloorsService.floorState!=4}" ></div></td>
           <td><p><button class="astext" (click)="onClickFloor(4)"
                          [ngClass]="{'active' : FloorsService.floorState==4}">{{'floor.f4' | translate}}</button></p></td>
@@ -28,7 +28,7 @@
           <td><p><button class="astext" (click)="onClickFloor(0)"
                          [ngClass]="{'active' : FloorsService.floorState==0}">{{'floor.f0' | translate}}</button></p></td>
         </tr>
-        <tr *ngIf="LocationService.locationState!=2 && LocationService.locationState !=4">
+        <tr *ngIf="LocationService.locationState!=5 && LocationService.locationState !=6">
           <td><div class="triangle" [ngClass]="{'hidden' : FloorsService.floorState!=-1}"></div></td>
           <td><p><button class="astext" (click)="onClickFloor(-1)"
                          [ngClass]="{'active' : FloorsService.floorState==-1}">{{'floor.f-1' | translate}}</button></p></td>

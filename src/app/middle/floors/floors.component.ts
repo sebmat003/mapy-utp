@@ -12,7 +12,6 @@ import {LocationService} from '../../services/location.service';
 export class FloorsComponent implements OnInit {
 
   @Input() private transform: boolean = false;
-  // public floorState: number = 0;
 
 
   constructor(private FloorsService: FloorsService, private MapService: MapService, public LocationService: LocationService) {
@@ -24,7 +23,6 @@ export class FloorsComponent implements OnInit {
 
 
   onClickFloor(number: number) {
-    // this.floorState = number;
     if(this.FloorsService.floorState != number) {
       this.FloorsService.floorState = number;
       this.MapService.changeFloor();
