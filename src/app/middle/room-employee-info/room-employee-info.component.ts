@@ -10,7 +10,6 @@ import {MapService} from '../../services/map.service';
 export class RoomEmployeeInfoComponent implements OnInit {
   @Input() private transform: boolean = false;
 
-
   constructor(public searchingService: SearchingService, public mapService: MapService) {
   }
 
@@ -19,18 +18,36 @@ export class RoomEmployeeInfoComponent implements OnInit {
 
   closeInfoBox() {
 
-    if(this.searchingService.numberOfClicks == 1) {
+    if (this.searchingService.numberOfClicks == 1) {
       this.searchingService.resetInfoData();
       this.searchingService.clickedListItem = false;
-    } else this.searchingService.numberOfClicks = 1;
+    } else {
+      this.searchingService.numberOfClicks = 1;
+    }
 
   }
 
-  navigateToRoom(locationId: number, floorName: string, roomId: number ) {
-    this.mapService.displayRoomOnMap(locationId, floorName, roomId);
+
+  async navigateToRoom(locationId: number, floorName: string, roomId: number) {
+    this.searchingService.resetInfoData();
+    this.searchingService.clickedListItem = false;
+    await this.mapService.displayRoomOnMap(locationId, floorName, roomId);
   }
 
-  navigateToEmployeeRoom(roomId: number) {
-
+  async navigateToEmployeeRoom(roomId: number) {
+    this.searchingService.resetInfoData();
+    this.searchingService.clickedListItem = false;
+    await this.searchingService.getEmployeeRoomInfoData(roomId).subscribe((data) => {
+        data = Array.of(data);
+        if (data != null) {
+          let locationId = data['0'].campusId;
+          let floorName = data['0'].floorName;
+          this.mapService.displayRoomOnMap(locationId, floorName, roomId);
+        } else {
+          console.log('No data of employee room');
+        }
+      }
+    )
   }
+
 }

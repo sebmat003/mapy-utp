@@ -128,14 +128,11 @@ export class MapService {
         'https://api-dev.kb.utp.edu.pl/maps/svg/generate?campus='+ location + '&level=' + 0 + '&mapSize=5000&isIsometric=true&fontSize=3',
         i + 1, 5000);
     }
+    this.addTileAnimation();
+    this.getIdRoomInMap();
     this.mapIsLoaded = true;
     this.layers.push(this.currentLocationMaps[0], this.currentLocationMaps[1]);
     this.layers[0]._url.classList.add('inactive-layer');
-
-    this.addTileAnimation();
-    this.getIdRoomInMap();
-    // this.layers[this.layers.length - 1]._url.classList.add('active-layer');
-    // this.layers[this.layers.length - 1]._url.classList.remove('inactive-layer');
   }
 
   changeFloor() {
@@ -192,14 +189,14 @@ export class MapService {
       updatedArray[updatedArray.length - 1]._url.classList.add('active-layer');
       updatedArray[updatedArray.length - 1]._url.classList.remove('inactive-layer');
     }
-    this.addTileAnimation();
-    this.getIdRoomInMap();
+    // this.addTileAnimation();
+    // this.getIdRoomInMap();
     return updatedArray;
   }
 
 
   addTileAnimation() {
-    this.layers.forEach((map) => {
+    this.currentLocationMaps.forEach((map) => {
       map._url.classList.add('tile-animation');
       let children = map._url.lastElementChild.children;
       for (let i = 0; i < children.length; i++) {
@@ -222,7 +219,7 @@ export class MapService {
   }
 
   getIdRoomInMap() {
-    this.layers.forEach((map) => {
+    this.currentLocationMaps.forEach((map) => {
       let children = map._url.lastElementChild.children;
       for (let i = 0; i < children.length; i++) {
         let objecttype = children[i].attributes.getNamedItem('objecttype');
@@ -239,31 +236,38 @@ export class MapService {
     });
   }
 
-  displayRoomOnMap(locationId: number, floorName: string, roomId: number ) {
+  async displayRoomOnMap(locationId: number, floorName: string, roomId: number ) {
     if(locationId != this.LocationService.locationState) {
       this.LocationService.locationState = locationId;
-      this.changeLocation();
+      await this.changeLocation();
     }
 
     let floor = null;
 
     switch (floorName) {
-      case "Piwnica": {
+      case "Piwnica":
+      case "POZIOM -1": {
         floor = -1;
       } break;
-      case "Parter": {
+      case "Parter":
+      case "POZIOM 0": {
         floor = 0;
       } break;
-      case "I piętro": {
+      case "I piętro":
+      case "I piętro - Poddasze":
+      case "POZIOM 1": {
         floor = 1;
       } break;
-      case "II piętro": {
+      case "II piętro":
+      case "POZIOM 2": {
         floor = 2;
       } break;
-      case "III piętro": {
+      case "III piętro":
+      case "POZIOM 3": {
         floor = 3;
       } break;
-      case "IV piętro": {
+      case "IV piętro":
+      case "POZIOM 4": {
         floor = 4;
       } break;
     }
@@ -272,6 +276,8 @@ export class MapService {
       this.FloorsService.floorState = floor;
       this.changeFloor();
     }
+
+
   }
 
   removeMarker() {

@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {MapService} from './map.service';
 
 @Injectable()
 export class SearchingService {
@@ -38,11 +39,12 @@ export class SearchingService {
   roomsData = null;
   roomInfoUrl = 'https://api-dev.kb.utp.edu.pl/search-provider/room?roomId=';
   roomInfoData = null;
-
+  employeeRoomInfoData = null;
 
   //info component about employee/room
   numberOfClicks: number = 1;
   clickedListItem = false;
+
 
 
   constructor(private httpClient: HttpClient) {
@@ -116,11 +118,15 @@ export class SearchingService {
     }
   }
 
-  getRoomInfoData(text: string) {
-    this.httpClient.get(this.roomInfoUrl + text, {responseType: 'json'})
+  getRoomInfoData(id: string | number) {
+    this.httpClient.get(this.roomInfoUrl + id, {responseType: 'json'})
       .subscribe((data) => {
         this.roomInfoData = Array.of(data);
       });
+  }
+
+  getEmployeeRoomInfoData(id: number) {
+    return this.httpClient.get(this.roomInfoUrl + id, {responseType: 'json'})
   }
 
   resetData() {
@@ -142,6 +148,7 @@ export class SearchingService {
   resetInfoData() {
     this.roomInfoData = null;
     this.employeeInfoData = null;
+    this.employeeRoomInfoData = null;
   }
 
   resetInputs() {

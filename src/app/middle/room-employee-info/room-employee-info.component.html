@@ -39,7 +39,7 @@
               </div>
               <div class="button-room-box" *ngIf="item.roomSpaceManagerId !== null">
                 <button class="room-button" type="button"
-                (click)="navigateToEmployeeRoom(item.roomSpaceManagerId)"
+                (click)="navigateToEmployeeRoom(item.roomSpaceManagerId).then()"
                 >
                   <img src="../../../assets/images/navigation.svg" alt="navigate">
                   <label>{{'list-searching.navigate' | translate}}</label>
@@ -129,11 +129,10 @@
 
         </div>
         <div class="button-box">
-          <button class="navi-button" type="button">
-            <img src="../../../assets/images/navigation.svg" alt="navigate"
-            (click)="navigateToRoom(searchingService.roomInfoData[0].campusId,
-            searchingService.roomInfoData[0].floorName,
-             searchingService.roomInfoData[0].roomId)">
+          <button class="navi-button" type="button" (click)="navigateToRoom(searchingService?.roomInfoData[0].campusId,
+            searchingService?.roomInfoData[0].floorName,
+            searchingService?.roomInfoData[0].roomId).then()">>
+            <img src="../../../assets/images/navigation.svg" alt="navigate">
             <label>{{'list-searching.navigate' | translate}}</label>
           </button>
         </div>
@@ -141,3 +140,5 @@
     </div>
   </div>
 </ng-container>
+
+
