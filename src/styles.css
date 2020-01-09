@@ -143,7 +143,12 @@ p, div, img, td{
 }
 
 .path-animation:hover {
-  /*fill: rgba(68,224,224,0.78);*/
+  animation: animate_stroke 2s infinite;
+}
+
+/*instant animation of selected path */
+.navigated-path-animation {
+  transition: all 0.5s;
   animation: animate_stroke 2s infinite;
 }
 
@@ -152,6 +157,11 @@ p, div, img, td{
   50% {stroke-width: 2}
   100% {stroke-width: 1}
 
+}
+
+.navigated-path-animation {
+  transition: all 0.5s;
+  animation: animate_stroke 2s infinite;
 }
 
 

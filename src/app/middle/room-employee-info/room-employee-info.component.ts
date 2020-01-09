@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SearchingService} from '../../services/searching.service';
 import {MapService} from '../../services/map.service';
+import {MinimizeButtonService} from '../../services/minimize-button.service';
 
 @Component({
   selector: 'app-room-employee-info',
@@ -10,7 +11,8 @@ import {MapService} from '../../services/map.service';
 export class RoomEmployeeInfoComponent implements OnInit {
   @Input() private transform: boolean = false;
 
-  constructor(public searchingService: SearchingService, public mapService: MapService) {
+  constructor(public searchingService: SearchingService, public mapService: MapService,
+              public minimizeService: MinimizeButtonService) {
   }
 
   ngOnInit() {
@@ -31,12 +33,14 @@ export class RoomEmployeeInfoComponent implements OnInit {
   async navigateToRoom(locationId: number, floorName: string, roomId: number) {
     this.searchingService.resetInfoData();
     this.searchingService.clickedListItem = false;
+    this.minimizeService.ifMinimize = true;
     await this.mapService.displayRoomOnMap(locationId, floorName, roomId);
   }
 
   async navigateToEmployeeRoom(roomId: number) {
     this.searchingService.resetInfoData();
     this.searchingService.clickedListItem = false;
+    this.minimizeService.ifMinimize = true;
     await this.searchingService.getEmployeeRoomInfoData(roomId).subscribe((data) => {
         data = Array.of(data);
         if (data != null) {

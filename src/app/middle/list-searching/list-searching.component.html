@@ -14,7 +14,8 @@
           </div>
           <div class="navi-buttons">
             <ng-container *ngIf="item.roomId !== null">
-              <button class="navi-button" type="button" (click)="navigate();$event.stopPropagation()">
+              <button class="navi-button" type="button" (click)="navigateRoom(item.campusId, item.floorName, item.roomId).then();
+              $event.stopPropagation()">
                 <img src="../../../assets/images/navigation.svg" alt="navigate">
                 <label>{{'list-searching.navigate' | translate}}</label>
               </button>
@@ -32,7 +33,9 @@
           </div>
           <div class="navi-buttons">
             <ng-container *ngIf="item.additionalData[0].roomSpaceManagerId !== null">
-              <button class="navi-button" type="button" (click)="navigate();$event.stopPropagation()">
+              <button class="navi-button" type="button"
+                      (click)="navigateEmployeeRoom(item.additionalData[0].roomSpaceManagerId).then();
+                      $event.stopPropagation()">
                 <img src="../../../assets/images/navigation.svg" alt="navigate">
                 <label>{{'list-searching.navigate' | translate}}</label>
               </button>
@@ -64,7 +67,9 @@
           </div>
           <ng-container *ngIf="item.additionalData[0].roomSpaceManagerId !== null">
             <div class="navi-buttons">
-              <button class="navi-button" type="button" (click)="navigate();$event.stopPropagation()">
+              <button class="navi-button" type="button"
+                      (click)="navigateEmployeeRoom(item.additionalData[0].roomSpaceManagerId).then();
+                      $event.stopPropagation()">
                 <img src="../../../assets/images/navigation.svg" alt="navigate">
                 <label>{{'list-searching.navigate' | translate}}</label>
               </button>
@@ -91,7 +96,8 @@
           </div>
           <div class="navi-buttons">
             <ng-container *ngIf="item.roomId !== null">
-              <button class="navi-button" type="button" (click)="navigate();$event.stopPropagation()">
+              <button class="navi-button" type="button" (click)="navigateRoom(item.campusId, item.floorName, item.roomId).then();
+              $event.stopPropagation()">
                 <img src="../../../assets/images/navigation.svg" alt="navigate">
                 <label>{{'list-searching.navigate' | translate}}</label>
               </button>

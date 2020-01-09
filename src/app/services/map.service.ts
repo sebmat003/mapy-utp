@@ -244,30 +244,32 @@ export class MapService {
 
     let floor = null;
 
+    floorName.toLowerCase();
+
     switch (floorName) {
       case "Piwnica":
-      case "POZIOM -1": {
+      case "Poziom -1": {
         floor = -1;
       } break;
       case "Parter":
-      case "POZIOM 0": {
+      case "Poziom 0": {
         floor = 0;
       } break;
       case "I piętro":
       case "I piętro - Poddasze":
-      case "POZIOM 1": {
+      case "Poziom 1": {
         floor = 1;
       } break;
       case "II piętro":
-      case "POZIOM 2": {
+      case "Poziom 2": {
         floor = 2;
       } break;
       case "III piętro":
-      case "POZIOM 3": {
+      case "Poziom 3": {
         floor = 3;
       } break;
       case "IV piętro":
-      case "POZIOM 4": {
+      case "Poziom 4": {
         floor = 4;
       } break;
     }
@@ -277,6 +279,26 @@ export class MapService {
       this.changeFloor();
     }
 
+    let children = this.currentLocationMaps[floor + 1]._url.lastElementChild.children;
+    for (let i = 0; i < children.length; i++) {
+      let objecttype = children[i].attributes.getNamedItem('objecttype');
+      let objectid = children[i].attributes.getNamedItem('objectid');
+      if (children[i].nodeName == 'polygon' && objecttype && objectid) {
+        if (objectid.value == roomId && objecttype.value == 'room') {
+          let color = children[i].attributes.getNamedItem('fill');
+          // @ts-ignore
+          d3.select(children[i]).style('fill', d3.color(color.value).brighter());
+          // d3.select(children[i]).style('stroke', 'white');
+          children[i].classList.add('navigated-path-animation');
+
+          d3.select(children[i]).on('mouseover', function () {
+
+          }).on('mouseout', function () {
+
+          });
+        }
+      }
+    }
 
   }
 
