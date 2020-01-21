@@ -12,7 +12,7 @@ export class LeftMenuComponent implements OnInit {
   private showLeftMenu: boolean = true;
   @Output() emitStateMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private searchingService: SearchingService) { }
+  constructor() { }
 
   ngOnInit() {
     this.emitStateMenu.emit(this.showLeftMenu);

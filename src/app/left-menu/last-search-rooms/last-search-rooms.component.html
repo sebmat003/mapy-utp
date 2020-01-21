@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="text">
+    <p>{{'last-search-rooms.title' | translate}}</p>
+  </div>
+  <ng-container *ngIf="this.searchingService.lastSearchRooms.length != 0">
+      <ul>
+        <li *ngFor="let item of this.searchingService.lastSearchRooms">
+          <div class="item-info">
+            <p>{{item.roomName}}</p>
+          </div>
+          <div class="navi-buttons">
+            <div class="select-button" type="button">
+              <p>{{ 'searching.select' | translate}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </ng-container>
+
+  <ng-container *ngIf="this.searchingService.lastSearchRooms.length == 0">
+    <p id="no-results">{{'last-search-rooms.info' | translate}}</p>
+  </ng-container>
+</div>

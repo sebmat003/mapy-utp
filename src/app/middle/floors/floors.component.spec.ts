@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FloorsComponent } from './floors.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {FloorsService} from '../../services/floors.service';
+import {MapService} from '../../services/map.service';
+import {LocationService} from '../../services/location.service';
+import {HttpClientModule} from '@angular/common/http';
+import {SearchingService} from '../../services/searching.service';
 
 describe('FloorsComponent', () => {
   let component: FloorsComponent;
@@ -8,7 +14,17 @@ describe('FloorsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FloorsComponent ]
+      declarations: [ FloorsComponent ],
+      imports: [
+        TranslateModule.forRoot(),
+        HttpClientModule
+      ],
+      providers: [
+        FloorsService,
+        MapService,
+        LocationService,
+        SearchingService
+      ]
     })
     .compileComponents();
   }));

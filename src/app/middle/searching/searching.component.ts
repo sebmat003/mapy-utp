@@ -108,6 +108,7 @@ export class SearchingComponent implements OnInit {
 
   clickedSubUnit(subUnitId: string | number) {
     this.searchingService.getEmployeesData(subUnitId);
+    this.minimizeButtonService.ifMinimize = false;
   }
 
 
@@ -151,6 +152,7 @@ export class SearchingComponent implements OnInit {
   clickedFloor(floorId: number | string) {
     this.floorId = floorId;
     this.searchingService.getRoomsData(this.campusId, this.buildingId, this.floorId);
+    this.minimizeButtonService.ifMinimize = false;
   }
 
 

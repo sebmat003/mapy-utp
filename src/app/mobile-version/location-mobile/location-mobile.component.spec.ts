@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LocationMobileComponent } from './location-mobile.component';
+import {LocationService} from '../../services/location.service';
 
 describe('LocationMobileComponent', () => {
   let component: LocationMobileComponent;
@@ -8,7 +9,10 @@ describe('LocationMobileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocationMobileComponent ]
+      declarations: [ LocationMobileComponent ],
+      providers: [
+        LocationService
+      ]
     })
     .compileComponents();
   }));

@@ -101,5 +101,9 @@
     "campus": "Campus:",
     "floor": "Floor:",
     "address": "Address:"
+  },
+  "last-search-rooms": {
+    "title": "Recently searched rooms",
+    "info": "No recently searched rooms"
   }
 }

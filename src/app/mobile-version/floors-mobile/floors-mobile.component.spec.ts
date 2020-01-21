@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FloorsMobileComponent } from './floors-mobile.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {FloorsService} from '../../services/floors.service';
 
 describe('FloorsMobileComponent', () => {
   let component: FloorsMobileComponent;
@@ -8,7 +10,11 @@ describe('FloorsMobileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FloorsMobileComponent ]
+      declarations: [ FloorsMobileComponent ],
+      imports: [TranslateModule.forRoot()],
+      providers: [
+        FloorsService
+      ]
     })
     .compileComponents();
   }));

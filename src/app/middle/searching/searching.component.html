@@ -19,7 +19,8 @@
                    #input
                    placeholder="{{'searching.search' | translate}}"
                    [(ngModel)]="this.message"
-                   (input)="this.searchingService.getRoomAndEmployeeData(input.value);"
+                   (input)="this.minimizeButtonService.ifMinimize = false;
+                   this.searchingService.getRoomAndEmployeeData(input.value);"
             >
           </td>
         </ng-container>

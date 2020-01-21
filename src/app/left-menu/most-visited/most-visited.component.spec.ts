@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MostVisitedComponent } from './most-visited.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('MostVisitedComponent', () => {
   let component: MostVisitedComponent;
@@ -8,7 +9,8 @@ describe('MostVisitedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MostVisitedComponent ]
+      declarations: [ MostVisitedComponent ],
+      imports: [TranslateModule.forRoot()]
     })
     .compileComponents();
   }));

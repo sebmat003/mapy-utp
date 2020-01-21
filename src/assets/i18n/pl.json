@@ -101,5 +101,9 @@
     "campus": "Kampus:",
     "floor": "Piętro:",
     "address": "Adres:"
+  },
+  "last-search-rooms": {
+    "title": "Ostatnio wyszukiwane pokoje",
+    "info": "Brak ostatnio wyszukiwanych pokojów"
   }
 }

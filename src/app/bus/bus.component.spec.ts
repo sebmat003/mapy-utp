@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BusComponent } from './bus.component';
+import {BusItemComponent} from './bus-item/bus-item.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('BusComponent', () => {
   let component: BusComponent;
@@ -8,7 +10,11 @@ describe('BusComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BusComponent ]
+      declarations: [
+        BusComponent,
+        BusItemComponent
+      ],
+      imports: [TranslateModule.forRoot()]
     })
     .compileComponents();
   }));

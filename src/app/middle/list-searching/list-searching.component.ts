@@ -12,7 +12,7 @@ export class ListSearchingComponent implements OnInit {
   @Input() private transform: boolean = false;
 
 
-  constructor(public minimizeButtonService: MinimizeButtonService,
+  constructor(
               public searchingService: SearchingService,
               public mapService: MapService,
               public minimizeService: MinimizeButtonService) { }

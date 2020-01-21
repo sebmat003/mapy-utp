@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NaviOptionsComponent } from './navi-options.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {MinimizeButtonService} from '../../services/minimize-button.service';
 
 describe('NaviOptionsComponent', () => {
   let component: NaviOptionsComponent;
@@ -8,7 +10,11 @@ describe('NaviOptionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NaviOptionsComponent ]
+      declarations: [ NaviOptionsComponent ],
+      imports: [TranslateModule.forRoot()],
+      providers: [
+        MinimizeButtonService
+      ]
     })
     .compileComponents();
   }));

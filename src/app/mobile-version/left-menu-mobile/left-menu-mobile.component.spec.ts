@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LeftMenuMobileComponent } from './left-menu-mobile.component';
+import {LogoComponent} from '../../left-menu/logo/logo.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {MenuMobileService} from '../../services/menu-mobile.service';
 
 describe('LeftMenuMobileComponent', () => {
   let component: LeftMenuMobileComponent;
@@ -8,7 +11,14 @@ describe('LeftMenuMobileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeftMenuMobileComponent ]
+      declarations: [
+        LeftMenuMobileComponent,
+        LogoComponent
+      ],
+      providers: [
+        MenuMobileService
+      ],
+      imports: [TranslateModule.forRoot()]
     })
     .compileComponents();
   }));

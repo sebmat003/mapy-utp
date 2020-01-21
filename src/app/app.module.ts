@@ -7,8 +7,6 @@ import { LogoComponent } from './left-menu/logo/logo.component';
 import { NavigationPanelComponent } from './left-menu/navigation-panel/navigation-panel.component';
 import { MostVisitedComponent } from './left-menu/most-visited/most-visited.component';
 import { RestaurantComponent } from './left-menu/restaurant/restaurant.component';
-import { RoomInfoComponent } from './left-menu/room-info/room-info.component';
-import { EmployeeInfoComponent } from './left-menu/employee-info/employee-info.component';
 import { SearchingComponent } from './middle/searching/searching.component';
 import { MapComponent } from './middle/map/map.component';
 import { NaviOptionsComponent } from './middle/navi-options/navi-options.component';
@@ -21,7 +19,6 @@ import { MenuRestaurantComponent } from './menu-restaurant/menu-restaurant.compo
 import { BusComponent } from './bus/bus.component';
 import { FooterComponent } from './footer/footer.component';
 import { LeftMenuMobileComponent } from './mobile-version/left-menu-mobile/left-menu-mobile.component';
-import { OptionsComponent } from './mobile-version/left-menu-mobile/options/options.component';
 import { LocationMobileComponent } from './mobile-version/location-mobile/location-mobile.component';
 import { FloorsMobileComponent } from './mobile-version/floors-mobile/floors-mobile.component';
 import { ChangeFloorsComponent } from './mobile-version/change-floors/change-floors.component';
@@ -35,7 +32,7 @@ import {MenuMobileService} from './services/menu-mobile.service';
 import {FloorsService} from './services/floors.service';
 import {MapService} from './services/map.service';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MinimizeButtonService} from './services/minimize-button.service';
 import { ListSearchingComponent } from './middle/list-searching/list-searching.component';
@@ -50,7 +47,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {VarDirective} from './directives/var.directive';
 import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-employee-info.component';
-
+import { LastSearchRoomsComponent } from './left-menu/last-search-rooms/last-search-rooms.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,8 +56,6 @@ import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-empl
     NavigationPanelComponent,
     MostVisitedComponent,
     RestaurantComponent,
-    RoomInfoComponent,
-    EmployeeInfoComponent,
     SearchingComponent,
     MapComponent,
     NaviOptionsComponent,
@@ -73,7 +68,6 @@ import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-empl
     BusComponent,
     FooterComponent,
     LeftMenuMobileComponent,
-    OptionsComponent,
     LocationMobileComponent,
     FloorsMobileComponent,
     ChangeFloorsComponent,
@@ -82,7 +76,8 @@ import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-empl
     FilterPipe,
     SearchPanelComponent,
     VarDirective,
-    RoomEmployeeInfoComponent
+    RoomEmployeeInfoComponent,
+    LastSearchRoomsComponent
   ],
   imports: [
     BrowserModule,
@@ -112,7 +107,8 @@ import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-empl
     FloorsService,
     MapService,
     MinimizeButtonService,
-    SearchingService
+    SearchingService,
+    TranslateService
 
   ],
   bootstrap: [AppComponent]
@@ -122,5 +118,5 @@ export class AppModule {}
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http,"./assets/i18n/", ".json");
 }

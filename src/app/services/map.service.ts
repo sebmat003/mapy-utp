@@ -11,11 +11,15 @@ import {SearchingService} from './searching.service';
 @Injectable()
 export class MapService {
 
+  map: L.Map;
   currentLocationMaps = [];
   layers = [];
   mapIsLoaded: boolean = false;
 
   bounds = [];
+
+  previousRoomColor = null;
+  previousRoomId = null;
 
   options = {
     crs: L.CRS.Simple,
@@ -24,7 +28,6 @@ export class MapService {
     maxZoom: 8,
     zoomControl: false,
     center: [250, 90],
-    // maxBounds: [[0, -1], [5, 6]],
     maxBounds: [[120, -120], [350, 320]],
     maxBoundsViscosity: 1,
     attributionControl: false,
@@ -34,6 +37,7 @@ export class MapService {
   coordinates;
   marker;
   clicked: boolean = false;
+
 
   icon = {
     icon: L.icon({
@@ -59,12 +63,14 @@ export class MapService {
     this.clicked = false;
     map.on('click', <LeafletMouseEvent>(e) => {
       this.coordinates = e.latlng;
+      console.log(this.coordinates);
 
-      if (map.getZoom() < 4) {
-        map.setView(this.coordinates, map.getZoom() + 2);
-      } else if (map.getZoom() >= 4 && map.getZoom() <= 6) {
-        map.setView(this.coordinates, map.getZoom() + 1);
-      }
+      // if (map.getZoom() < 4) {
+      //   map.setView(this.coordinates, map.getZoom() + 2);
+      // } else if (map.getZoom() >= 4 && map.getZoom() <= 6) {
+      //   map.setView(this.coordinates, map.getZoom() + 1);
+      // }
+      map.setView(this.coordinates, map.getZoom());
       if (!this.clicked) {
         this.clicked = true;
         this.marker = L.marker([this.coordinates.lat + 0.001, this.coordinates.lng], this.icon).addTo(map);
@@ -237,6 +243,9 @@ export class MapService {
   }
 
   async displayRoomOnMap(locationId: number, floorName: string, roomId: number ) {
+
+    this.resetPreviousRoomSettings();
+
     if(locationId != this.LocationService.locationState) {
       this.LocationService.locationState = locationId;
       await this.changeLocation();
@@ -283,23 +292,60 @@ export class MapService {
     for (let i = 0; i < children.length; i++) {
       let objecttype = children[i].attributes.getNamedItem('objecttype');
       let objectid = children[i].attributes.getNamedItem('objectid');
+
       if (children[i].nodeName == 'polygon' && objecttype && objectid) {
         if (objectid.value == roomId && objecttype.value == 'room') {
-          let color = children[i].attributes.getNamedItem('fill');
-          // @ts-ignore
-          d3.select(children[i]).style('fill', d3.color(color.value).brighter());
-          // d3.select(children[i]).style('stroke', 'white');
-          children[i].classList.add('navigated-path-animation');
+          this.previousRoomColor = children[i].attributes.getNamedItem('fill');
+          this.previousRoomId = roomId;
 
           d3.select(children[i]).on('mouseover', function () {
-
           }).on('mouseout', function () {
-
           });
+
+          children[i].id = 'selected-room';
+          let event = new MouseEvent('click', {
+            view: window,
+            bubbles: false,
+          });
+          //TODO tu trzeba cos zrobic!
+          document.getElementById('selected-room').dispatchEvent(event);
+          // @ts-ignore
+          d3.select(children[i]).style('fill', 'white');
+          children[i].classList.add('navigated-path-animation');
+
         }
       }
     }
 
+  }
+
+  resetPreviousRoomSettings() {
+    this.currentLocationMaps.forEach((map)=> {
+      let children = map._url.lastElementChild.children;
+      for (let i = 0; i < children.length; i++) {
+        let objecttype = children[i].attributes.getNamedItem('objecttype');
+        let objectid = children[i].attributes.getNamedItem('objectid');
+
+        //previous room - reset settings
+        if (children[i].nodeName == 'polygon' && objecttype && objectid) {
+          if (objectid.value == this.previousRoomId && objecttype.value == 'room' &&
+            this.previousRoomColor != null && this.previousRoomId != null) {
+            let color = this.previousRoomColor;
+            // @ts-ignore
+            d3.select(children[i]).style('fill', d3.color(color.value));
+            d3.select(children[i]).on('mouseover', function () {
+              // @ts-ignore
+              d3.select(children[i]).style('fill', d3.color(color.value).darker());
+            }).on('mouseout', function () {
+              // @ts-ignore
+              d3.select(children[i]).style('fill', d3.color(color.value));
+            });
+            children[i].classList.remove('navigated-path-animation');
+            children[i].classList.add('path-animation');
+          }
+        }
+      }
+    })
   }
 
   removeMarker() {

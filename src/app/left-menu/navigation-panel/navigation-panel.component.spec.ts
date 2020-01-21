@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavigationPanelComponent } from './navigation-panel.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {SearchingService} from '../../services/searching.service';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('NavigationPanelComponent', () => {
   let component: NavigationPanelComponent;
@@ -8,7 +11,14 @@ describe('NavigationPanelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationPanelComponent ]
+      declarations: [ NavigationPanelComponent ],
+      imports: [
+        TranslateModule.forRoot(),
+        HttpClientModule
+      ],
+      providers: [
+        SearchingService
+      ]
     })
     .compileComponents();
   }));

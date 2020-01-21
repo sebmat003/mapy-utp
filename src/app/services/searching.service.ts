@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {MapService} from './map.service';
 
 @Injectable()
 export class SearchingService {
@@ -45,6 +44,8 @@ export class SearchingService {
   numberOfClicks: number = 1;
   clickedListItem = false;
 
+  lastSearchRooms = [];
+
 
 
   constructor(private httpClient: HttpClient) {
@@ -56,6 +57,40 @@ export class SearchingService {
       .subscribe((data) => {
         this.campusData = data;
       });
+
+    //dummy data
+    this.lastSearchRooms = [
+      {
+        'locationId': 15,
+        'floorName': 'Piętro I',
+        'roomId': 54,
+        'roomName': 'C 202'
+      },
+      {
+        'locationId': 3567,
+        'floorName': 'Piętro I',
+        'roomId': 354,
+        'roomName': 'B 342'
+      },
+      {
+        'locationId': 12,
+        'floorName': 'Piętro I',
+        'roomId': 312,
+        'roomName': 'A 20212'
+      },
+      {
+        'locationId': 12,
+        'floorName': 'Piętro I',
+        'roomId': 312,
+        'roomName': 'Y 3123'
+      },
+      {
+        'locationId': 12,
+        'floorName': 'Piętro I',
+        'roomId': 312,
+        'roomName': 'D 3213'
+      },
+    ]
   }
 
 

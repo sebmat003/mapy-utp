@@ -1,32 +1,31 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuRestaurantComponent } from './menu-restaurant.component';
+import { LastSearchRoomsComponent } from './last-search-rooms.component';
 import {TranslateModule} from '@ngx-translate/core';
-import {MenuRestaurantService} from '../services/menu-restaurant.service';
+import {SearchingService} from '../../services/searching.service';
 import {HttpClientModule} from '@angular/common/http';
-import {PdfViewerModule} from 'ng2-pdf-viewer';
 
-describe('MenuRestaurantComponent', () => {
-  let component: MenuRestaurantComponent;
-  let fixture: ComponentFixture<MenuRestaurantComponent>;
+describe('LastSearchRoomsComponent', () => {
+  let component: LastSearchRoomsComponent;
+  let fixture: ComponentFixture<LastSearchRoomsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuRestaurantComponent ],
+      declarations: [ LastSearchRoomsComponent ],
       imports: [
         TranslateModule.forRoot(),
-        HttpClientModule,
-        PdfViewerModule
+        HttpClientModule
       ],
       providers: [
-        MenuRestaurantService
+        SearchingService,
+
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuRestaurantComponent);
+    fixture = TestBed.createComponent(LastSearchRoomsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
