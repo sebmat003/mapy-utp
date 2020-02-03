@@ -1,6 +1,6 @@
 <!-- list for searching state 1 -->
-<ng-container *ngIf="searchingService.searchingState==1 && searchingService.roomAndEmployeeData != null">
-  <div class="list-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''">
+<ng-container *ngIf="searchingService.searchingState==1 && searchingService.roomAndEmployeeData != null" >
+  <div class="list-container" [ngClass]="this.minimizeService.ifMinimize ? 'minimize' : ''">
     <div class="list" [ngClass]="{'transform-right' : transform, '': !transform }">
       <ul>
         <li *ngFor="let item of searchingService.roomAndEmployeeData.rooms"
@@ -14,7 +14,8 @@
           </div>
           <div class="navi-buttons">
             <ng-container *ngIf="item.roomId !== null">
-              <button class="navi-button" type="button" (click)="navigateRoom(item.campusId, item.floorName, item.roomId).then();
+              <button class="navi-button" type="button"
+                      (click)="navigateRoom(item).then();
               $event.stopPropagation()">
                 <img src="../../../assets/images/navigation.svg" alt="navigate">
                 <label>{{'list-searching.navigate' | translate}}</label>
@@ -53,7 +54,7 @@
 
 <!--list for searching state 2-->
 <ng-container *ngIf="searchingService.employeesInUnitData != null && searchingService.searchingState==2">
-  <div class="list-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''">
+  <div class="list-container" [ngClass]="this.minimizeService.ifMinimize ? 'minimize' : ''">
     <div class="list" [ngClass]="{'transform-right' : transform, '': !transform }">
       <ul>
         <li *ngFor="let item of searchingService.employeesInUnitData"
@@ -82,7 +83,7 @@
 </ng-container>
 <!--list for searching state 3-->
 <ng-container *ngIf="searchingService.roomsData != null && searchingService.searchingState==3">
-  <div class="list-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''">
+  <div class="list-container" [ngClass]="this.minimizeService.ifMinimize ? 'minimize' : ''">
     <div class="list" [ngClass]="{'transform-right' : transform, '': !transform }">
       <ul>
         <li *ngFor="let item of searchingService.roomsData?.content"
@@ -96,7 +97,8 @@
           </div>
           <div class="navi-buttons">
             <ng-container *ngIf="item.roomId !== null">
-              <button class="navi-button" type="button" (click)="navigateRoom(item.campusId, item.floorName, item.roomId).then();
+              <button class="navi-button" type="button"
+                      (click)="navigateRoom(item).then();
               $event.stopPropagation()">
                 <img src="../../../assets/images/navigation.svg" alt="navigate">
                 <label>{{'list-searching.navigate' | translate}}</label>

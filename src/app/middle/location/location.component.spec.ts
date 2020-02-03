@@ -5,6 +5,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {LocationService} from '../../services/location.service';
 import {MapService} from '../../services/map.service';
 import {FloorsService} from '../../services/floors.service';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('LocationComponent', () => {
   let component: LocationComponent;
@@ -13,7 +14,9 @@ describe('LocationComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LocationComponent ],
-      imports: [TranslateModule.forRoot()],
+      imports: [
+        TranslateModule.forRoot(),
+        HttpClientModule],
       providers: [
         LocationService,
         MapService,

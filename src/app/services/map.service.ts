@@ -62,22 +62,17 @@ export class MapService {
 
     this.clicked = false;
     map.on('click', <LeafletMouseEvent>(e) => {
+      console.log('123');
       this.coordinates = e.latlng;
-      console.log(this.coordinates);
-
-      // if (map.getZoom() < 4) {
-      //   map.setView(this.coordinates, map.getZoom() + 2);
-      // } else if (map.getZoom() >= 4 && map.getZoom() <= 6) {
-      //   map.setView(this.coordinates, map.getZoom() + 1);
-      // }
       map.setView(this.coordinates, map.getZoom());
       if (!this.clicked) {
+        console.log('clicked = true');
         this.clicked = true;
         this.marker = L.marker([this.coordinates.lat + 0.001, this.coordinates.lng], this.icon).addTo(map);
       } else {
+        console.log('false');
         this.marker.setLatLng([this.coordinates.lat + 0.001, this.coordinates.lng]);
       }
-
     });
   }
 
@@ -242,12 +237,26 @@ export class MapService {
     });
   }
 
-  async displayRoomOnMap(locationId: number, floorName: string, roomId: number ) {
-
+  async displayRoomOnMap(roomObject) {
     this.resetPreviousRoomSettings();
 
-    if(locationId != this.LocationService.locationState) {
-      this.LocationService.locationState = locationId;
+    let campusId = roomObject.campusId;
+    let roomId = roomObject.roomId;
+    let floorName = roomObject.floorName;
+    let roomNumber = roomObject.roomNumber;
+    let roomMinorUnit = roomObject.roomMinorUnit;
+
+    //push object to last searching rooms
+    this.searchingService.insertObjectIntoLastRooms({
+      'campusId': campusId,
+      'floorName': floorName,
+      'roomId': roomId,
+      'roomNumber': roomNumber,
+      'roomMinorUnit': roomMinorUnit,
+    });
+
+    if(campusId != this.LocationService.locationState) {
+      this.LocationService.locationState = campusId;
       await this.changeLocation();
     }
 
@@ -305,10 +314,10 @@ export class MapService {
           children[i].id = 'selected-room';
           let event = new MouseEvent('click', {
             view: window,
-            bubbles: false,
+            bubbles: true,
           });
-          //TODO tu trzeba cos zrobic!
-          document.getElementById('selected-room').dispatchEvent(event);
+
+          // document.getElementById('selected-room').dispatchEvent(event);
           // @ts-ignore
           d3.select(children[i]).style('fill', 'white');
           children[i].classList.add('navigated-path-animation');

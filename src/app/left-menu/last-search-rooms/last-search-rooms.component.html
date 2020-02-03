@@ -6,10 +6,12 @@
       <ul>
         <li *ngFor="let item of this.searchingService.lastSearchRooms">
           <div class="item-info">
-            <p>{{item.roomName}}</p>
+            <p>{{item.roomNumber | slice:0:10}}</p>
+            <p class="small-text">{{item.roomMinorUnit | slice:0:30}} </p>
           </div>
-          <div class="navi-buttons">
-            <div class="select-button" type="button">
+          <div class="navi-button-container">
+            <div class="select-button" type="button"
+                 (click)="navigate(item).then()">
               <p>{{ 'searching.select' | translate}}</p>
             </div>
           </div>

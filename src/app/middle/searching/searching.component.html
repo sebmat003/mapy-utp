@@ -1,4 +1,4 @@
-<div class="search-container" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize' : ''">
+<div class="search-container" [ngClass]="this.minimizeButtonService.ifMinimize ? 'minimize' : ''">
   <div class="search-panel" [ngClass]="{'transform-right' : transform, '': !transform }">
     <table>
       <tr *ngVar="let unitItem;">
@@ -25,7 +25,7 @@
           </td>
         </ng-container>
         <ng-container *ngIf="searchingService.searchingState==2">
-          <td class="half-search-input" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
+          <td class="half-search-input" [ngClass]="this.minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
             <mat-form-field>
               <mat-select placeholder="{{'searching.select-unit' | translate}}">
                 <mat-option *ngFor="let item of searchingService.unitsData; let i of index"
@@ -35,7 +35,7 @@
               </mat-select>
             </mat-form-field>
           </td>
-          <td class="half-search-input" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
+          <td class="half-search-input" [ngClass]="this.minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
             <mat-form-field [ngClass]="this.unitSelected ? '' : 'inactive-form'">
               <mat-select placeholder="{{'searching.select-sub-unit' | translate}}" [(ngModel)]="unitOptionValue">
                 <mat-option *ngFor="let item of unitItem?.listChildren"
@@ -58,7 +58,7 @@
               </mat-select>
             </mat-form-field>
           </td>
-          <td class="one-third-search-input" [ngClass]="minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
+          <td class="one-third-search-input" [ngClass]="this.minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
             <mat-form-field [ngClass]="this.campusSelected ? '' : 'inactive-form'">
               <mat-select placeholder="{{'searching.select-building' | translate}}" [(ngModel)]="buildingOptionValue">
                 <mat-option *ngFor="let item of searchingService.buildingData"
@@ -69,7 +69,7 @@
             </mat-form-field>
           </td>
           <td class="one-third-search-input"
-              [ngClass]="minimizeButtonService.ifMinimize ? 'minimize-last-mat-form' : ''">
+              [ngClass]="this.minimizeButtonService.ifMinimize ? 'minimize-last-mat-form' : ''">
             <mat-form-field [ngClass]="this.buildingSelected ? '' : 'inactive-form'">
               <mat-select placeholder="{{'searching.select-floor' | translate}}" [(ngModel)]="floorOptionValue">
                 <mat-option *ngFor="let item of searchingService.floorData"

@@ -21,11 +21,11 @@ describe('ListSearchingComponent', () => {
         HttpClientModule
       ],
       providers: [
-        MinimizeButtonService,
         SearchingService,
         MapService,
         LocationService,
-        FloorsService
+        FloorsService,
+        MinimizeButtonService,
       ]
     })
     .compileComponents();

@@ -129,9 +129,7 @@
 
         </div>
         <div class="button-box">
-          <button class="navi-button" type="button" (click)="navigateToRoom(searchingService?.roomInfoData[0].campusId,
-            searchingService?.roomInfoData[0].floorName,
-            searchingService?.roomInfoData[0].roomId).then()">
+          <button class="navi-button" type="button" (click)="navigateToRoom(searchingService?.roomInfoData[0]).then()">
             <img src="../../../assets/images/navigation.svg" alt="navigate">
             <label>{{'list-searching.navigate' | translate}}</label>
           </button>

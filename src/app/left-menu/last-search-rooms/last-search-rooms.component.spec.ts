@@ -4,6 +4,7 @@ import { LastSearchRoomsComponent } from './last-search-rooms.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {SearchingService} from '../../services/searching.service';
 import {HttpClientModule} from '@angular/common/http';
+import {MapService} from '../../services/map.service';
 
 describe('LastSearchRoomsComponent', () => {
   let component: LastSearchRoomsComponent;
@@ -18,6 +19,7 @@ describe('LastSearchRoomsComponent', () => {
       ],
       providers: [
         SearchingService,
+        MapService
 
       ]
     })

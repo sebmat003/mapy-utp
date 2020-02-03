@@ -46,8 +46,6 @@ export class SearchingService {
 
   lastSearchRooms = [];
 
-
-
   constructor(private httpClient: HttpClient) {
     this.httpClient.get(this.unitsUrl, {responseType: 'json'})
       .subscribe((data) => {
@@ -57,42 +55,26 @@ export class SearchingService {
       .subscribe((data) => {
         this.campusData = data;
       });
+}
 
-    //dummy data
-    this.lastSearchRooms = [
-      {
-        'locationId': 15,
-        'floorName': 'Piętro I',
-        'roomId': 54,
-        'roomName': 'C 202'
-      },
-      {
-        'locationId': 3567,
-        'floorName': 'Piętro I',
-        'roomId': 354,
-        'roomName': 'B 342'
-      },
-      {
-        'locationId': 12,
-        'floorName': 'Piętro I',
-        'roomId': 312,
-        'roomName': 'A 20212'
-      },
-      {
-        'locationId': 12,
-        'floorName': 'Piętro I',
-        'roomId': 312,
-        'roomName': 'Y 3123'
-      },
-      {
-        'locationId': 12,
-        'floorName': 'Piętro I',
-        'roomId': 312,
-        'roomName': 'D 3213'
-      },
-    ]
+  insertObjectIntoLastRooms(object) {
+
+    if(this.lastSearchRooms.length != 0) {
+      let duplicatedRoom = false;
+      this.lastSearchRooms.forEach( (item)=> {
+        if(item.roomId == object.roomId) duplicatedRoom = true;
+      });
+      if(!duplicatedRoom) this.lastSearchRooms.unshift(object);
+    } else {
+      this.lastSearchRooms.push(object);
+    }
+
+
+    if(this.lastSearchRooms.length > 5) {
+      this.lastSearchRooms.pop();
+    }
+
   }
-
 
   getRoomAndEmployeeData(text: string) {
     this.employeesInUnitData = null;

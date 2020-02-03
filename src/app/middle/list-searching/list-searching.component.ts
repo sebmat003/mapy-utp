@@ -11,11 +11,11 @@ import {MapService} from '../../services/map.service';
 export class ListSearchingComponent implements OnInit {
   @Input() private transform: boolean = false;
 
-
   constructor(
               public searchingService: SearchingService,
               public mapService: MapService,
-              public minimizeService: MinimizeButtonService) { }
+              public minimizeService: MinimizeButtonService) {
+  }
 
   ngOnInit() {
   }
@@ -27,17 +27,16 @@ export class ListSearchingComponent implements OnInit {
     } else if(type == 2) {
       this.searchingService.getEmployeeInfoData(text);
     }
-
     this.searchingService.clickedListItem = true;
   }
 
 
-  async navigateRoom(locationId: number, floorName: string, roomId: number) {
+  async navigateRoom(object) {
     this.searchingService.clickedListItem = false;
     this.searchingService.resetInfoData();
     this.searchingService.clickedListItem = false;
     this.minimizeService.ifMinimize = true;
-    await this.mapService.displayRoomOnMap(locationId, floorName, roomId);
+    await this.mapService.displayRoomOnMap(object);
   }
 
   async navigateEmployeeRoom(roomId: number) {
@@ -48,9 +47,7 @@ export class ListSearchingComponent implements OnInit {
     await this.searchingService.getEmployeeRoomInfoData(roomId).subscribe((data) => {
         data = Array.of(data);
         if (data != null) {
-          let locationId = data['0'].campusId;
-          let floorName = data['0'].floorName;
-          this.mapService.displayRoomOnMap(locationId, floorName, roomId);
+          this.mapService.displayRoomOnMap(data['0']);
         } else {
           console.log('No data of employee room');
         }

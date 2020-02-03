@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchingService} from '../../services/searching.service';
+import {MapService} from '../../services/map.service';
 
 @Component({
   selector: 'app-last-search-rooms',
@@ -8,9 +9,12 @@ import {SearchingService} from '../../services/searching.service';
 })
 export class LastSearchRoomsComponent implements OnInit {
 
-  constructor(public searchingService: SearchingService) { }
+  constructor(public searchingService: SearchingService, public mapService: MapService) { }
 
   ngOnInit() {
   }
 
+  async navigate(object) {
+    await this.mapService.displayRoomOnMap(object);
+  }
 }
