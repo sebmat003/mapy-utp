@@ -8,7 +8,7 @@
             <img src="../../../assets/images/employee-white.svg" alt="employee">
           </div>
           <div class="name">
-            <p>{{searchingService.employeeInfoData?.firstName}} {{searchingService.employeeInfoData?.lastName}}</p>
+            <p>{{searchingService.employeeInfoData?.firstName | slice:0:15}} {{searchingService.employeeInfoData?.lastName | slice:0:15}}</p>
           </div>
         </div>
         <div class="information" *ngFor="let item of searchingService.employeeInfoData?.additionalData">
@@ -86,7 +86,7 @@
             <img src="../../../assets/images/door-white.svg" alt="room">
           </div>
           <div class="name">
-            <p>{{searchingService?.roomInfoData['0'].roomNumber}}</p>
+            <p>{{searchingService?.roomInfoData['0'].roomNumber | slice:0:10}}</p>
           </div>
         </div>
         <div class="information" id="margin-bottom">

@@ -7,7 +7,7 @@
         <li *ngFor="let item of this.searchingService.lastSearchRooms">
           <div class="item-info">
             <p>{{item.roomNumber | slice:0:10}}</p>
-            <p class="small-text">{{item.roomMinorUnit | slice:0:30}} </p>
+            <p class="small-text">{{item.roomMinorUnit | slice:0:25}} </p>
           </div>
           <div class="navi-button-container">
             <div class="select-button" type="button"

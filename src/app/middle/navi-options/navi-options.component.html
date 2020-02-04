@@ -5,25 +5,25 @@
            title="{{ minimizeButtonService.ifMinimize ? ['min-max-button.max' | translate] : ['min-max-button.min' | translate]}}">
         {{ minimizeButtonService.ifMinimize ? '+' : '-'}}</div>
     </div>
-    <div class="option first-aid" title="{{'menu-mobile.first-aid' | translate}}">
+    <div class="option first-aid" title="{{'menu-mobile.first-aid' | translate}}" type="button" (click)="click('AED')">
       <img src="../../../assets/images/first-aid-kit.svg" alt="">
     </div>
-    <div class="option wheelchair" title="{{'menu-mobile.disabled' | translate}}">
-      <img src="../../../assets/images/wheelchair-access.svg" alt="">
+    <div class="option wheelchair" title="{{'menu-mobile.withdraw' | translate}}" type="button" (click)="click('CASH_MACHINE')">
+      <img src="../../../assets/images/withdraw.svg" alt="">
     </div>
-    <div class="option elevator" title="{{'menu-mobile.elevator' | translate}}">
+    <div class="option elevator" title="{{'menu-mobile.elevator' | translate}}" type="button" (click)="click('ELEVATOR')">
       <img src="../../../assets/images/elevator.svg" alt="">
     </div>
-    <div class="option shop" title="{{'menu-mobile.shop' | translate}}">
+    <div class="option shop" title="{{'menu-mobile.shop' | translate}}" type="button" (click)="click('FOOD')">
       <img src="../../../assets/images/fork.svg" alt="">
     </div>
-    <div class="option printer" title="{{'menu-mobile.xerox copy' | translate}}">
+    <div class="option printer" title="{{'menu-mobile.xerox copy' | translate}}" type="button" (click)="click('PHOTOCOPY')">
       <img src="../../../assets/images/printer.svg" alt="">
     </div>
-    <div class="option changing-room" title="{{'menu-mobile.changing-room' | translate}}">
+    <div class="option changing-room" title="{{'menu-mobile.changing-room' | translate}}" type="button" (click)="click('CLOAKROOM')">
       <img src="../../../assets/images/hanger.svg" alt="">
     </div>
-    <div class="option wc" title="{{'menu-mobile.wc' | translate}}">
+    <div class="option wc" title="{{'menu-mobile.wc' | translate}}" type="button" (click)="click('TOILET')">
       <p>WC</p>
     </div>
 

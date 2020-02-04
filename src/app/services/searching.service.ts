@@ -3,6 +3,9 @@ import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class SearchingService {
+
+  transform: boolean = true;
+
   // three options in main search input
   // 1 - common searching
   // 2 - search by employee
@@ -10,13 +13,6 @@ export class SearchingService {
   public searchingState: number = 1;
   public valueFirstInput: string;
 
-  // two inputs in left menu
-  // 0--no one is active
-  // 1--first input is active ( which means user clicked on it )
-  // 2--second input is active
-  public leftInputState: number = 0;
-  public leftSearchFilter: string = '';
-  public leftSearchFilter2: string = '';
   unitsUrl = 'https://api.kb.utp.edu.pl/search-provider/structure/all';
   unitsData = null;
   employeesUrl = 'https://api-dev.kb.utp.edu.pl/search-provider/employee/find-all-by-sub-unit-code?subUnitCode=';
@@ -169,23 +165,7 @@ export class SearchingService {
   }
 
   resetInputs() {
-    this.leftSearchFilter = '';
-    this.leftSearchFilter2 = '';
     this.valueFirstInput = '';
   }
-
-  dummyData = [
-    {name: 'pokój', employee: 'kowalski'},
-    {name: 'pokój 21', employee: 'elżbieta h'},
-    {name: 'budynek 312', employee: 'jan'},
-    {name: 'budynek 200', employee: 'krzysztof z'},
-    {name: 'cccc', employee: 'somebody'},
-    {name: 'pokój', employee: 'somebody'},
-    {name: 'pokój 402', employee: 'dsaxx'},
-    {name: 'pokój 243', employee: 'someone'},
-    {name: 'pokój 303', employee: 'zczc'},
-    {name: 'pokój 201', employee: 'dsad'},
-  ];
-
 
 }

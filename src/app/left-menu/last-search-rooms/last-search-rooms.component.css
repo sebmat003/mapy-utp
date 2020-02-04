@@ -35,16 +35,20 @@ ul {
   position: relative;
   display: inline-block;
   overflow: auto;
-  margin: 0;
+  margin-top: 1%;
+
 }
 
 li {
   width: 100%;
+  height: 30%;
   background-color: white;
   list-style-type: none;
   transition: all;
   transition-duration: 0.1s;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 li:hover{
@@ -53,10 +57,13 @@ li:hover{
 
 .item-info {
   position: relative;
-  display: inline-block;
   width: 60%;
-  text-align: left;
-
+  text-align: center;
+  display: flex;
+  /*align-items: left;*/
+  justify-content: left;
+  float: left;
+  margin-left: 5%;
 }
 
 .item-info p {
@@ -64,11 +71,12 @@ li:hover{
 }
 
 .navi-button-container {
-  position: relative;
-  display: inline-block;
-  width: 15%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: right;
-  height: 100%;
+  float: left;
 }
 
 .select-button {
@@ -77,7 +85,7 @@ li:hover{
   color: white;
   opacity: 0.5;
   display: inline-block;
-  width: 100%;
+  width: 50%;
   height: 100%;
   border: none;
   cursor: pointer;
@@ -86,8 +94,7 @@ li:hover{
   transition-duration: 0.2s;
   text-decoration: none;
   background-color: #1b272e;
-  border-radius: 10%;
-  margin: 4%;
+  border-radius: 1px;
 }
 
 li:hover .select-button  {

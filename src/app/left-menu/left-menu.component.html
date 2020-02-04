@@ -1,4 +1,4 @@
-<div class="left-menu-container" [ngClass]="{ 'show': showLeftMenu, 'noshow': !showLeftMenu}">
+<div class="left-menu-container" [ngClass]="{ 'show': transform, 'noshow': !transform}">
   <app-logo></app-logo>
   <app-last-search-rooms></app-last-search-rooms>
   <!--<app-navigation-panel></app-navigation-panel>-->
@@ -6,9 +6,9 @@
   <app-most-visited></app-most-visited>
   <app-restaurant></app-restaurant>
 </div>
-<div class="button-container" [ngClass]="{ 'open-button': showLeftMenu, 'hide-button': !showLeftMenu}">
+<div class="button-container" [ngClass]="{ 'open-button': transform, 'hide-button': !transform}">
   <div class="button" (click)="toggleMenu()">
-    <div class="triangle" [ngClass]="{ 'triangle-right': showLeftMenu, 'triangle-left': !showLeftMenu}"></div>
+    <div class="triangle" [ngClass]="{ 'triangle-right': transform, 'triangle-left': !transform}"></div>
   </div>
 </div>
 

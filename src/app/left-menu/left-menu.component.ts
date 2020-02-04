@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SearchingService} from '../services/searching.service';
 
 
@@ -8,18 +8,14 @@ import {SearchingService} from '../services/searching.service';
   styleUrls: ['./left-menu.component.css']
 })
 export class LeftMenuComponent implements OnInit {
+  @Input() private transform: boolean = false;
 
-  private showLeftMenu: boolean = true;
-  @Output() emitStateMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-  constructor() { }
+  constructor(private searchingService: SearchingService) { }
 
   ngOnInit() {
-    this.emitStateMenu.emit(this.showLeftMenu);
   }
 
   toggleMenu () {
-    this.showLeftMenu = !this.showLeftMenu;
-    this.emitStateMenu.emit(this.showLeftMenu);
+    this.searchingService.transform = !this.searchingService.transform;
   }
 }

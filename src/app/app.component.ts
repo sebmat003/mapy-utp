@@ -12,9 +12,6 @@ import {SearchingService} from './services/searching.service';
 })
 export class AppComponent {
 
-  transform: boolean = false;
-
-
   constructor(public LocationService: LocationService, public MenuRestaurantService: MenuRestaurantService,
               public FloorsService: FloorsService, public TranslateService: TranslateService,
               public SearchingService: SearchingService) {
@@ -23,7 +20,7 @@ export class AppComponent {
 
 
   onTransform(stateLeftMenu: boolean) {
-    this.transform = stateLeftMenu;
+    this.SearchingService.transform = stateLeftMenu;
   }
 
 

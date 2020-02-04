@@ -203,7 +203,7 @@ export class MapService {
       for (let i = 0; i < children.length; i++) {
         let objecttype = children[i].attributes.getNamedItem('objecttype');
         if (children[i].nodeName == 'polygon' && objecttype) {
-          if (objecttype.value == 'room') {
+          if (objecttype.value == 'ROOM') {
             let color = children[i].attributes.getNamedItem('fill');
             d3.select(children[i]).on('mouseover', function () {
               // @ts-ignore
@@ -226,7 +226,7 @@ export class MapService {
         let objecttype = children[i].attributes.getNamedItem('objecttype');
         let objectid = children[i].attributes.getNamedItem('objectid');
         if (children[i].nodeName == 'polygon' && objecttype && objectid) {
-          if (objecttype.value == 'room') {
+          if (objecttype.value == 'ROOM') {
             d3.select(children[i]).on('click', ()=> {
               this.searchingService.getRoomInfoData(objectid.value);
               this.searchingService.clickedListItem = true;
@@ -239,6 +239,7 @@ export class MapService {
 
   async displayRoomOnMap(roomObject) {
     this.resetPreviousRoomSettings();
+    this.searchingService.transform = false;
 
     let campusId = roomObject.campusId;
     let roomId = roomObject.roomId;
@@ -303,7 +304,7 @@ export class MapService {
       let objectid = children[i].attributes.getNamedItem('objectid');
 
       if (children[i].nodeName == 'polygon' && objecttype && objectid) {
-        if (objectid.value == roomId && objecttype.value == 'room') {
+        if (objectid.value == roomId && objecttype.value == 'ROOM') {
           this.previousRoomColor = children[i].attributes.getNamedItem('fill');
           this.previousRoomId = roomId;
 
@@ -328,6 +329,22 @@ export class MapService {
 
   }
 
+  displayAdditionalElementsOnMap(type: string) {
+    this.currentLocationMaps.forEach((item) => {
+      let map = item._url.lastElementChild.children;
+      for (let i = 0; i < map.length; i++) {
+        let objecttype = map[i].attributes.getNamedItem('objecttype');
+        if (map[i].nodeName == 'polygon' && objecttype) {
+          if(objecttype.value == type) {
+            // @ts-ignore
+            d3.select(map[i]).style('fill', 'white');
+            map[i].classList.add('navigated-path-animation');
+          }
+        }
+      }
+    });
+  }
+
   resetPreviousRoomSettings() {
     this.currentLocationMaps.forEach((map)=> {
       let children = map._url.lastElementChild.children;
@@ -337,7 +354,7 @@ export class MapService {
 
         //previous room - reset settings
         if (children[i].nodeName == 'polygon' && objecttype && objectid) {
-          if (objectid.value == this.previousRoomId && objecttype.value == 'room' &&
+          if (objectid.value == this.previousRoomId && objecttype.value == 'ROOM' &&
             this.previousRoomColor != null && this.previousRoomId != null) {
             let color = this.previousRoomColor;
             // @ts-ignore
@@ -355,6 +372,10 @@ export class MapService {
         }
       }
     })
+  }
+
+  resetDisplayingAdditionalElements() {
+
   }
 
   removeMarker() {
