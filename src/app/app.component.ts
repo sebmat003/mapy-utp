@@ -4,6 +4,7 @@ import {MenuRestaurantService} from './services/menu-restaurant.service';
 import {FloorsService} from './services/floors.service';
 import {TranslateService} from '@ngx-translate/core';
 import {SearchingService} from './services/searching.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent {
 
   constructor(public LocationService: LocationService, public MenuRestaurantService: MenuRestaurantService,
               public FloorsService: FloorsService, public TranslateService: TranslateService,
-              public SearchingService: SearchingService) {
+              public SearchingService: SearchingService,
+              private spinner: NgxSpinnerService) {
     TranslateService.setDefaultLang('pl');
   }
 

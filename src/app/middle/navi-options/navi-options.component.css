@@ -25,7 +25,7 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50px;
-  background-color: #efefef;
+  background-color: #e5e5e5;
 }
 
 .option img {
@@ -93,5 +93,17 @@
   transform: translateY(1rem) translateX(1rem);
   font-size: 0.8rem;
 
+}
+
+.blinking {
+  animation: blinking_animation 0.7s infinite;
+  pointer-events: all !important;
+}
+
+@keyframes blinking_animation {
+  0% {background-color: #e5e5e5}
+  40% {background-color: #fff}
+  60% {background-color: #fff}
+  100% {background-color: #e5e5e5}
 }
 

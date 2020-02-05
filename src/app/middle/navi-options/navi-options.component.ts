@@ -9,6 +9,7 @@ import {MapService} from '../../services/map.service';
 })
 export class NaviOptionsComponent implements OnInit {
   @Input() private transform: boolean = false;
+  clickedElement: number;
 
 
   constructor( public minimizeButtonService: MinimizeButtonService,
@@ -19,7 +20,15 @@ export class NaviOptionsComponent implements OnInit {
   }
 
 
-  click(type: string) {
-    this.mapService.displayAdditionalElementsOnMap(type);
+  click(type: string, numberOfElement: number) {
+    if(this.clickedElement != numberOfElement){
+      this.clickedElement = numberOfElement;
+      this.mapService.displayAdditionalElement = true;
+      this.mapService.displayAdditionalElementsOnMap(type);
+    } else {
+      this.clickedElement = NaN;
+      this.mapService.displayAdditionalElement = false;
+      this.mapService.resetDisplayingAdditionalElements();
+    }
   }
 }

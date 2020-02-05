@@ -105,5 +105,8 @@
   "last-search-rooms": {
     "title": "Recently searched rooms",
     "info": "No recently searched rooms"
+  },
+  "spinner": {
+    "loading": "Loading..."
   }
 }

@@ -6,6 +6,7 @@ import {FloorsService} from './floors.service';
 import {HttpClient} from '@angular/common/http';
 import * as d3 from 'd3';
 import {SearchingService} from './searching.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 
 @Injectable()
@@ -20,6 +21,11 @@ export class MapService {
 
   previousRoomColor = null;
   previousRoomId = null;
+  previousAdditionalElementAttributes = [];
+  displayAdditionalElement: boolean = false;
+
+  //flag about what was displayed before, 0 - nothing, 1 - displayed room, 2 - displayed additional element (like xero)
+  previousDisplay: number = 0;
 
   options = {
     crs: L.CRS.Simple,
@@ -79,13 +85,15 @@ export class MapService {
   constructor(private LocationService: LocationService,
               private FloorsService: FloorsService,
               private httpClient: HttpClient,
-              private searchingService: SearchingService) {
+              private searchingService: SearchingService,
+              private spinner: NgxSpinnerService) {
 
     this.initializeMap();
   }
 
   //starting in campus 2 (Kaliskiego)
   async initializeMap() {
+    await this.spinner.show();
     for(let i=-1; i<4; i++) {
       //only for testing ! -  all levels are the same
       await this.getLocationMaps(
@@ -97,6 +105,7 @@ export class MapService {
     this.mapIsLoaded = true;
     this.addTileAnimation();
     this.getIdRoomInMap();
+    await this.spinner.hide();
   }
 
   async getLocationMaps(url: string, bounds: number, viewBox: number) {
@@ -113,6 +122,7 @@ export class MapService {
   }
 
   async changeLocation() {
+    await this.spinner.show();
     this.mapIsLoaded = false;
     this.removeMarker();
     this.resetClassesInLayers();
@@ -134,6 +144,7 @@ export class MapService {
     this.mapIsLoaded = true;
     this.layers.push(this.currentLocationMaps[0], this.currentLocationMaps[1]);
     this.layers[0]._url.classList.add('inactive-layer');
+    await this.spinner.hide();
   }
 
   changeFloor() {
@@ -238,7 +249,8 @@ export class MapService {
   }
 
   async displayRoomOnMap(roomObject) {
-    this.resetPreviousRoomSettings();
+    this.resetElementOnMap();
+    this.previousDisplay = 1;
     this.searchingService.transform = false;
 
     let campusId = roomObject.campusId;
@@ -300,11 +312,11 @@ export class MapService {
 
     let children = this.currentLocationMaps[floor + 1]._url.lastElementChild.children;
     for (let i = 0; i < children.length; i++) {
-      let objecttype = children[i].attributes.getNamedItem('objecttype');
-      let objectid = children[i].attributes.getNamedItem('objectid');
+      let objectType = children[i].attributes.getNamedItem('objecttype');
+      let objectId = children[i].attributes.getNamedItem('objectid');
 
-      if (children[i].nodeName == 'polygon' && objecttype && objectid) {
-        if (objectid.value == roomId && objecttype.value == 'ROOM') {
+      if (children[i].nodeName == 'polygon' && objectType && objectId) {
+        if (objectId.value == roomId && objectType.value == 'ROOM') {
           this.previousRoomColor = children[i].attributes.getNamedItem('fill');
           this.previousRoomId = roomId;
 
@@ -312,14 +324,14 @@ export class MapService {
           }).on('mouseout', function () {
           });
 
-          children[i].id = 'selected-room';
-          let event = new MouseEvent('click', {
-            view: window,
-            bubbles: true,
-          });
-
-          // document.getElementById('selected-room').dispatchEvent(event);
-          // @ts-ignore
+          // children[i].id = 'selected-room';
+          // let event = new MouseEvent('click', {
+          //   view: window,
+          //   bubbles: true,
+          // });
+          //
+          // // document.getElementById('selected-room').dispatchEvent(event);
+          // // @ts-ignore
           d3.select(children[i]).style('fill', 'white');
           children[i].classList.add('navigated-path-animation');
 
@@ -330,12 +342,23 @@ export class MapService {
   }
 
   displayAdditionalElementsOnMap(type: string) {
+    this.resetElementOnMap();
+    this.previousDisplay = 2;
     this.currentLocationMaps.forEach((item) => {
       let map = item._url.lastElementChild.children;
       for (let i = 0; i < map.length; i++) {
-        let objecttype = map[i].attributes.getNamedItem('objecttype');
-        if (map[i].nodeName == 'polygon' && objecttype) {
-          if(objecttype.value == type) {
+        let objectType = map[i].attributes.getNamedItem('objecttype');
+        if (map[i].nodeName == 'polygon' && objectType) {
+          if(objectType.value == type) {
+            let objectId = map[i].attributes.getNamedItem('objectid');
+            let objectColor = map[i].attributes.getNamedItem('fill');
+            this.previousAdditionalElementAttributes.push(
+              {
+                'id': objectId.value,
+                'type': objectType.value,
+                'color': objectColor.value
+              }
+            );
             // @ts-ignore
             d3.select(map[i]).style('fill', 'white');
             map[i].classList.add('navigated-path-animation');
@@ -343,6 +366,16 @@ export class MapService {
         }
       }
     });
+  }
+
+  resetElementOnMap() {
+    if(this.previousDisplay != 0) {
+      if(this.previousDisplay == 1) {
+        this.resetPreviousRoomSettings();
+      } else if (this.previousDisplay == 2) {
+        this.resetDisplayingAdditionalElements();
+      }
+    }
   }
 
   resetPreviousRoomSettings() {
@@ -375,7 +408,23 @@ export class MapService {
   }
 
   resetDisplayingAdditionalElements() {
+    this.previousAdditionalElementAttributes.forEach( (element) => {
+      this.currentLocationMaps.forEach( (map) => {
+        let children = map._url.lastElementChild.children;
+        for (let i = 0; i < children.length; i++) {
+          let objectType = children[i].attributes.getNamedItem('objecttype');
+          let objectId = children[i].attributes.getNamedItem('objectid');
 
+          //additional elements - reset settings (each element could have different color)
+          if (children[i].nodeName == 'polygon' && objectType && objectId) {
+            if (objectId.value == element.id && objectType.value == element.type) {
+              d3.select(children[i]).style('fill', element.color);
+              children[i].classList.remove('navigated-path-animation');
+            }
+          }
+        }
+      })
+    });
   }
 
   removeMarker() {

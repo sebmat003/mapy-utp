@@ -5,25 +5,32 @@
            title="{{ minimizeButtonService.ifMinimize ? ['min-max-button.max' | translate] : ['min-max-button.min' | translate]}}">
         {{ minimizeButtonService.ifMinimize ? '+' : '-'}}</div>
     </div>
-    <div class="option first-aid" title="{{'menu-mobile.first-aid' | translate}}" type="button" (click)="click('AED')">
+    <div [ngClass]="mapService.displayAdditionalElement && this.clickedElement == 0 ? 'blinking' : ''"
+      class="option first-aid" title="{{'menu-mobile.first-aid' | translate}}" type="button" (click)="click('AED', 0)">
       <img src="../../../assets/images/first-aid-kit.svg" alt="">
     </div>
-    <div class="option wheelchair" title="{{'menu-mobile.withdraw' | translate}}" type="button" (click)="click('CASH_MACHINE')">
+    <div [ngClass]="mapService.displayAdditionalElement && this.clickedElement == 1 ? 'blinking' : ''"
+      class="option wheelchair" title="{{'menu-mobile.withdraw' | translate}}" type="button" (click)="click('CASH_MACHINE', 1)">
       <img src="../../../assets/images/withdraw.svg" alt="">
     </div>
-    <div class="option elevator" title="{{'menu-mobile.elevator' | translate}}" type="button" (click)="click('ELEVATOR')">
+    <div [ngClass]="mapService.displayAdditionalElement && this.clickedElement == 2 ? 'blinking' : ''"
+      class="option elevator" title="{{'menu-mobile.elevator' | translate}}" type="button" (click)="click('ELEVATOR', 2)">
       <img src="../../../assets/images/elevator.svg" alt="">
     </div>
-    <div class="option shop" title="{{'menu-mobile.shop' | translate}}" type="button" (click)="click('FOOD')">
+    <div [ngClass]="mapService.displayAdditionalElement && this.clickedElement == 3 ? 'blinking' : ''"
+      class="option shop" title="{{'menu-mobile.shop' | translate}}" type="button" (click)="click('FOOD', 3)">
       <img src="../../../assets/images/fork.svg" alt="">
     </div>
-    <div class="option printer" title="{{'menu-mobile.xerox copy' | translate}}" type="button" (click)="click('PHOTOCOPY')">
+    <div [ngClass]="mapService.displayAdditionalElement && this.clickedElement == 4 ? 'blinking' : ''"
+      class="option printer" title="{{'menu-mobile.xerox copy' | translate}}" type="button" (click)="click('PHOTOCOPY', 4)">
       <img src="../../../assets/images/printer.svg" alt="">
     </div>
-    <div class="option changing-room" title="{{'menu-mobile.changing-room' | translate}}" type="button" (click)="click('CLOAKROOM')">
+    <div [ngClass]="mapService.displayAdditionalElement && this.clickedElement == 5 ? 'blinking' : ''"
+      class="option changing-room" title="{{'menu-mobile.changing-room' | translate}}" type="button" (click)="click('CLOAKROOM', 5)">
       <img src="../../../assets/images/hanger.svg" alt="">
     </div>
-    <div class="option wc" title="{{'menu-mobile.wc' | translate}}" type="button" (click)="click('TOILET')">
+    <div [ngClass]="mapService.displayAdditionalElement && this.clickedElement == 6 ? 'blinking' : ''"
+      class="option wc" title="{{'menu-mobile.wc' | translate}}" type="button" (click)="click('TOILET', 6)">
       <p>WC</p>
     </div>
 

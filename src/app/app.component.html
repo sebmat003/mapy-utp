@@ -1,3 +1,12 @@
+<ngx-spinner
+  bdColor = "rgba(10,10,10,0.7)"
+  size = "medium"
+  color = "#fff"
+  type = "square-loader"
+  [fullScreen] = "true"
+
+><p style="color: white; opacity: 0.5;" > {{'spinner.loading' | translate}} </p>
+</ngx-spinner>
 <!--left side-->
 <app-left-menu [transform]="SearchingService.transform" ></app-left-menu>
 <app-floors [transform]="SearchingService.transform"></app-floors>

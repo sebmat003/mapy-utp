@@ -48,6 +48,7 @@ import {MatTableModule} from '@angular/material/table';
 import {VarDirective} from './directives/var.directive';
 import { RoomEmployeeInfoComponent } from './middle/room-employee-info/room-employee-info.component';
 import { LastSearchRoomsComponent } from './left-menu/last-search-rooms/last-search-rooms.component';
+import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +98,8 @@ import { LastSearchRoomsComponent } from './left-menu/last-search-rooms/last-sea
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    NgxSpinnerModule
 
   ],
   providers: [
@@ -108,8 +110,8 @@ import { LastSearchRoomsComponent } from './left-menu/last-search-rooms/last-sea
     MapService,
     MinimizeButtonService,
     SearchingService,
-    TranslateService
-
+    TranslateService,
+    NgxSpinnerService
   ],
   bootstrap: [AppComponent]
 })
