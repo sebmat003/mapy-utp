@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {TranslateService} from '@ngx-translate/core';
+import {Subject} from 'rxjs';
 
 @Injectable()
 export class SearchingService {
@@ -11,7 +13,8 @@ export class SearchingService {
   // 2 - search by employee
   // 3 - search by room/building
   public searchingState: number = 1;
-  public valueFirstInput: string;
+  valueOfFirstInputSource: Subject<string> = new Subject<string>();
+  public valueOfFirstInput = this.valueOfFirstInputSource.asObservable();
 
   unitsUrl = 'https://api.kb.utp.edu.pl/search-provider/structure/all';
   unitsData = null;
@@ -42,7 +45,7 @@ export class SearchingService {
 
   lastSearchRooms = [];
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private translateService: TranslateService) {
     this.httpClient.get(this.unitsUrl, {responseType: 'json'})
       .subscribe((data) => {
         this.unitsData = data;
@@ -52,6 +55,49 @@ export class SearchingService {
         this.campusData = data;
       });
 }
+
+
+  navigateToRoomInformation(roomNumber: number){
+    let lang = this.translateService.getDefaultLang();
+    if (roomNumber != null) {
+      if (lang == 'pl') {
+        this.setValueOfFirstInput("Prowadzę do: " + roomNumber);
+      } else if (lang == 'en') {
+        this.setValueOfFirstInput("Navigating to: " + roomNumber);
+      }
+    }
+  }
+
+  navigateToAdditionalElementInformation(type: string) {
+    let lang = this.translateService.getDefaultLang();
+    if (type != null) {
+      if (lang == 'pl') {
+        let typeTranslate = '';
+        switch(type) {
+          case 'AED': typeTranslate = 'Pierwsza pomoc'; break;
+          case 'CASH_MACHINE': typeTranslate = 'Bankomaty'; break;
+          case 'ELEVATOR': typeTranslate = 'Windy'; break;
+          case 'FOOD': typeTranslate = 'Restauracje'; break;
+          case 'PHOTOCOPY': typeTranslate = 'Ksero'; break;
+          case 'CLOAKROOM': typeTranslate = 'Szatnie'; break;
+          case 'TOILET': typeTranslate = 'Toalety'; break;
+        }
+        this.setValueOfFirstInput("Prowadzę do: " + typeTranslate);
+      } else if (lang == 'en') {
+        let typeTranslate = '';
+        switch(type) {
+          case 'AED': typeTranslate = 'First aid'; break;
+          case 'CASH_MACHINE': typeTranslate = 'Cash machines'; break;
+          case 'ELEVATOR': typeTranslate = 'Elevators'; break;
+          case 'FOOD': typeTranslate = 'Restaurants'; break;
+          case 'PHOTOCOPY': typeTranslate = 'Xero'; break;
+          case 'CLOAKROOM': typeTranslate = 'Cloakrooms'; break;
+          case 'TOILET': typeTranslate = 'Toilets'; break;
+        }
+        this.setValueOfFirstInput("Navigating to: " + typeTranslate);
+      }
+    }
+  }
 
   insertObjectIntoLastRooms(object) {
 
@@ -164,8 +210,13 @@ export class SearchingService {
     this.employeeRoomInfoData = null;
   }
 
-  resetInputs() {
-    this.valueFirstInput = '';
+  resetFirstInput() {
+    this.setValueOfFirstInput('');
   }
+
+  setValueOfFirstInput(newValue: string) {
+    this.valueOfFirstInputSource.next(newValue);
+  }
+
 
 }

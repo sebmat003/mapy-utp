@@ -3,31 +3,31 @@
 
   <div class="options-container">
     <table class="table-options">
-      <tr>
+      <tr type="button" (click)="clickElement('TOILET')">
         <td><img src="../../../assets/images/wc.png" alt=""></td>
         <td><p>{{'menu-mobile.wc' | translate}}</p></td>
       </tr>
-      <tr>
+      <tr type="button" (click)="clickElement('CLOAKROOM')">
         <td><img src="../../../assets/images/hanger.svg" alt=""></td>
         <td><p>{{'menu-mobile.changing-room' | translate}}</p></td>
       </tr>
-      <tr>
+      <tr type="button" (click)="clickElement('ELEVATOR')">
         <td><img src="../../../assets/images/elevator.svg" alt=""></td>
         <td><p>{{'menu-mobile.elevator' | translate}}</p></td>
       </tr>
-      <tr>
-        <td><img src="../../../assets/images/wheelchair-access.svg" alt=""></td>
-        <td><p>{{'menu-mobile.disabled' | translate}}</p></td>
+      <tr type="button" (click)="clickElement('CASH_MACHINE')">
+        <td><img src="../../../assets/images/withdraw.svg" alt=""></td>
+        <td><p>{{'menu-mobile.withdraw' | translate}}</p></td>
       </tr>
-      <tr>
+      <tr type="button" (click)="clickElement('PHOTOCOPY')">
         <td><img src="../../../assets/images/printer.svg" alt=""></td>
         <td><p>{{'menu-mobile.xerox copy' | translate}}</p></td>
       </tr>
-      <tr>
+      <tr type="button" (click)="clickElement('FOOD')">
         <td><img src="../../../assets/images/fork.svg" alt=""></td>
         <td><p>{{'menu-mobile.shop' | translate}}</p></td>
       </tr>
-      <tr>
+      <tr type="button" (click)="clickElement('AED')">
         <td><img src="../../../assets/images/first-aid-kit.svg" alt=""></td>
         <td><p>{{'menu-mobile.first-aid' | translate}}</p></td>
       </tr>
@@ -43,7 +43,7 @@
         <td></td>
         <td></td>
       </tr>
-      <tr>
+      <tr type="button" (click)="changeLanguage()">
         <td><img src="../../../assets/images/white-flag-symbol.png" alt=""></td>
         <td><p>{{'menu-mobile.change-language' | translate}}</p></td>
       </tr>

@@ -22,12 +22,12 @@ export class FloorsComponent implements OnInit {
   }
 
 
-  onClickFloor(number: number) {
-    if(this.FloorsService.floorState != number) {
+  async onClickFloor(number: number) {
+    if(!this.MapService.floorIsChanging && this.FloorsService.floorState != number) {
       this.FloorsService.floorState = number;
-      this.MapService.changeFloor();
+      await this.MapService.changeFloor();
     }
-
-
   }
 }
+
+

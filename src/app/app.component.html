@@ -4,39 +4,29 @@
   color = "#fff"
   type = "square-loader"
   [fullScreen] = "true"
-
 ><p style="color: white; opacity: 0.5;" > {{'spinner.loading' | translate}} </p>
 </ngx-spinner>
 <!--left side-->
 <app-left-menu [transform]="SearchingService.transform" ></app-left-menu>
 <app-floors [transform]="SearchingService.transform"></app-floors>
 <app-location [transform]="SearchingService.transform"></app-location>
-
 <app-left-menu-mobile></app-left-menu-mobile>
 <!--middle-->
-
 <app-map></app-map>
-
 <app-navi-options [transform]="SearchingService.transform"></app-navi-options>
 <app-searching [transform]="SearchingService.transform"></app-searching>
 <app-list-searching [transform]="SearchingService.transform"></app-list-searching>
 <app-change-location *ngIf="LocationService.showLocation"></app-change-location>
 <app-menu-restaurant *ngIf="MenuRestaurantService.showMenu"></app-menu-restaurant>
 <app-change-floors *ngIf="FloorsService.showFloors"></app-change-floors>
-
 <app-room-employee-info *ngIf="SearchingService.clickedListItem"
   [transform]="SearchingService.transform"></app-room-employee-info>
-
 <!--right side-->
-<!--<app-sizing-map></app-sizing-map>-->
 <app-bus></app-bus>
 <app-language></app-language>
 
-
-
 <!--bottom-->
 <app-footer></app-footer>
-
 <app-floors-mobile></app-floors-mobile>
 <app-location-mobile></app-location-mobile>
 

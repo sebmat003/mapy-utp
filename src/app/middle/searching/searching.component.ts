@@ -14,11 +14,13 @@ export interface IWindow extends Window {
 })
 export class SearchingComponent implements OnInit {
   @Input() private transform: boolean = false;
+
+  valueFirstInput: string = '';
+
   private display: boolean = false;
   clicked: number = 0;
   private innerWidth: number;
   mobileVersion: boolean = false;
-  message: string = '';
   public started: boolean = false;
   vSearch: any = null;
   unitOptionValue: any;
@@ -37,16 +39,18 @@ export class SearchingComponent implements OnInit {
               public searchingService: SearchingService) {
     this.onResize();
   }
-
   ngOnInit() {
+    this.searchingService.valueOfFirstInput
+      .subscribe((value) => {
+        this.valueFirstInput = value;
+      });
     this.onResize();
   }
-
 
   click() {
     this.display = !this.display;
     this.clicked = 0;
-    this.message = '';
+    this.searchingService.resetFirstInput();
   }
 
   microphone() {
@@ -54,19 +58,18 @@ export class SearchingComponent implements OnInit {
       const {webkitSpeechRecognition}: IWindow = <IWindow>window;
       if (webkitSpeechRecognition != undefined) {
         this.started = true;
-        this.message = '';
+        this.searchingService.resetFirstInput();
         this.vSearch = new webkitSpeechRecognition();
         this.vSearch.continuous = false;
         this.vSearch.interimresults = false;
         this.vSearch.lang = 'pl-PL';
         this.vSearch.start();
         this.vSearch.onresult = (e) => {
-          this.message = e.results[0][0].transcript;
+          this.searchingService.setValueOfFirstInput(e.results[0][0].transcript);
           this.vSearch.stop();
           this.started = false;
-          this.searchingService.getRoomAndEmployeeData(this.message);
+          this.searchingService.getRoomAndEmployeeData(this.valueFirstInput);
         };
-
       }
     } else {
       this.vSearch.stop();
@@ -88,7 +91,7 @@ export class SearchingComponent implements OnInit {
   dropdownClick(number: number) {
     this.searchingService.searchingState = number;
     this.display = false;
-    this.searchingService.resetInputs();
+    this.searchingService.resetFirstInput();
     this.searchingService.resetData();
     this.unitSelected = false;
     this.campusSelected = false;

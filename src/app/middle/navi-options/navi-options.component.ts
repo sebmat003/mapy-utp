@@ -10,24 +10,27 @@ import {MapService} from '../../services/map.service';
 export class NaviOptionsComponent implements OnInit {
   @Input() private transform: boolean = false;
   clickedElement: number;
-
+  displayAdditionalElement: boolean;
 
   constructor( public minimizeButtonService: MinimizeButtonService,
                public mapService: MapService) { }
 
   ngOnInit() {
-
+    this.mapService.getValueOfDisplayedAdditionalElement()
+      .subscribe( (value) => {
+        this.displayAdditionalElement = value;
+        if(!value) this.clickedElement = NaN;
+      });
   }
-
 
   click(type: string, numberOfElement: number) {
     if(this.clickedElement != numberOfElement){
       this.clickedElement = numberOfElement;
-      this.mapService.displayAdditionalElement = true;
+      this.mapService.setValueOfDisplayedAdditionalElement(true);
       this.mapService.displayAdditionalElementsOnMap(type);
     } else {
       this.clickedElement = NaN;
-      this.mapService.displayAdditionalElement = false;
+      this.mapService.setValueOfDisplayedAdditionalElement(false);
       this.mapService.resetDisplayingAdditionalElements();
     }
   }

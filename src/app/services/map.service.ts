@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
 import * as d3 from 'd3';
 import {SearchingService} from './searching.service';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {BehaviorSubject} from 'rxjs';
 
 
 @Injectable()
@@ -22,7 +23,7 @@ export class MapService {
   previousRoomColor = null;
   previousRoomId = null;
   previousAdditionalElementAttributes = [];
-  displayAdditionalElement: boolean = false;
+  displayAdditionalElement: BehaviorSubject<boolean>;
 
   //flag about what was displayed before, 0 - nothing, 1 - displayed room, 2 - displayed additional element (like xero)
   previousDisplay: number = 0;
@@ -54,6 +55,8 @@ export class MapService {
     })
   };
 
+  floorIsChanging: boolean = false;
+
   mapReady(map: L.Map) {
 
     this.bounds.push([[-100, 0], [400, 500]]);
@@ -68,15 +71,12 @@ export class MapService {
 
     this.clicked = false;
     map.on('click', <LeafletMouseEvent>(e) => {
-      console.log('123');
       this.coordinates = e.latlng;
       map.setView(this.coordinates, map.getZoom());
       if (!this.clicked) {
-        console.log('clicked = true');
         this.clicked = true;
         this.marker = L.marker([this.coordinates.lat + 0.001, this.coordinates.lng], this.icon).addTo(map);
       } else {
-        console.log('false');
         this.marker.setLatLng([this.coordinates.lat + 0.001, this.coordinates.lng]);
       }
     });
@@ -89,6 +89,7 @@ export class MapService {
               private spinner: NgxSpinnerService) {
 
     this.initializeMap();
+    this.displayAdditionalElement = new BehaviorSubject<boolean>(false);
   }
 
   //starting in campus 2 (Kaliskiego)
@@ -126,7 +127,6 @@ export class MapService {
     this.mapIsLoaded = false;
     this.removeMarker();
     this.resetClassesInLayers();
-    this.searchingService.resetInputs();
     this.layers = [];
     this.currentLocationMaps = [];
 
@@ -147,34 +147,29 @@ export class MapService {
     await this.spinner.hide();
   }
 
-  changeFloor() {
-    this.removeMarker();
-    this.resetClassesInLayers();
-    this.searchingService.resetInputs();
-    let location = this.LocationService.locationState;
-    let floor = this.FloorsService.floorState;
-    this.layers = this.updateArray(this.layers, this.currentLocationMaps, floor, location);
+  async changeFloor() {
+      this.floorIsChanging = true;
+      this.removeMarker();
+      this.resetClassesInLayers();
+      let location = this.LocationService.locationState;
+      let floor = this.FloorsService.floorState;
+      this.layers = await this.updateArray(this.layers, this.currentLocationMaps, floor, location);
   }
 
-  updateArray(current_layers, location_array, floor_number: number, location: number) {
+  async updateArray(current_layers, location_array, floor_number: number, location: number) {
     let updatedArray = current_layers;
     let updatedArray_length = updatedArray.length;
-    let difference = 0;
-    if (location == 1 || location == 2 || location == 6 ||  location == 7) {
-      difference = updatedArray_length - (floor_number + 2);
-    } else if (location == 4 || location == 5) {
-      difference = updatedArray_length - (floor_number + 1);
-    }
+    let difference = updatedArray_length - (floor_number + 2);
 
-    if (difference > 0) {
+    if (difference >= 0) {
       for (let i = 0; i < difference; i++) {
         updatedArray[updatedArray.length - 1]._url.classList.add('remove-layer');
-        setTimeout(() => {
+        setTimeout(async () => {
           updatedArray[updatedArray.length - 1]._url.classList.remove('remove-layer');
           updatedArray.pop();
         }, 250);
       }
-      if (difference == 1) {
+        if (difference == 1) {
         updatedArray[updatedArray.length - 2]._url.classList.add('active-layer');
         updatedArray[updatedArray.length - 2]._url.classList.remove('inactive-layer');
       } else if (difference == 2) {
@@ -203,6 +198,9 @@ export class MapService {
     }
     // this.addTileAnimation();
     // this.getIdRoomInMap();
+    setTimeout(()=> {
+      this.floorIsChanging = false;
+    },250);
     return updatedArray;
   }
 
@@ -251,8 +249,11 @@ export class MapService {
   async displayRoomOnMap(roomObject) {
     this.resetElementOnMap();
     this.previousDisplay = 1;
+    this.searchingService.resetData();
+    this.searchingService.searchingState = 1;
     this.searchingService.transform = false;
-
+    this.searchingService.navigateToRoomInformation(roomObject.roomNumber);
+    this.setValueOfDisplayedAdditionalElement(false);
     let campusId = roomObject.campusId;
     let roomId = roomObject.roomId;
     let floorName = roomObject.floorName;
@@ -344,6 +345,10 @@ export class MapService {
   displayAdditionalElementsOnMap(type: string) {
     this.resetElementOnMap();
     this.previousDisplay = 2;
+    this.searchingService.resetData();
+    this.searchingService.searchingState = 1;
+    this.searchingService.transform = false;
+    this.searchingService.navigateToAdditionalElementInformation(type);
     this.currentLocationMaps.forEach((item) => {
       let map = item._url.lastElementChild.children;
       for (let i = 0; i < map.length; i++) {
@@ -443,6 +448,14 @@ export class MapService {
       map._url.classList.add('inactive-layer');
       map._url.classList.remove('active-layer');
     });
+  }
+
+  getValueOfDisplayedAdditionalElement() {
+    return this.displayAdditionalElement.asObservable();
+  }
+
+  setValueOfDisplayedAdditionalElement(newValue: boolean) {
+    this.displayAdditionalElement.next(newValue);
   }
 }
 

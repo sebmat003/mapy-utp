@@ -22,12 +22,12 @@ export class ChangeFloorsComponent implements OnInit {
   }
 
 
-  onClickItem(state: number) {
+  async onClickItem(state: number) {
     this.FloorsService.floorState = state;
 
-    setTimeout(() => {
+    await setTimeout(async () => {
       this.FloorsService.showFloors = false;
-      this.MapService.changeFloor();
+      await this.MapService.changeFloor();
     },100)
   }
 }

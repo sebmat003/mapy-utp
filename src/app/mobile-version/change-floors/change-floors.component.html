@@ -5,19 +5,19 @@
     </div>
     <div class="floors">
       <table class="table-floors">
-        <tr class="floors-item" (click)="onClickItem(3)">
+        <tr class="floors-item" (click)="onClickItem(3).then()">
           <td [ngClass]="{'active' : FloorsService.floorState == 3}">{{'floor.f3' | translate}}</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(2)">
+        <tr class="floors-item" (click)="onClickItem(2).then()">
           <td [ngClass]="{'active' : FloorsService.floorState == 2}">{{'floor.f2' | translate}}</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(1)">
+        <tr class="floors-item" (click)="onClickItem(1).then()">
           <td [ngClass]="{'active' : FloorsService.floorState == 1}">{{'floor.f1' | translate}}</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(0)">
+        <tr class="floors-item" (click)="onClickItem(0).then()">
           <td [ngClass]="{'active' : FloorsService.floorState == 0}">{{'floor.f0' | translate}}</td>
         </tr>
-        <tr class="floors-item" (click)="onClickItem(-1)">
+        <tr class="floors-item" (click)="onClickItem(-1).then()">
           <td [ngClass]="{'active' : FloorsService.floorState == -1}">{{'floor.f-1' | translate}}</td>
         </tr>
       </table>
