@@ -38,6 +38,7 @@ export class LeftMenuMobileComponent implements OnInit {
   }
 
   clickElement(type: string) {
+    this.showLeftMenu = false;
     this.mapService.setValueOfDisplayedAdditionalElement(true);
     this.mapService.displayAdditionalElementsOnMap(type);
   }

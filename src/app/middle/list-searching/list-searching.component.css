@@ -50,7 +50,6 @@
   display: inline-block;
   width: 70%;
   text-align: left;
-  transform: translateY(-30%);
 }
 
 .item-info p {
@@ -89,7 +88,6 @@
   display: inline-block;
   color: white;
   font-size: .8rem;
-  transform: translateY(-50%);
   margin-left: 5%;
   margin-top: 2%;
   cursor: pointer;
@@ -133,7 +131,7 @@
     height: auto;
     z-index: 2 !important;
     text-align: left;
-    margin: 7% 0 0;
+    margin: 5% 0 0;
   }
   .list {
     z-index: 2 !important;
@@ -146,7 +144,7 @@
 }
 @media only screen and (max-width: 900px) {
   .list-container {
-    margin: 8% 0 0;
+    margin: 6% 0 0;
   }
 
   .list {
@@ -156,7 +154,7 @@
 
 @media only screen and (max-width: 700px) {
   .list-container {
-    margin: 10% 0 0;
+    margin: 7% 0 0;
   }
 
   .list {
@@ -166,7 +164,7 @@
 
 @media only screen and (max-width: 500px) {
   .list-container {
-    margin: 12% 0 0;
+    margin: 9% 0 0;
   }
 
   .list {
@@ -176,7 +174,7 @@
 
 @media only screen and (max-width: 360px) {
   .list-container {
-    margin: 16% 0 0;
+    margin: 12% 0 0;
   }
 
   .list {

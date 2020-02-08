@@ -1,3 +1,5 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -210,3 +212,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: none !important;
   }
 }
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/fonts/glyphicons-halflings-regular.eot');
+  src: url('/assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/glyphicons-halflings-regular.woff') format('woff'),
+  url('/assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('/assets/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+

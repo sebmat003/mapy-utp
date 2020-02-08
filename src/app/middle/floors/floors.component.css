@@ -24,19 +24,33 @@
   transform: translate(-2%);
 }
 
+table {
+  visibility: visible;
+  border: none;
+  transform: translateX(-2px);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  border-left: 1px solid white;
+}
+
+table td {
+  padding: 0.3rem;
+  text-align: left;
+}
+
+table tr td:first-child {
+  width: 0.1rem;
+  padding: 0;
+}
+
+table tr td:last-child p {
+  margin-left: 2rem;
+}
 
 p:not(:first-child) {
   margin-top: 0.3rem;
-}
-
-
-.line {
-  position: relative;
-  background-color: white;
-  height: 7rem;
-  width: 1px;
-  float: left;
-  visibility: visible;
 }
 
 .triangle {
@@ -55,18 +69,7 @@ p:not(:first-child) {
   visibility: visible;
   position: relative;
   float: left;
-}
-
-.table-floors {
-  visibility: visible;
-  border: none;
-  transform: translateX(-2px);
-
-
-}
-
-.table-floors tr td:last-child p {
-  margin-left: 1rem;
+  display: inline-block;
 }
 
 .astext {
@@ -78,15 +81,12 @@ p:not(:first-child) {
 
 .astext:active, .astext:hover {
   color: white;
-  /*font-weight: 500;*/
-
 }
 
 .active {
   color: white !important;
   font-weight: 600;
 }
-
 
 .transform-right {
   transform: translateX(100%);

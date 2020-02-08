@@ -2,6 +2,7 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {MenuMobileService} from '../../services/menu-mobile.service';
 import {MinimizeButtonService} from '../../services/minimize-button.service';
 import {SearchingService} from '../../services/searching.service';
+import {MapService} from '../../services/map.service';
 
 export interface IWindow extends Window {
   webkitSpeechRecognition: any;
@@ -36,7 +37,7 @@ export class SearchingComponent implements OnInit {
   floorId = null;
 
   constructor(private LeftMenuMobileService: MenuMobileService, public minimizeButtonService: MinimizeButtonService,
-              public searchingService: SearchingService) {
+              public searchingService: SearchingService, private mapService: MapService) {
     this.onResize();
   }
   ngOnInit() {
@@ -159,4 +160,10 @@ export class SearchingComponent implements OnInit {
   }
 
 
+  clearInput() {
+    this.valueFirstInput = '';
+    this.minimizeButtonService.ifMinimize = false;
+    this.mapService.resetElementOnMap();
+    this.searchingService.resetData();
+  }
 }

@@ -15,13 +15,17 @@
 
         <ng-container *ngIf="searchingService.searchingState==1">
           <td class="search-input">
-            <input type="text"
-                   #input
-                   placeholder="{{'searching.search' | translate}}"
-                   [(ngModel)]="this.valueFirstInput"
-                   (input)="this.minimizeButtonService.ifMinimize = false;
+              <input type="text"
+                     #input
+                     placeholder="{{'searching.search' | translate}}"
+                     [(ngModel)]="this.valueFirstInput"
+                     (input)="this.minimizeButtonService.ifMinimize = false;
                    this.searchingService.getRoomAndEmployeeData(input.value);"
-            >
+              >
+            <span *ngIf="this.valueFirstInput != ''"
+                  class="clear-button glyphicon glyphicon-remove"
+                  (click)="clearInput()"
+            ></span>
           </td>
         </ng-container>
         <ng-container *ngIf="searchingService.searchingState==2">
@@ -58,7 +62,8 @@
               </mat-select>
             </mat-form-field>
           </td>
-          <td class="one-third-search-input" [ngClass]="this.minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
+          <td class="one-third-search-input"
+              [ngClass]="this.minimizeButtonService.ifMinimize ? 'minimize-mat-form' : ''">
             <mat-form-field [ngClass]="this.campusSelected ? '' : 'inactive-form'">
               <mat-select placeholder="{{'searching.select-building' | translate}}" [(ngModel)]="buildingOptionValue">
                 <mat-option *ngFor="let item of searchingService.buildingData"

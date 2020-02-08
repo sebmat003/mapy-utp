@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MinimizeButtonService} from '../../services/minimize-button.service';
 import {MapService} from '../../services/map.service';
+import {SearchingService} from '../../services/searching.service';
 
 @Component({
   selector: 'app-navi-options',
@@ -13,7 +14,8 @@ export class NaviOptionsComponent implements OnInit {
   displayAdditionalElement: boolean;
 
   constructor( public minimizeButtonService: MinimizeButtonService,
-               public mapService: MapService) { }
+               public mapService: MapService,
+               private searchingService: SearchingService) { }
 
   ngOnInit() {
     this.mapService.getValueOfDisplayedAdditionalElement()
@@ -27,9 +29,12 @@ export class NaviOptionsComponent implements OnInit {
     if(this.clickedElement != numberOfElement){
       this.clickedElement = numberOfElement;
       this.mapService.setValueOfDisplayedAdditionalElement(true);
+      this.minimizeButtonService.ifMinimize = true;
       this.mapService.displayAdditionalElementsOnMap(type);
     } else {
       this.clickedElement = NaN;
+      this.minimizeButtonService.ifMinimize = false;
+      this.searchingService.resetFirstInput();
       this.mapService.setValueOfDisplayedAdditionalElement(false);
       this.mapService.resetDisplayingAdditionalElements();
     }
