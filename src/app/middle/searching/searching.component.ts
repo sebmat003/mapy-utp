@@ -165,5 +165,6 @@ export class SearchingComponent implements OnInit {
     this.minimizeButtonService.ifMinimize = false;
     this.mapService.resetElementOnMap();
     this.searchingService.resetData();
+    this.mapService.setValueOfDisplayedAdditionalElement(false);
   }
 }

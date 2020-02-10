@@ -13,11 +13,10 @@ import {BehaviorSubject} from 'rxjs';
 @Injectable()
 export class MapService {
 
-  map: L.Map;
+  map;
   currentLocationMaps = [];
   layers = [];
   mapIsLoaded: boolean = false;
-
   bounds = [];
 
   previousRoomColor = null;
@@ -30,21 +29,18 @@ export class MapService {
 
   options = {
     crs: L.CRS.Simple,
-    zoom: 2,
-    minZoom: 2,
+    zoom: 0,
+    minZoom: -1,
     maxZoom: 8,
     zoomControl: false,
-    center: [250, 90],
-    maxBounds: [[120, -120], [350, 320]],
+    center: [2500, 2500],
+    maxBounds: [[1000, 1000], [4000, 4000]],
     maxBoundsViscosity: 1,
     attributionControl: false,
     preferCanvas: true,
   };
 
   coordinates;
-  marker;
-  clicked: boolean = false;
-
 
   icon = {
     icon: L.icon({
@@ -56,29 +52,23 @@ export class MapService {
   };
 
   floorIsChanging: boolean = false;
-
   mapReady(map: L.Map) {
+    this.map = map;
 
-    this.bounds.push([[-100, 0], [400, 500]]);
-    this.bounds.push([[-100, -1], [401, 501]]);
-    this.bounds.push([[-100, -2], [402, 502]]);
-    this.bounds.push([[-100, -3], [403, 503]]);
-    this.bounds.push([[-100, -4], [404, 504]]);
+    this.bounds.push([[0,0], [5000, 5000]]);
+    this.bounds.push([[0, -15], [5015, 5015]]);
+    this.bounds.push([[0, -30], [5030, 5030]]);
+    this.bounds.push([[0, -45], [5045, 5045]]);
+    this.bounds.push([[0, -60], [5060, 5060]]);
 
-    map.addControl(L.control.zoom(
+    this.map.addControl(L.control.zoom(
       {}
     ));
 
-    this.clicked = false;
-    map.on('click', <LeafletMouseEvent>(e) => {
+    this.map.on('click', <LeafletMouseEvent>(e) => {
       this.coordinates = e.latlng;
-      map.setView(this.coordinates, map.getZoom());
-      if (!this.clicked) {
-        this.clicked = true;
-        this.marker = L.marker([this.coordinates.lat + 0.001, this.coordinates.lng], this.icon).addTo(map);
-      } else {
-        this.marker.setLatLng([this.coordinates.lat + 0.001, this.coordinates.lng]);
-      }
+      console.log(this.coordinates);
+      this.map.setView(this.coordinates, this.map.getZoom());
     });
   }
 
@@ -106,6 +96,7 @@ export class MapService {
     this.mapIsLoaded = true;
     this.addTileAnimation();
     this.getIdRoomInMap();
+    console.log(this.layers);
     await this.spinner.hide();
   }
 
@@ -125,7 +116,6 @@ export class MapService {
   async changeLocation() {
     await this.spinner.show();
     this.mapIsLoaded = false;
-    this.removeMarker();
     this.resetClassesInLayers();
     this.layers = [];
     this.currentLocationMaps = [];
@@ -149,7 +139,6 @@ export class MapService {
 
   async changeFloor() {
       this.floorIsChanging = true;
-      this.removeMarker();
       this.resetClassesInLayers();
       let location = this.LocationService.locationState;
       let floor = this.FloorsService.floorState;
@@ -236,7 +225,7 @@ export class MapService {
         let objectid = children[i].attributes.getNamedItem('objectid');
         if (children[i].nodeName == 'polygon' && objecttype && objectid) {
           if (objecttype.value == 'ROOM') {
-            d3.select(children[i]).on('click', ()=> {
+            d3.select(children[i]).on('click', (e)=> {
               this.searchingService.getRoomInfoData(objectid.value);
               this.searchingService.clickedListItem = true;
             })
@@ -324,22 +313,14 @@ export class MapService {
           d3.select(children[i]).on('mouseover', function () {
           }).on('mouseout', function () {
           });
-
-          // children[i].id = 'selected-room';
-          // let event = new MouseEvent('click', {
-          //   view: window,
-          //   bubbles: true,
-          // });
-          //
-          // // document.getElementById('selected-room').dispatchEvent(event);
           // // @ts-ignore
           d3.select(children[i]).style('fill', 'white');
           children[i].classList.add('navigated-path-animation');
 
+          this.map.flyTo(this.layers[0].getBounds().getCenter(), 0);
         }
       }
     }
-
   }
 
   displayAdditionalElementsOnMap(type: string) {
@@ -432,13 +413,6 @@ export class MapService {
     });
   }
 
-  removeMarker() {
-    if (this.marker != null) {
-      this.clicked = false;
-      L.Map.prototype.removeControl(this.marker);
-    }
-  }
-
   resetClassesInLayers() {
     this.layers.forEach((map) => {
       map._url.classList.add('inactive-layer');
@@ -457,5 +431,6 @@ export class MapService {
   setValueOfDisplayedAdditionalElement(newValue: boolean) {
     this.displayAdditionalElement.next(newValue);
   }
+
 }
 
