@@ -8,6 +8,7 @@
   position: relative;
   color: #1b272e;
   text-transform: uppercase;
+  text-overflow: ellipsis;
 }
 
 .text {
@@ -18,8 +19,9 @@
 }
 .text p {
   margin-top: 5%;
-  font-size: .8rem;
+  font-size: .6rem;
   font-weight: 600;
+  text-overflow: ellipsis;
 }
 
 #no-results {
@@ -27,6 +29,7 @@
   margin-top: 5%;
   color: #71706f;
   text-transform: lowercase;
+  text-overflow: ellipsis;
 }
 
 ul {

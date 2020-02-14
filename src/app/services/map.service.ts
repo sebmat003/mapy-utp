@@ -317,7 +317,7 @@ export class MapService {
           d3.select(children[i]).style('fill', 'white');
           children[i].classList.add('navigated-path-animation');
 
-          this.map.flyTo(this.layers[0].getBounds().getCenter(), 0);
+          this.map.flyTo(this.layers[0].getBounds().getCenter(), -1);
         }
       }
     }
