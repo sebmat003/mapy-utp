@@ -1,3 +1,7 @@
+UTPGateway v2 - frontend of university campus searching
+and navigation system (project will be deployed using 
+navigation panels situated in campus buildings)
+
 # Mapy
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
