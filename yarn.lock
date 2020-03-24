@@ -5744,6 +5744,13 @@ ngx-filter-pipe@^2.1.2:
   dependencies:
     tslib "^1.7.1"
 
+ngx-spinner@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-spinner/-/ngx-spinner-8.1.0.tgz#edb834669ff8ee92fb9f2d307ae654557c0e4429"
+  integrity sha512-VtIcKsxe+cNj9zCelNesSJZ/xarjxKL86GQG9h4JM++/Hf7HUJtPDBWXZ6lBk0CpgWdJ4++XX3aeOntI92ApEw==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -8736,10 +8743,10 @@ yargs@13.1.0:
     y18n "^4.0.0"
     yargs-parser "^13.0.0"
 
-yarn@^1.21.1:
-  version "1.21.1"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.21.1.tgz#1d5da01a9a03492dc4a5957befc1fd12da83d89c"
-  integrity sha512-dQgmJv676X/NQczpbiDtc2hsE/pppGDJAzwlRiADMTvFzYbdxPj2WO4PcNyriSt2c4jsCMpt8UFRKHUozt21GQ==
+yarn@^1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.0.tgz#acf82906e36bcccd1ccab1cfb73b87509667c881"
+  integrity sha512-KMHP/Jq53jZKTY9iTUt3dIVl/be6UPs2INo96+BnZHLKxYNTfwMmlgHTaMWyGZoO74RI4AIFvnWhYrXq2USJkg==
 
 yeast@0.1.2:
   version "0.1.2"
